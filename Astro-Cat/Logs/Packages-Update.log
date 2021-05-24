@@ -1,5 +1,5 @@
 
-=== Mon May 24 22:49:43 2021
+=== Mon May 24 22:56:28 2021
 
 Packages were changed.
 Update Mode: mergeDefaultDependencies
@@ -39,7 +39,7 @@ The following packages were added:
   com.unity.modules.vr@1.0.0
   com.unity.modules.wind@1.0.0
   com.unity.modules.xr@1.0.0
-  com.unity.test-framework@1.1.22
+  com.unity.test-framework@1.1.20
   com.unity.textmeshpro@2.1.1
-  com.unity.timeline@1.2.18
+  com.unity.timeline@1.2.17
   com.unity.ugui@1.0.0
