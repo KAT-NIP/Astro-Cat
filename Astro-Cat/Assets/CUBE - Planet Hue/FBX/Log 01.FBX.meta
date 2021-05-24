@@ -1,0 +1,286 @@
+fileFormatVersion: 2
+guid: 2c64c6af0d82b6b4592489531d450d41
+timeCreated: 1516260919
+licenseType: Store
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Big Rock 01
+    100002: Big Rock 02
+    100004: Big Rock 03
+    100006: Box002
+    100008: Grass 01
+    100010: Ground 01
+    100012: Ground 02
+    100014: Ground 03
+    100016: Ground 04
+    100018: Ground 05
+    100020: Ground 06
+    100022: Ground 07
+    100024: Ground 08
+    100026: Ground Rock 01
+    100028: Ground Rock 02
+    100030: Ground Rock 03
+    100032: //RootNode
+    100034: Log 01
+    100036: Male01 NS01
+    100038: Mushroom 01A
+    100040: Mushroom 01B
+    100042: Mushroom 01C
+    100044: Ocean 01
+    100046: Plant 02A
+    100048: Plant 02B
+    100050: Plant 02C
+    100052: Plant 04A
+    100054: Plant 04B
+    100056: Plant 04C
+    100058: Plant 06A
+    100060: Plant 06B
+    100062: Plant 06C
+    100064: Rock 01
+    100066: Rock 02
+    100068: Rock 03
+    100070: Rock 04
+    100072: Rock 05
+    100074: Tree 01A
+    100076: Tree 01B
+    100078: Tree 01C
+    100080: Tree 02A
+    400000: Big Rock 01
+    400002: Big Rock 02
+    400004: Big Rock 03
+    400006: Box002
+    400008: Grass 01
+    400010: Ground 01
+    400012: Ground 02
+    400014: Ground 03
+    400016: Ground 04
+    400018: Ground 05
+    400020: Ground 06
+    400022: Ground 07
+    400024: Ground 08
+    400026: Ground Rock 01
+    400028: Ground Rock 02
+    400030: Ground Rock 03
+    400032: Log 01
+    400034: //RootNode
+    400036: Male01 NS01
+    400038: Mushroom 01A
+    400040: Mushroom 01B
+    400042: Mushroom 01C
+    400044: Ocean 01
+    400046: Plant 02A
+    400048: Plant 02B
+    400050: Plant 02C
+    400052: Plant 04A
+    400054: Plant 04B
+    400056: Plant 04C
+    400058: Plant 06A
+    400060: Plant 06B
+    400062: Plant 06C
+    400064: Rock 01
+    400066: Rock 02
+    400068: Rock 03
+    400070: Rock 04
+    400072: Rock 05
+    400074: Tree 01A
+    400076: Tree 01B
+    400078: Tree 01C
+    400080: Tree 02A
+    2300000: Big Rock 01
+    2300002: Big Rock 02
+    2300004: Big Rock 03
+    2300006: Box002
+    2300008: Grass 01
+    2300010: Ground 01
+    2300012: Ground 02
+    2300014: Ground 03
+    2300016: Ground 04
+    2300018: Ground 05
+    2300020: Ground 06
+    2300022: Ground 07
+    2300024: Ground 08
+    2300026: Ground Rock 01
+    2300028: Ground Rock 02
+    2300030: Ground Rock 03
+    2300032: Log 01
+    2300034: Male01 NS01
+    2300036: Mushroom 01A
+    2300038: Mushroom 01B
+    2300040: Mushroom 01C
+    2300042: Ocean 01
+    2300044: Plant 02A
+    2300046: Plant 02B
+    2300048: Plant 02C
+    2300050: Plant 04A
+    2300052: Plant 04B
+    2300054: Plant 04C
+    2300056: Plant 06A
+    2300058: Plant 06B
+    2300060: Plant 06C
+    2300062: Rock 01
+    2300064: Rock 02
+    2300066: Rock 03
+    2300068: Rock 04
+    2300070: Rock 05
+    2300072: Tree 01A
+    2300074: Tree 01B
+    2300076: Tree 01C
+    2300078: Tree 02A
+    2300080: //RootNode
+    3300000: Big Rock 01
+    3300002: Big Rock 02
+    3300004: Big Rock 03
+    3300006: Box002
+    3300008: Grass 01
+    3300010: Ground 01
+    3300012: Ground 02
+    3300014: Ground 03
+    3300016: Ground 04
+    3300018: Ground 05
+    3300020: Ground 06
+    3300022: Ground 07
+    3300024: Ground 08
+    3300026: Ground Rock 01
+    3300028: Ground Rock 02
+    3300030: Ground Rock 03
+    3300032: Log 01
+    3300034: Male01 NS01
+    3300036: Mushroom 01A
+    3300038: Mushroom 01B
+    3300040: Mushroom 01C
+    3300042: Ocean 01
+    3300044: Plant 02A
+    3300046: Plant 02B
+    3300048: Plant 02C
+    3300050: Plant 04A
+    3300052: Plant 04B
+    3300054: Plant 04C
+    3300056: Plant 06A
+    3300058: Plant 06B
+    3300060: Plant 06C
+    3300062: Rock 01
+    3300064: Rock 02
+    3300066: Rock 03
+    3300068: Rock 04
+    3300070: Rock 05
+    3300072: Tree 01A
+    3300074: Tree 01B
+    3300076: Tree 01C
+    3300078: Tree 02A
+    3300080: //RootNode
+    4300000: Male01 NS01
+    4300002: Ground 01
+    4300004: Ground 02
+    4300006: Ground 03
+    4300008: Rock 01
+    4300010: Box002
+    4300012: Big Rock 01
+    4300014: Tree 02A
+    4300016: Plant 02A
+    4300018: Plant 02B
+    4300020: Plant 02C
+    4300022: Plant 04B
+    4300024: Plant 04C
+    4300026: Ground Rock 01
+    4300028: Ground Rock 02
+    4300030: Ground Rock 03
+    4300032: Tree 01A
+    4300034: Plant 04A
+    4300036: Rock 02
+    4300038: Rock 03
+    4300040: Rock 04
+    4300042: Rock 05
+    4300044: Big Rock 02
+    4300046: Big Rock 03
+    4300048: Tree 01B
+    4300050: Tree 01C
+    4300052: Mushroom 01A
+    4300054: Mushroom 01B
+    4300056: Mushroom 01C
+    4300058: Plant 06A
+    4300060: Plant 06B
+    4300062: Plant 06C
+    4300064: Grass 01
+    4300066: Ocean 01
+    4300068: Ground 04
+    4300070: Ground 05
+    4300072: Ground 06
+    4300074: Ground 07
+    4300076: Ground 08
+    4300078: Log 01
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
