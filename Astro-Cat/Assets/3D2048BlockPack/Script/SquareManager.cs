@@ -43,90 +43,61 @@ public class SquareManager : MonoBehaviour {
 
         if (stop) return;
 
-        // touch
-        if (Input.GetMouseButtonDown(0) || (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began))
+        DetectDirection();
+        if (move)
         {
-            wait = true;
-            firstPos = Input.GetMouseButtonDown(0) ? Input.mousePosition : (Vector3)Input.GetTouch(0).position;
-        }
+            move = false;
+            Spawn();
+            k = 0;
+            l = 0;
 
-        if (Input.GetMouseButton(0) || (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved))
-        {
-            gap = (Input.GetMouseButton(0) ? Input.mousePosition : (Vector3)Input.GetTouch(0).position) - firstPos;
-            if (gap.magnitude < 100) return;
-            gap.Normalize();
-
-            if (wait)
+            // score
+            if (score > 0)
             {
-                /*
-                wait = false;
-                // up
-                if (gap.y > 0 && gap.x > -0.5f && gap.x < 0.5f) for (x = 0; x <= 3; x++) for (y = 0; y <= 2; y++) for (i = 3; i >= y + 1; i--) MoveOrCombine(x, i - 1, x, i);
-                // down
-                else if (gap.y < 0 && gap.x > -0.5f && gap.x < 0.5f) for (x = 0; x <= 3; x++) for (y = 3; y >= 1; y--) for (i = 0; i <= y - 1; i++) MoveOrCombine(x, i + 1, x, i);
-                // right
-                else if (gap.x > 0 && gap.y > -0.5f && gap.y < 0.5f) for (y = 0; y <= 3; y++) for (x = 0; x <= 2; x++) for (i = 3; i >= x + 1; i--) MoveOrCombine(i - 1, y, i, y);
-                // left
-                else if (gap.x < 0 && gap.y > -0.5f && gap.y < 0.5f) for (y = 0; y <= 3; y++) for (x = 3; x >= 1; x--) for (i = 0; i <= x - 1; i++) MoveOrCombine(i + 1, y, i, y);
-                else return;
-                */
-                DetectDirection();
+                Plus.text = "+" + score.ToString() + "    ";
+                Plus.GetComponent<Animator>().SetTrigger("PlusBack");
+                Plus.GetComponent<Animator>().SetTrigger("Plus");
+                Score.text = (int.Parse(Score.text) + score).ToString();
 
-                if (move)
+                score = 0;
+            }
+
+            for (x = 0; x <= 3; x++) for (y = 0; y <= 3; y++)
                 {
-                    move = false;
-                    Spawn();
-                    k = 0;
-                    l = 0;
-
-                    // score
-                    if (score > 0)
+                    //  when all tiles are full, K is zero
+                    if (Square[x, y] == null)
                     {
-                        Plus.text = "+" + score.ToString() + "    ";
-                        Plus.GetComponent<Animator>().SetTrigger("PlusBack");
-                        Plus.GetComponent<Animator>().SetTrigger("Plus");
-                        Score.text = (int.Parse(Score.text) + score).ToString();
-
-                        score = 0;
+                        k++;
+                        continue;
                     }
 
-                    for(x = 0; x <=3; x++) for (y=0; y<=3; y++)
-                    {
-                            //  when all tiles are full, K is zero
-                            if (Square[x, y] == null)
-                            {
-                                k++;
-                                continue;
-                            }
+                    if (Square[x, y].tag == "Finish")
+                        Square[x, y].tag = "Untagged";
+                }
 
-                        if (Square[x, y].tag == "Finish")
-                                Square[x, y].tag = "Untagged";
-                    }
+            if (k == 0)
+            {
+                //no horizontal or vertical joining block, l becomes 0 and the game is over.
+                for (y = 0; y <= 3; y++)
+                    for (x = 0; x <= 2; x++)
+                        if (Square[x, y].name == Square[x + 1, y].name)
+                            l++;
 
-                    if(k == 0)
-                    {
-                        //no horizontal or vertical joining block, l becomes 0 and the game is over.
-                        for (y = 0; y <= 3; y++)
-                            for (x = 0; x <= 2; x++)
-                                if (Square[x, y].name == Square[x + 1, y].name)
-                                    l++;
+                for (x = 0; x <= 3; x++)
+                    for (y = 0; y <= 2; y++)
+                        if (Square[x, y].name == Square[x, y + 1].name)
+                            l++;
 
-                        for (x = 0; x <= 3; x++)
-                            for (y = 0; y <= 2; y++)
-                                if (Square[x, y].name == Square[x, y + 1].name)
-                                    l++;
-
-                        if (l == 0)
-                        {
-                            stop = true;
-                            Quit.SetActive(true);
-                            return;
-                        }
-                    }
+                if (l == 0)
+                {
+                    stop = true;
+                    Quit.SetActive(true);
+                    return;
                 }
             }
         }
-	}
+
+    }
 
     // [x1, y1] Position before moving, [x2, y2] Position after moving.
     void MoveOrCombine(int x1, int y1, int x2, int y2)
@@ -141,7 +112,7 @@ public class SquareManager : MonoBehaviour {
         }
 
         // Combine
-        if (Square[x1, y1] !=null && Square[x2, y2] != null && Square[x1, y1].name == Square[x2, y2].name && Square[x1, y1].tag != "Finish" && Square[x2, y2].tag != "Finish")
+        if (Square[x1, y1] != null && Square[x2, y2] != null && Square[x1, y1].name == Square[x2, y2].name && Square[x1, y1].tag != "Finish" && Square[x2, y2].tag != "Finish")
         {
             move = true;
             for (j = 0; j <= 16; j++)
@@ -178,7 +149,6 @@ public class SquareManager : MonoBehaviour {
             TargetPos(x, y),
             Quaternion.identity
             );
-
         Square[x, y].GetComponent<Animator>().SetTrigger("Spawn");
     }
 
@@ -192,7 +162,6 @@ public class SquareManager : MonoBehaviour {
     {
         if (PlayerPrefs.HasKey("Score"))
             PlayerPrefs.DeleteKey("Score");
-
     }
 
     public static Vector3 TargetPos(float _x, float _y)
@@ -214,31 +183,23 @@ public class SquareManager : MonoBehaviour {
 
     public void DetectDirection()
     {
-        if (quterSwip)
+        wait = false;
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            wait = false;
-            // up
-            if (gap.y > 0 && gap.x > -1 && gap.x < 0) for (x = 0; x <= 3; x++) for (y = 0; y <= 2; y++) for (i = 3; i >= y + 1; i--) MoveOrCombine(x, i - 1, x, i);
-            // down
-            else if (gap.y < 0 && gap.x > 0 && gap.x < 1) for (x = 0; x <= 3; x++) for (y = 3; y >= 1; y--) for (i = 0; i <= y - 1; i++) MoveOrCombine(x, i + 1, x, i);
-            // right
-            else if (gap.x > 0 && gap.y > 0 && gap.y < 1) for (y = 0; y <= 3; y++) for (x = 0; x <= 2; x++) for (i = 3; i >= x + 1; i--) MoveOrCombine(i - 1, y, i, y);
-            // left
-            else if (gap.x < 0 && gap.y > -1 && gap.y < 0) for (y = 0; y <= 3; y++) for (x = 3; x >= 1; x--) for (i = 0; i <= x - 1; i++) MoveOrCombine(i + 1, y, i, y);
-            else return;
+            for (x = 0; x <= 3; x++) for (y = 0; y <= 2; y++) for (i = 3; i >= y + 1; i--) MoveOrCombine(x, i - 1, x, i);
         }
-        else
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            wait = false;
-            // up
-            if (gap.y > 0 && gap.x > -0.5f && gap.x < 0.5f) for (x = 0; x <= 3; x++) for (y = 0; y <= 2; y++) for (i = 3; i >= y + 1; i--) MoveOrCombine(x, i - 1, x, i);
-            // down
-            else if (gap.y < 0 && gap.x > -0.5f && gap.x < 0.5f) for (x = 0; x <= 3; x++) for (y = 3; y >= 1; y--) for (i = 0; i <= y - 1; i++) MoveOrCombine(x, i + 1, x, i);
-            // right
-            else if (gap.x > 0 && gap.y > -0.5f && gap.y < 0.5f) for (y = 0; y <= 3; y++) for (x = 0; x <= 2; x++) for (i = 3; i >= x + 1; i--) MoveOrCombine(i - 1, y, i, y);
-            // left
-            else if (gap.x < 0 && gap.y > -0.5f && gap.y < 0.5f) for (y = 0; y <= 3; y++) for (x = 3; x >= 1; x--) for (i = 0; i <= x - 1; i++) MoveOrCombine(i + 1, y, i, y);
-            else return;
+            for (x = 0; x <= 3; x++) for (y = 3; y >= 1; y--) for (i = 0; i <= y - 1; i++) MoveOrCombine(x, i + 1, x, i);
         }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            for (y = 0; y <= 3; y++) for (x = 0; x <= 2; x++) for (i = 3; i >= x + 1; i--) MoveOrCombine(i - 1, y, i, y);
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            for (y = 0; y <= 3; y++) for (x = 3; x >= 1; x--) for (i = 0; i <= x - 1; i++) MoveOrCombine(i + 1, y, i, y);
+        }
+        else return;
     }
 }
