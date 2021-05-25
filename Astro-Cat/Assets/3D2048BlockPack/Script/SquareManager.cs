@@ -6,11 +6,12 @@ public class SquareManager : MonoBehaviour {
 
     public GameObject[] n;
     public GameObject Quit;
-    public Text Score, Plus;
+    public Text Score, Plus, WinText;
 
-    bool wait, move, stop;
+    public GameObject Win;
+
+    bool move, stop;
     int x, y, i, j, k, l, score;
-    Vector3 firstPos, gap;
     GameObject[,] Square = new GameObject[4, 4];
 
     [Header("[Grid]")]
@@ -42,6 +43,11 @@ public class SquareManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
 
         if (stop) return;
+
+        if(CheckLevelWin())
+        {
+            Win.SetActive(true);
+        }
 
         DetectDirection();
         if (move)
@@ -183,7 +189,6 @@ public class SquareManager : MonoBehaviour {
 
     public void DetectDirection()
     {
-        wait = false;
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             for (x = 0; x <= 3; x++) for (y = 0; y <= 2; y++) for (i = 3; i >= y + 1; i--) MoveOrCombine(x, i - 1, x, i);
@@ -201,5 +206,31 @@ public class SquareManager : MonoBehaviour {
             for (y = 0; y <= 3; y++) for (x = 3; x >= 1; x--) for (i = 0; i <= x - 1; i++) MoveOrCombine(i + 1, y, i, y);
         }
         else return;
+    }
+
+    public bool CheckLevelWin()
+    {
+        for(int i = 0; i <= 3; i++)
+        {
+            for(int j = 0; j <= 3; j++)
+            {
+                if(Square[i, j] != null && Square[i, j].name == n[4].name + "(Clone)")
+                {
+                    WinText.text = "Level 1 Clear!";
+                    return true;
+                }
+                if (Square[i, j] != null && Square[i, j].name == n[5].name + "(Clone)")
+                {
+                    WinText.text = "Level 2 Clear!";
+                    return true;
+                }
+                if (Square[i, j] != null && Square[i, j].name == n[6].name + "(Clone)")
+                {
+                    WinText.text = "Level 3 Clear!";
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
