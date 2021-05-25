@@ -6,7 +6,7 @@ public class SquareManager : MonoBehaviour {
 
     public GameObject[] n;
     public GameObject Quit;
-    public Text Score, BestScore, Plus;
+    public Text Score, Plus;
 
     bool wait, move, stop;
     int x, y, i, j, k, l, score;
@@ -33,8 +33,6 @@ public class SquareManager : MonoBehaviour {
         Spawn();
 
         //reset score
-        BestScore.text = "0";
-        BestScore.text = PlayerPrefs.GetInt("BestScore").ToString();
         Score.text = "0";
     }
 
@@ -89,13 +87,6 @@ public class SquareManager : MonoBehaviour {
                         Plus.GetComponent<Animator>().SetTrigger("Plus");
                         Score.text = (int.Parse(Score.text) + score).ToString();
 
-                        if (PlayerPrefs.GetInt("BestScore", 0) < int.Parse(Score.text))
-                        {
-                            PlayerPrefs.SetInt("BestScore", int.Parse(Score.text));
-                            print("BestScore.text = " + BestScore.text);
-                        }
-
-                        BestScore.text = PlayerPrefs.GetInt("BestScore").ToString();
                         score = 0;
                     }
 
@@ -199,9 +190,6 @@ public class SquareManager : MonoBehaviour {
 
     public void ResetData()
     {
-        if (PlayerPrefs.HasKey("BestScore"))
-            PlayerPrefs.DeleteKey("BestScore");
-
         if (PlayerPrefs.HasKey("Score"))
             PlayerPrefs.DeleteKey("Score");
 
