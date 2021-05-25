@@ -3339,6 +3339,75 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &1847353730
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 559839889887298930, guid: 7506c4aeee20d6e4fb9e7035a534191f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 559839889887298930, guid: 7506c4aeee20d6e4fb9e7035a534191f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 559839889887298930, guid: 7506c4aeee20d6e4fb9e7035a534191f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 559839889887298930, guid: 7506c4aeee20d6e4fb9e7035a534191f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 559839889887298930, guid: 7506c4aeee20d6e4fb9e7035a534191f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9063079
+      objectReference: {fileID: 0}
+    - target: {fileID: 559839889887298930, guid: 7506c4aeee20d6e4fb9e7035a534191f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 559839889887298930, guid: 7506c4aeee20d6e4fb9e7035a534191f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.42261827
+      objectReference: {fileID: 0}
+    - target: {fileID: 559839889887298930, guid: 7506c4aeee20d6e4fb9e7035a534191f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 559839889887298930, guid: 7506c4aeee20d6e4fb9e7035a534191f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 559839889887298930, guid: 7506c4aeee20d6e4fb9e7035a534191f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 559839889887298930, guid: 7506c4aeee20d6e4fb9e7035a534191f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 559839889887336786, guid: 7506c4aeee20d6e4fb9e7035a534191f,
+        type: 3}
+      propertyPath: m_Name
+      value: DragonSD_06
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7506c4aeee20d6e4fb9e7035a534191f, type: 3}
 --- !u!1 &1863070437
 GameObject:
   m_ObjectHideFlags: 0
