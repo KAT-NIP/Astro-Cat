@@ -10,6 +10,8 @@ public class SquareManager : MonoBehaviour {
 
     public GameObject Win;
 
+    bool[] levelClear = { false, false, false };
+
     bool move, stop;
     int x, y, i, j, k, l, score;
     GameObject[,] Square = new GameObject[4, 4];
@@ -47,6 +49,11 @@ public class SquareManager : MonoBehaviour {
         if(CheckLevelWin())
         {
             Win.SetActive(true);
+        }
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            Win.SetActive(false);
         }
 
         DetectDirection();
@@ -214,19 +221,22 @@ public class SquareManager : MonoBehaviour {
         {
             for(int j = 0; j <= 3; j++)
             {
-                if(Square[i, j] != null && Square[i, j].name == n[4].name + "(Clone)")
+                if(!levelClear[0] && Square[i, j] != null && Square[i, j].name == n[4].name + "(Clone)")
                 {
                     WinText.text = "Level 1 Clear!";
+                    levelClear[0] = true;
                     return true;
                 }
-                if (Square[i, j] != null && Square[i, j].name == n[5].name + "(Clone)")
+                if (!levelClear[1] && Square[i, j] != null && Square[i, j].name == n[5].name + "(Clone)")
                 {
                     WinText.text = "Level 2 Clear!";
+                    levelClear[1] = true;
                     return true;
                 }
-                if (Square[i, j] != null && Square[i, j].name == n[6].name + "(Clone)")
+                if (!levelClear[2] && Square[i, j] != null && Square[i, j].name == n[6].name + "(Clone)")
                 {
                     WinText.text = "Level 3 Clear!";
+                    levelClear[2] = true;
                     return true;
                 }
             }
