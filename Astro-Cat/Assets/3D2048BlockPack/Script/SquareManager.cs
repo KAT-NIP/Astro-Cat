@@ -24,9 +24,11 @@ public class SquareManager : MonoBehaviour {
     static float gridOffset;
     static bool horizontal;
     public bool quterSwip;
+    GameObject talkObject;
 
 
-    void Start () {
+    void Start()
+    {
         //grid setting
         gridGap = setGridGap;
         gridOffset = setGridOffset;
@@ -34,13 +36,15 @@ public class SquareManager : MonoBehaviour {
 
         Spawn();
         Spawn();
-
+        talkObject = GameObject.FindWithTag("talkPanel");
         //reset score
         Score.text = "0";
     }
 
-	void Update () {
+    void Update()
+    {
 
+        talkObject.SetActive(false);
         // Escape
         if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
 
