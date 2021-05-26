@@ -10,6 +10,7 @@ public class SquareManager : MonoBehaviour {
 
     public GameObject Win;
 
+    // 레벨 1, 2, 3 클리어 여부
     bool[] levelClear = { false, false, false };
 
     bool move, stop;
@@ -43,18 +44,18 @@ public class SquareManager : MonoBehaviour {
 
     void Update()
     {
-
         talkObject.SetActive(false);
         // Escape
         if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
 
         if (stop) return;
 
+        // 레벨 클리어 조건 체크
         if(CheckLevelWin())
         {
             Win.SetActive(true);
         }
-
+        // 마우스 클릭하면 Level Complete 문구 사라짐
         if(Input.GetMouseButtonDown(0))
         {
             Win.SetActive(false);
@@ -68,7 +69,7 @@ public class SquareManager : MonoBehaviour {
             k = 0;
             l = 0;
 
-            // score
+            // score(점수 올라가는 애니메이션)
             if (score > 0)
             {
                 Plus.text = "+" + score.ToString() + "    ";
@@ -81,7 +82,7 @@ public class SquareManager : MonoBehaviour {
 
             for (x = 0; x <= 3; x++) for (y = 0; y <= 3; y++)
                 {
-                    //  when all tiles are full, K is zero
+                    // when all tiles are full, K is zero(빈칸 체크)
                     if (Square[x, y] == null)
                     {
                         k++;
@@ -94,7 +95,7 @@ public class SquareManager : MonoBehaviour {
 
             if (k == 0)
             {
-                //no horizontal or vertical joining block, l becomes 0 and the game is over.
+                // 게임 종료 조건(가로 세로로 합칠 수 있는 블록이 있는지 확인)
                 for (y = 0; y <= 3; y++)
                     for (x = 0; x <= 2; x++)
                         if (Square[x, y].name == Square[x + 1, y].name)
@@ -105,6 +106,7 @@ public class SquareManager : MonoBehaviour {
                         if (Square[x, y].name == Square[x, y + 1].name)
                             l++;
 
+                // 빈칸이 없고(k == 0) 가로, 세로로 합칠 수 있는 블록이 없으면(l == 0) 게임 종료
                 if (l == 0)
                 {
                     stop = true;
@@ -200,19 +202,20 @@ public class SquareManager : MonoBehaviour {
 
     public void DetectDirection()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        // 키보드 입력에 따라 이동방향 결(
+        if (Input.GetKeyDown(KeyCode.UpArrow))  // 위
         {
             for (x = 0; x <= 3; x++) for (y = 0; y <= 2; y++) for (i = 3; i >= y + 1; i--) MoveOrCombine(x, i - 1, x, i);
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow)) // 아래
         {
             for (x = 0; x <= 3; x++) for (y = 3; y >= 1; y--) for (i = 0; i <= y - 1; i++) MoveOrCombine(x, i + 1, x, i);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow)) // 오른쪽
         {
             for (y = 0; y <= 3; y++) for (x = 0; x <= 2; x++) for (i = 3; i >= x + 1; i--) MoveOrCombine(i - 1, y, i, y);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))   // 왼쪽
         {
             for (y = 0; y <= 3; y++) for (x = 3; x >= 1; x--) for (i = 0; i <= x - 1; i++) MoveOrCombine(i + 1, y, i, y);
         }
@@ -225,18 +228,22 @@ public class SquareManager : MonoBehaviour {
         {
             for(int j = 0; j <= 3; j++)
             {
+                // 레벨1 클리어조건 (n[4] = 32)
                 if(!levelClear[0] && Square[i, j] != null && Square[i, j].name == n[4].name + "(Clone)")
                 {
                     WinText.text = "Level 1 Clear!";
                     levelClear[0] = true;
                     return true;
                 }
+                // 레벨2 클리어조건 (n[5] = 64)
                 if (!levelClear[1] && Square[i, j] != null && Square[i, j].name == n[5].name + "(Clone)")
                 {
                     WinText.text = "Level 2 Clear!";
                     levelClear[1] = true;
                     return true;
                 }
+
+                // 레벨1 클리어조건 (n[6] = 128)
                 if (!levelClear[2] && Square[i, j] != null && Square[i, j].name == n[6].name + "(Clone)")
                 {
                     WinText.text = "Level 3 Clear!";
