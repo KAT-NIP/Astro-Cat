@@ -6,7 +6,7 @@ public class SquareManager : MonoBehaviour {
 
     public GameObject[] n;
     public GameObject Quit;
-    public Text Score, Plus, WinText;
+    public Text Score, Plus, WinText, ContinueText;
 
     public GameObject Win;
 
@@ -57,8 +57,11 @@ public class SquareManager : MonoBehaviour {
         {
             Win.SetActive(true);
         }
+        // 게임 종료 조건 체GameOver()
+        if (CheckStageWin()) GameClear();
+
         // 마우스 클릭하면 Level Complete 문구 사라짐
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             Win.SetActive(false);
             //마우스 클릭 시 대화창 사라짐
@@ -116,9 +119,7 @@ public class SquareManager : MonoBehaviour {
                     // 빈칸이 없고(k == 0) 가로, 세로로 합칠 수 있는 블록이 없으면(l == 0) 게임 종료
                     if (l == 0)
                     {
-                        stop = true;
-                        Quit.SetActive(true);
-                        return;
+                        GameOver();
                     }
                 }
             }
@@ -241,7 +242,9 @@ public class SquareManager : MonoBehaviour {
                 if(!levelClear[0] && Square[i, j] != null && Square[i, j].name == n[4].name + "(Clone)")
                 {
                     WinText.text = "Level 1 Clear!";
+                    ContinueText.text = "다음 레벨 목표 : 64점 타일";
                     levelClear[0] = true;
+
                     //talkObject활성화, 텍스트 내용 수정
                     talkObject.SetActive(true);
                     talkObjectText.text = "허억 레벨1을 벌써 깨다니?\n레벨2는 쉽지 않을테니 각오해라!";
@@ -253,6 +256,7 @@ public class SquareManager : MonoBehaviour {
                 if (!levelClear[1] && Square[i, j] != null && Square[i, j].name == n[5].name + "(Clone)")
                 {
                     WinText.text = "Level 2 Clear!";
+                    ContinueText.text = "다음 레벨 목표 : 128점 타일";
                     levelClear[1] = true;
 
                     talkObject.SetActive(true);
@@ -265,8 +269,9 @@ public class SquareManager : MonoBehaviour {
                 // 레벨1 클리어조건 (n[6] = 128)
                 if (!levelClear[2] && Square[i, j] != null && Square[i, j].name == n[6].name + "(Clone)")
                 {
-                    WinText.text = "Level 3 Clear!";
+                    WinText.text = "Stage Clear!";
                     levelClear[2] = true;
+                    ContinueText.text = "Click to continue";
 
                     talkObject.SetActive(true);
                     talkObjectText.text = "가장 어려운 게임인 2048을 이렇게 클리어해버리다니...\n나의 패배를 인정하지..";
@@ -277,5 +282,34 @@ public class SquareManager : MonoBehaviour {
             }
         }
         return false;
+    }
+
+    public bool CheckStageWin()
+    {
+        if(levelClear[2])
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void GameOver()
+    {
+        stop = true;
+        WinText.text = "Game over";
+        ContinueText.text = "Click to retry";
+        talkObjectText.text = "하하하, 역시 그럴 줄 알았다. 다시 한 번 기회를 줘보도록 하지.\n하지만 다시 한다고 달라질까 과연?";
+
+        talkObject.SetActive(true);
+        Win.SetActive(true);
+
+        mouseClick = false;
+        Quit.SetActive(true);
+    }
+
+    public void GameClear()
+    {
+        stop = true;
+        Quit.SetActive(true);
     }
 }
