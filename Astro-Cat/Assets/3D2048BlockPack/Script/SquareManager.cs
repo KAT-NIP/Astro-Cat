@@ -7,6 +7,7 @@ public class SquareManager : MonoBehaviour {
     public GameObject[] n;
     public GameObject Quit;
     public Text Score, Plus, WinText, ContinueText;
+    public AudioClip winClip;
 
     public GameObject Win;
 
@@ -29,6 +30,8 @@ public class SquareManager : MonoBehaviour {
     private Text talkObjectText; // 말풍선 속 대사 object
     bool mouseClick = false; // mouse click 시 game keep going
 
+    private AudioSource soundEffectAudio;
+
     void Start()
     {
         //grid setting
@@ -41,6 +44,8 @@ public class SquareManager : MonoBehaviour {
         
         talkObject = GameObject.FindWithTag("talkPanel");
         talkObjectText = GameObject.Find("talkPanel/Text").GetComponent<Text>();
+        soundEffectAudio = GetComponent<AudioSource>();
+
         //reset score
         Score.text = "0";
     }
@@ -58,7 +63,11 @@ public class SquareManager : MonoBehaviour {
             Win.SetActive(true);
         }
         // 게임 종료 조건 체GameOver()
-        if (CheckStageWin()) GameClear();
+        if (CheckStageWin())
+        {
+            GameClear();
+            return;
+        }
 
         // 마우스 클릭하면 Level Complete 문구 사라짐
         if (Input.GetMouseButtonDown(0))
@@ -120,12 +129,11 @@ public class SquareManager : MonoBehaviour {
                     if (l == 0)
                     {
                         GameOver();
+                        return;
                     }
                 }
             }
         }
-
-
     }
 
     // [x1, y1] Position before moving, [x2, y2] Position after moving.
@@ -309,6 +317,10 @@ public class SquareManager : MonoBehaviour {
 
     public void GameClear()
     {
+        soundEffectAudio.clip = winClip;
+        soundEffectAudio.loop = false;
+        soundEffectAudio.Play();
+
         stop = true;
         Quit.SetActive(true);
     }
