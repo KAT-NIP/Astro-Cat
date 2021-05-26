@@ -27,6 +27,7 @@ public class SquareManager : MonoBehaviour {
     public bool quterSwip;
     private GameObject talkObject; // 말풍선 object 
     private Text talkObjectText; // 말풍선 속 대사 object
+    bool flag = false; // mouse click 시 game keep going
 
     void Start()
     {
@@ -37,7 +38,7 @@ public class SquareManager : MonoBehaviour {
 
         Spawn();
         Spawn();
-        // 말풍서
+        
         talkObject = GameObject.FindWithTag("talkPanel");
         talkObjectText = GameObject.Find("talkPanel/Text").GetComponent<Text>();
         //reset score
@@ -62,62 +63,67 @@ public class SquareManager : MonoBehaviour {
             Win.SetActive(false);
             //마우스 클릭 시 대화창 사라짐
             talkObject.SetActive(false);
+            flag = true;
         }
 
-        DetectDirection();
-        if (move)
+        if (flag)
         {
-            move = false;
-            Spawn();
-            k = 0;
-            l = 0;
-
-            // score(점수 올라가는 애니메이션)
-            if (score > 0)
+            DetectDirection();
+            if (move)
             {
-                Plus.text = "+" + score.ToString() + "    ";
-                Plus.GetComponent<Animator>().SetTrigger("PlusBack");
-                Plus.GetComponent<Animator>().SetTrigger("Plus");
-                Score.text = (int.Parse(Score.text) + score).ToString();
+                move = false;
+                Spawn();
+                k = 0;
+                l = 0;
 
-                score = 0;
-            }
-
-            for (x = 0; x <= 3; x++) for (y = 0; y <= 3; y++)
+                // score(점수 올라가는 애니메이션)
+                if (score > 0)
                 {
-                    // when all tiles are full, K is zero(빈칸 체크)
-                    if (Square[x, y] == null)
+                    Plus.text = "+" + score.ToString() + "    ";
+                    Plus.GetComponent<Animator>().SetTrigger("PlusBack");
+                    Plus.GetComponent<Animator>().SetTrigger("Plus");
+                    Score.text = (int.Parse(Score.text) + score).ToString();
+
+                    score = 0;
+                }
+
+                for (x = 0; x <= 3; x++) for (y = 0; y <= 3; y++)
                     {
-                        k++;
-                        continue;
+                        // when all tiles are full, K is zero(빈칸 체크)
+                        if (Square[x, y] == null)
+                        {
+                            k++;
+                            continue;
+                        }
+
+                        if (Square[x, y].tag == "Finish")
+                            Square[x, y].tag = "Untagged";
                     }
 
-                    if (Square[x, y].tag == "Finish")
-                        Square[x, y].tag = "Untagged";
-                }
-
-            if (k == 0)
-            {
-                // 게임 종료 조건(가로 세로로 합칠 수 있는 블록이 있는지 확인)
-                for (y = 0; y <= 3; y++)
-                    for (x = 0; x <= 2; x++)
-                        if (Square[x, y].name == Square[x + 1, y].name)
-                            l++;
-
-                for (x = 0; x <= 3; x++)
-                    for (y = 0; y <= 2; y++)
-                        if (Square[x, y].name == Square[x, y + 1].name)
-                            l++;
-
-                // 빈칸이 없고(k == 0) 가로, 세로로 합칠 수 있는 블록이 없으면(l == 0) 게임 종료
-                if (l == 0)
+                if (k == 0)
                 {
-                    stop = true;
-                    Quit.SetActive(true);
-                    return;
+                    // 게임 종료 조건(가로 세로로 합칠 수 있는 블록이 있는지 확인)
+                    for (y = 0; y <= 3; y++)
+                        for (x = 0; x <= 2; x++)
+                            if (Square[x, y].name == Square[x + 1, y].name)
+                                l++;
+
+                    for (x = 0; x <= 3; x++)
+                        for (y = 0; y <= 2; y++)
+                            if (Square[x, y].name == Square[x, y + 1].name)
+                                l++;
+
+                    // 빈칸이 없고(k == 0) 가로, 세로로 합칠 수 있는 블록이 없으면(l == 0) 게임 종료
+                    if (l == 0)
+                    {
+                        stop = true;
+                        Quit.SetActive(true);
+                        return;
+                    }
                 }
             }
         }
+
 
     }
 
@@ -236,9 +242,10 @@ public class SquareManager : MonoBehaviour {
                 {
                     WinText.text = "Level 1 Clear!";
                     levelClear[0] = true;
-                    //talkObejct활성화, 텍스트 내용 수정
+                    //talkObject활성화, 텍스트 내용 수정
                     talkObject.SetActive(true);
                     talkObjectText.text = "허억 레벨1을 벌써 깨다니?\n레벨2는 쉽지 않을테니 각오해라!";
+                    flag = false;
                     
                     return true;
                 }
@@ -250,6 +257,8 @@ public class SquareManager : MonoBehaviour {
 
                     talkObject.SetActive(true);
                     talkObjectText.text = "말도 안돼.. 하지만 레벨3는 쉽게 깨지 못 할거다!";
+                    flag = false;
+
                     return true;
                 }
 
@@ -261,6 +270,8 @@ public class SquareManager : MonoBehaviour {
 
                     talkObject.SetActive(true);
                     talkObjectText.text = "가장 어려운 게임인 2048을 이렇게 클리어해버리다니...\n나의 패배를 인정하지..";
+                    flag = false;
+
                     return true;
                 }
             }
