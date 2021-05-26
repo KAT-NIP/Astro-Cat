@@ -26,7 +26,7 @@ public class SquareManager : MonoBehaviour {
     static bool horizontal;
     public bool quterSwip;
     GameObject talkObject;
-
+    private Text talkObjectText;
 
     void Start()
     {
@@ -38,13 +38,13 @@ public class SquareManager : MonoBehaviour {
         Spawn();
         Spawn();
         talkObject = GameObject.FindWithTag("talkPanel");
+        talkObjectText = talkObject.GetComponentInChildren<Text>(); //talkObject의 child Text지정
         //reset score
         Score.text = "0";
     }
 
     void Update()
     {
-        talkObject.SetActive(false);
         // Escape
         if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
 
@@ -59,6 +59,8 @@ public class SquareManager : MonoBehaviour {
         if(Input.GetMouseButtonDown(0))
         {
             Win.SetActive(false);
+            //마우스 클릭 시 대화창 사라짐
+            talkObject.SetActive(false);
         }
 
         DetectDirection();
@@ -233,6 +235,10 @@ public class SquareManager : MonoBehaviour {
                 {
                     WinText.text = "Level 1 Clear!";
                     levelClear[0] = true;
+                    //talkObejct활성화, 텍스트 내용 수정
+                    talkObject.SetActive(true);
+                    talkObjectText.text = "허억 레벨1을 벌써 깨다니?\n레벨2는 쉽지 않을테니 각오해라!";
+                    
                     return true;
                 }
                 // 레벨2 클리어조건 (n[5] = 64)
@@ -240,6 +246,9 @@ public class SquareManager : MonoBehaviour {
                 {
                     WinText.text = "Level 2 Clear!";
                     levelClear[1] = true;
+
+                    talkObject.SetActive(true);
+                    talkObjectText.text = "말도 안돼.. 하지만 레벨3는 쉽게 깨지 못 할거다!";
                     return true;
                 }
 
@@ -248,6 +257,9 @@ public class SquareManager : MonoBehaviour {
                 {
                     WinText.text = "Level 3 Clear!";
                     levelClear[2] = true;
+
+                    talkObject.SetActive(true);
+                    talkObjectText.text = "가장 어려운 게임인 2048을 이렇게 클리어해버리다니...\n나의 패배를 인정하지..";
                     return true;
                 }
             }
