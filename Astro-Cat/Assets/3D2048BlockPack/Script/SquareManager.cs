@@ -38,7 +38,7 @@ public class SquareManager : MonoBehaviour {
         Spawn();
         Spawn();
         talkObject = GameObject.FindWithTag("talkPanel");
-        talkObjectText = talkObject.GetComponentInChildren<Text>(); //talkObject의 child Text지정
+        talkObjectText = GameObject.Find("talkPanel/Text").GetComponent<Text>();
         //reset score
         Score.text = "0";
     }
