@@ -27,7 +27,7 @@ public class SquareManager : MonoBehaviour {
     public bool quterSwip;
     private GameObject talkObject; // 말풍선 object 
     private Text talkObjectText; // 말풍선 속 대사 object
-    bool flag = false; // mouse click 시 game keep going
+    bool mouseClick = false; // mouse click 시 game keep going
 
     void Start()
     {
@@ -63,10 +63,10 @@ public class SquareManager : MonoBehaviour {
             Win.SetActive(false);
             //마우스 클릭 시 대화창 사라짐
             talkObject.SetActive(false);
-            flag = true;
+            mouseClick = true;
         }
 
-        if (flag)
+        if (mouseClick)
         {
             DetectDirection();
             if (move)
@@ -245,7 +245,7 @@ public class SquareManager : MonoBehaviour {
                     //talkObject활성화, 텍스트 내용 수정
                     talkObject.SetActive(true);
                     talkObjectText.text = "허억 레벨1을 벌써 깨다니?\n레벨2는 쉽지 않을테니 각오해라!";
-                    flag = false;
+                    mouseClick = false;
                     
                     return true;
                 }
@@ -257,7 +257,7 @@ public class SquareManager : MonoBehaviour {
 
                     talkObject.SetActive(true);
                     talkObjectText.text = "말도 안돼.. 하지만 레벨3는 쉽게 깨지 못 할거다!";
-                    flag = false;
+                    mouseClick = false;
 
                     return true;
                 }
@@ -270,7 +270,7 @@ public class SquareManager : MonoBehaviour {
 
                     talkObject.SetActive(true);
                     talkObjectText.text = "가장 어려운 게임인 2048을 이렇게 클리어해버리다니...\n나의 패배를 인정하지..";
-                    flag = false;
+                    mouseClick = false;
 
                     return true;
                 }
