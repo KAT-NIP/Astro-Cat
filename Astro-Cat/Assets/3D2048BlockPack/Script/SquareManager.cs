@@ -25,8 +25,8 @@ public class SquareManager : MonoBehaviour {
     static float gridOffset;
     static bool horizontal;
     public bool quterSwip;
-    GameObject talkObject;
-    private Text talkObjectText;
+    private GameObject talkObject; // 말풍선 object 
+    private Text talkObjectText; // 말풍선 속 대사 object
 
     void Start()
     {
@@ -37,6 +37,7 @@ public class SquareManager : MonoBehaviour {
 
         Spawn();
         Spawn();
+        // 말풍서
         talkObject = GameObject.FindWithTag("talkPanel");
         talkObjectText = GameObject.Find("talkPanel/Text").GetComponent<Text>();
         //reset score
