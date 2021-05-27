@@ -32,5 +32,7 @@ public class MovingCat : MonoBehaviour
         transform.position += moveVec * speed * Time.deltaTime;
 
         anim.SetBool("isWalk", moveVec != Vector3.zero);
+
+        transform.LookAt(transform.position + moveVec);
     }
 }
