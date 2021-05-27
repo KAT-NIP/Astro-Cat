@@ -5,7 +5,10 @@ using UnityEngine;
 public class MovingCat : MonoBehaviour
 {
     public float speed = 2.0f;
-    public Animator anim;
+    float hAxis;
+    float vAxis;
+
+    Vector3 moveVec;
 
     // Start is called before the first frame update
     void Start()
@@ -16,26 +19,11 @@ public class MovingCat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim = GetComponent<Animator>();
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
+        hAxis = Input.GetAxisRaw("Horizontal");
+        vAxis = Input.GetAxisRaw("Vertical");
 
-            transform.position += Vector3.right * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
+        moveVec = new Vector3(hAxis, 0, vAxis).normalized;
 
-            transform.position += Vector3.left * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-
-            transform.position += Vector3.forward * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-
-            transform.position += Vector3.back * speed * Time.deltaTime;
-        }
+        transform.position += moveVec * speed * Time.deltaTime;
     }
 }
