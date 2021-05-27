@@ -121,6 +121,72 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &88713747
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.5831614
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6945814
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.060536
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.717418
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6965802
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.006617014
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0066163894
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_UseLightProbes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f651ea6e2c547d842a9ee9bcf3c15075, type: 2}
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
 --- !u!1001 &112702303
 PrefabInstance:
   m_ObjectHideFlags: 0
