@@ -9,7 +9,12 @@ public class MovingCat : MonoBehaviour
     float vAxis;
 
     Vector3 moveVec;
+    Animator anim;
 
+    private void Awake()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -25,5 +30,7 @@ public class MovingCat : MonoBehaviour
         moveVec = new Vector3(hAxis, 0, vAxis).normalized;
 
         transform.position += moveVec * speed * Time.deltaTime;
+
+        anim.SetBool("isWalk", moveVec != Vector3.zero);
     }
 }
