@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingCat : MonoBehaviour
-{
+{ 
     public float speed;
     float hAxis;
     float vAxis;
     bool jDown;
 
     bool isJump = false;
+    bool mouseClick = false;
 
     Vector3 moveVec;
 
     Rigidbody rigid;
     Animator anim;
+
+    public GameObject talkPanel;
 
     private void Awake()
     {
@@ -22,13 +25,24 @@ public class MovingCat : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
     }
 
-
     void Update()
     {
-        GetInput();
-        Move();
-        Turn();
-        Jump();
+        if (Input.GetMouseButtonDown(0))
+        {
+            //Win.SetActive(false);
+            //마우스 클릭 시 대화창 사라짐
+            talkPanel.SetActive(false);
+            mouseClick = true;
+        }
+
+        if (mouseClick)
+        {
+            GetInput();
+            Move();
+            Turn();
+            Jump();
+        }
+        
     }
 
     void GetInput()
