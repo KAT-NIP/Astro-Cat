@@ -15,7 +15,7 @@ public class SceneMovement1st : MonoBehaviour
     {
         if (player.onFloor)
         {
-            Invoke("SceneMove", 10.0f);
+            Invoke("SceneMove", 3.0f);
         }
     }
 
