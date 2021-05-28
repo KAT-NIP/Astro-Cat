@@ -56,7 +56,7 @@ public class MovingCat : MonoBehaviour
     {
         if (jDown && !isJump)
         {
-            rigid.AddForce(Vector3.up * 6, ForceMode.Impulse);
+            rigid.AddForce(Vector3.up * 5, ForceMode.Impulse);
             anim.SetTrigger("doJump");
             isJump = true;
             
