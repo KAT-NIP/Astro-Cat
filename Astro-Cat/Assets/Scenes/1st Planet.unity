@@ -4692,7 +4692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4997fb0487f8845f4a7f310e8161f6ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1851615962}
+  player: {fileID: 1851615957}
 --- !u!4 &633779807
 Transform:
   m_ObjectHideFlags: 0
@@ -5541,7 +5541,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788246617}
-  m_LocalRotation: {x: 0.44175175, y: -0.00000001543648, z: 0.0000000076009465, w: 0.8971374}
+  m_LocalRotation: {x: 0.44175175, y: 0.00000001543649, z: -0.000000007600949, w: 0.8971374}
   m_LocalPosition: {x: 8.03, y: 13.000002, z: -17.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6905,7 +6905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e937efb4995bd4a58b83bb9c59c6965b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1851615962}
+  player: {fileID: 1851615957}
   dragon: {fileID: 385355924}
 --- !u!4 &1100298574
 Transform:
@@ -10503,7 +10503,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629621641}
-  m_LocalRotation: {x: 0.44175175, y: -0.00000001543648, z: 0.0000000076009465, w: 0.8971374}
+  m_LocalRotation: {x: 0.44175175, y: 0.00000001543649, z: -0.000000007600949, w: 0.8971374}
   m_LocalPosition: {x: 8.03, y: 13.000002, z: -17.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11929,6 +11929,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1851615955}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1851615957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851615956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf4670e01d5047a2b2fb846d2498f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  onFloor: 0
 --- !u!4 &1851615959 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2314917975539241455, guid: 12348fc04884c514184365cc4df792af,
@@ -11965,20 +11979,6 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.8, z: 0}
---- !u!114 &1851615962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1851615956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec7711cab2e914dfabe082b987e08ad0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  onFloor: 0
 --- !u!1001 &1875855897
 PrefabInstance:
   m_ObjectHideFlags: 0

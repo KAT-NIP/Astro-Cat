@@ -11924,11 +11924,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1128221278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a14c3f6b9c4f4f77bce077f34cc88b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f281a8e114b34fb4bac852d14088f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  talkPanel: {fileID: 0}
 --- !u!54 &1128221280
 Rigidbody:
   m_ObjectHideFlags: 0

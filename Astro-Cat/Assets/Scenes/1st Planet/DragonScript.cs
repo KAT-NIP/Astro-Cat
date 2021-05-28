@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DragonScript : MonoBehaviour
 {
-    public Player player;
+    public PlayerMovement1st player;
     public GameObject dragon;
 
     // Start is called before the first frame update
