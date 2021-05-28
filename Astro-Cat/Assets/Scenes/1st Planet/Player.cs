@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     float hAxis;
     float vAxis;
 
+    public bool onFloor;
+
     Vector3 moveVec;
     Animator anim;
 
@@ -16,6 +18,11 @@ public class Player : MonoBehaviour
     void Awake()
     {
         anim = GetComponentInChildren<Animator>();
+    }
+
+    private void Start()
+    {
+        onFloor = false;    
     }
 
     // Update is called once per frame
@@ -31,5 +38,15 @@ public class Player : MonoBehaviour
         anim.SetBool("isWalk", moveVec != Vector3.zero);
 
         transform.LookAt(transform.position + moveVec);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Floor")
+        {
+            Debug.Log("Stepped!");
+            onFloor = true;
+
+        }
     }
 }

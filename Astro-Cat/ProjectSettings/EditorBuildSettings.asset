@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1st Planet.unity
     guid: 8fe1fb7282d8e4cdcadd6cdc3aa284dc
+  - enabled: 1
+    path: Assets/Scenes/2048Scene.unity
+    guid: d20591591113f469789dabf10ae6d824
   m_configObjects: {}

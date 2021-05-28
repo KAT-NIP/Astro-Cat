@@ -1,12 +1,14 @@
 ScriptsOnlyBuild:
   usedScripts:
-    Assembly-CSharp-Editor.dll:
-    - ReadmeEditorBE3
     Assembly-CSharp.dll:
+    - EnableDepthTexture
     - Follow
+    - Moving
     - MovingCat
     - Player
-    - ReadmeBE3
+    - SceneMover
+    - SquareManager
+    - Wormhole
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineComposer
@@ -25,6 +27,15 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.Outline
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/1st Planet.unity:
     - Class: 1
@@ -70,21 +81,23 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 12266}
+      Script: {instanceID: 11388}
     - Class: 114
-      Script: {instanceID: 12364}
+      Script: {instanceID: 12272}
     - Class: 114
-      Script: {instanceID: 12610}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 12830}
+      Script: {instanceID: 12616}
     - Class: 114
-      Script: {instanceID: 12840}
+      Script: {instanceID: 12836}
     - Class: 114
-      Script: {instanceID: 13462}
+      Script: {instanceID: 12846}
     - Class: 114
-      Script: {instanceID: 21938}
+      Script: {instanceID: 13468}
     - Class: 114
-      Script: {instanceID: 21940}
+      Script: {instanceID: 24376}
+    - Class: 114
+      Script: {instanceID: 24378}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -95,7 +108,100 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
     - Class: 220
+      Script: {instanceID: 0}
+    - Class: 221
+      Script: {instanceID: 0}
+    Assets/Scenes/2048Scene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11274}
+    - Class: 114
+      Script: {instanceID: 11300}
+    - Class: 114
+      Script: {instanceID: 11388}
+    - Class: 114
+      Script: {instanceID: 11548}
+    - Class: 114
+      Script: {instanceID: 11998}
+    - Class: 114
+      Script: {instanceID: 12488}
+    - Class: 114
+      Script: {instanceID: 13090}
+    - Class: 114
+      Script: {instanceID: 13388}
+    - Class: 114
+      Script: {instanceID: 13428}
+    - Class: 114
+      Script: {instanceID: 13494}
+    - Class: 114
+      Script: {instanceID: 13496}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 221
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
       Script: {instanceID: 0}
     Assets/Scenes/Default Planet.unity:
     - Class: 1
@@ -137,10 +243,28 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 12122}
+      Script: {instanceID: 11300}
     - Class: 114
-      Script: {instanceID: 12246}
+      Script: {instanceID: 11548}
+    - Class: 114
+      Script: {instanceID: 11856}
+    - Class: 114
+      Script: {instanceID: 11998}
+    - Class: 114
+      Script: {instanceID: 12128}
+    - Class: 114
+      Script: {instanceID: 12252}
+    - Class: 114
+      Script: {instanceID: 12420}
+    - Class: 114
+      Script: {instanceID: 13090}
+    - Class: 114
+      Script: {instanceID: 13496}
+    - Class: 114
+      Script: {instanceID: 55170}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 124
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -149,6 +273,12 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
@@ -375,6 +505,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 66f0dbbeae03c379e84dc5fa3a041f4b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SceneMover
   - hash:
       serializedVersion: 2
       Hash: 666a1bc8d46f314c018ffaaa3f6628d1
@@ -719,7 +855,7 @@ ScriptsOnlyBuild:
     className: CinemachineVirtualCamera
   - hash:
       serializedVersion: 2
-      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+      Hash: 205a0131eebc67681a273287a4e9a10f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -999,9 +1135,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: aef9386513e10c2b58b4c2172faf4e3c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SceneMovement1st
   platform: 2
   scenePathNames:
   - Assets/Scenes/Default Planet.unity
   - Assets/Scenes/1st Planet.unity
-  playerPath: /Users/yang-yujin/Documents/GitHub/Astro-Cat/Astro-Cat/BuildSettings/1st
-    Planet.app
+  - Assets/Scenes/2048Scene.unity
+  playerPath: /Users/min/Desktop/3-1/Astro-Cat/Astro-Cat/BuildSettings/2048Scene.app
