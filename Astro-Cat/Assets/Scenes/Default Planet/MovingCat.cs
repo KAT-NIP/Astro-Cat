@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovingCat : MonoBehaviour
 { 
@@ -11,6 +12,7 @@ public class MovingCat : MonoBehaviour
 
     bool isJump = false;
     bool mouseClick = false;
+    int clickCount = 0;
 
     Vector3 moveVec;
 
@@ -18,21 +20,32 @@ public class MovingCat : MonoBehaviour
     Animator anim;
 
     public GameObject talkPanel;
+    private Text talkObjectText;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
+        talkObjectText = GameObject.Find("talkPanel/Text").GetComponent<Text>();
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //Win.SetActive(false);
-            //마우스 클릭 시 대화창 사라짐
-            talkPanel.SetActive(false);
-            mouseClick = true;
+            if(clickCount == 0)
+            {
+                talkObjectText.text = "우주..? 행성..? 어디로 가야하지?";
+                clickCount++;
+            }
+            else
+            {
+                //Win.SetActive(false);
+                //마우스 클릭 시 대화창 사라짐
+                talkPanel.SetActive(false);
+                mouseClick = true;
+            }
+            
         }
 
         if (mouseClick)
