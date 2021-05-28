@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovingCat : MonoBehaviour
 {
-    public float speed = 2.0f;
+    public float speed;
     float hAxis;
     float vAxis;
     bool jDown;
