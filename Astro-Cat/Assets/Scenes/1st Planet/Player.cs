@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Stepped!");
             onFloor = true;
-
+            GameObject.Find("Dragon").transform.Find("DragonSD_32").gameObject.SetActive(true);
         }
     }
 }
