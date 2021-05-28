@@ -6,6 +6,8 @@ using UnityEngine;
 public class SceneMover : MonoBehaviour
 
 {
+    public Camera firstPersonCamera;
+    public Camera WormholeCamera;
 
     void Update()
 
@@ -14,11 +16,23 @@ public class SceneMover : MonoBehaviour
         if (player.transform.position.y <= -3f)
 
         {
-
-            SceneManager.LoadScene("1st Planet");
-
+            //SceneManager.LoadScene("Wormhole");
+            showWormHole();
+            Invoke("sceneMove", 2.8f);
         }
 
     }
+
+    public void showWormHole()
+    {
+        WormholeCamera.enabled = true;
+        firstPersonCamera.enabled = false;
+    }
+
+    public void sceneMove()
+    {
+        SceneManager.LoadScene("1st Planet");
+    }
+
 
 }
