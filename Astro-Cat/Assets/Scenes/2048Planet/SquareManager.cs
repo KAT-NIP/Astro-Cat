@@ -13,6 +13,7 @@ public class SquareManager : MonoBehaviour {
 
     // 레벨 1, 2, 3 클리어 여부
     bool[] levelClear = { false, false, false };
+    public bool isGameOver;
 
     bool move, stop;
     int x, y, i, j, k, l, score;
@@ -38,6 +39,8 @@ public class SquareManager : MonoBehaviour {
         gridGap = setGridGap;
         gridOffset = setGridOffset;
         horizontal = setHorizontal;
+
+        isGameOver = false;
 
         Spawn();
         Spawn();
@@ -322,6 +325,7 @@ public class SquareManager : MonoBehaviour {
         soundEffectAudio.Play();
 
         stop = true;
-        Quit.SetActive(true);
+        isGameOver = true;
+        //Quit.SetActive(true);
     }
 }
