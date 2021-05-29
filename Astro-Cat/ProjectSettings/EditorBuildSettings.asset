@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2048Scene.unity
     guid: d20591591113f469789dabf10ae6d824
+  - enabled: 1
+    path: Assets/Scenes/1st Planet after game.unity
+    guid: 824b35429e3034bd99fc481ec8a4e2fa
   m_configObjects: {}

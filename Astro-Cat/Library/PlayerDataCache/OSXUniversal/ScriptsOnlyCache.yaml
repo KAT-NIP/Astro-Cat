@@ -1,11 +1,13 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - DragonScript
     - EnableDepthTexture
     - Follow
     - Moving
     - MovingCat
-    - Player
+    - PlayerMovement1st
+    - SceneMovement1st
     - SceneMover
     - SquareManager
     - Wormhole
@@ -20,8 +22,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -37,6 +41,89 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Outline
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/1st Planet after game.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11398}
+    - Class: 114
+      Script: {instanceID: 11894}
+    - Class: 114
+      Script: {instanceID: 11990}
+    - Class: 114
+      Script: {instanceID: 12286}
+    - Class: 114
+      Script: {instanceID: 12384}
+    - Class: 114
+      Script: {instanceID: 12630}
+    - Class: 114
+      Script: {instanceID: 12850}
+    - Class: 114
+      Script: {instanceID: 13482}
+    - Class: 114
+      Script: {instanceID: 15170}
+    - Class: 114
+      Script: {instanceID: 15172}
+    - Class: 114
+      Script: {instanceID: 175478}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 220
+      Script: {instanceID: 0}
+    - Class: 221
+      Script: {instanceID: 0}
     Assets/Scenes/1st Planet.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -81,23 +168,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11388}
+      Script: {instanceID: 11398}
     - Class: 114
-      Script: {instanceID: 12272}
+      Script: {instanceID: 11894}
     - Class: 114
-      Script: {instanceID: 12370}
+      Script: {instanceID: 11990}
     - Class: 114
-      Script: {instanceID: 12616}
+      Script: {instanceID: 12286}
     - Class: 114
-      Script: {instanceID: 12836}
+      Script: {instanceID: 12384}
     - Class: 114
-      Script: {instanceID: 12846}
+      Script: {instanceID: 12630}
     - Class: 114
-      Script: {instanceID: 13468}
+      Script: {instanceID: 12850}
     - Class: 114
-      Script: {instanceID: 24376}
+      Script: {instanceID: 13482}
     - Class: 114
-      Script: {instanceID: 24378}
+      Script: {instanceID: 15170}
+    - Class: 114
+      Script: {instanceID: 15172}
+    - Class: 114
+      Script: {instanceID: 175478}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -156,25 +247,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11274}
     - Class: 114
-      Script: {instanceID: 11300}
+      Script: {instanceID: 11310}
     - Class: 114
-      Script: {instanceID: 11388}
+      Script: {instanceID: 11398}
     - Class: 114
-      Script: {instanceID: 11548}
+      Script: {instanceID: 11558}
     - Class: 114
-      Script: {instanceID: 11998}
+      Script: {instanceID: 12012}
     - Class: 114
-      Script: {instanceID: 12488}
+      Script: {instanceID: 12502}
     - Class: 114
-      Script: {instanceID: 13090}
+      Script: {instanceID: 13104}
     - Class: 114
-      Script: {instanceID: 13388}
+      Script: {instanceID: 13402}
     - Class: 114
-      Script: {instanceID: 13428}
+      Script: {instanceID: 13442}
     - Class: 114
-      Script: {instanceID: 13494}
+      Script: {instanceID: 13508}
     - Class: 114
-      Script: {instanceID: 13496}
+      Script: {instanceID: 13510}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -230,6 +321,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 90
@@ -243,28 +338,34 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11300}
+      Script: {instanceID: 11274}
     - Class: 114
-      Script: {instanceID: 11548}
+      Script: {instanceID: 11310}
     - Class: 114
-      Script: {instanceID: 11856}
+      Script: {instanceID: 11558}
     - Class: 114
-      Script: {instanceID: 11998}
+      Script: {instanceID: 11866}
     - Class: 114
-      Script: {instanceID: 12128}
+      Script: {instanceID: 12012}
     - Class: 114
-      Script: {instanceID: 12252}
+      Script: {instanceID: 12142}
     - Class: 114
-      Script: {instanceID: 12420}
+      Script: {instanceID: 12266}
     - Class: 114
-      Script: {instanceID: 13090}
+      Script: {instanceID: 12434}
     - Class: 114
-      Script: {instanceID: 13496}
+      Script: {instanceID: 12502}
     - Class: 114
-      Script: {instanceID: 55170}
+      Script: {instanceID: 13104}
+    - Class: 114
+      Script: {instanceID: 13510}
+    - Class: 114
+      Script: {instanceID: 36546}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -273,6 +374,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -519,6 +622,12 @@ ScriptsOnlyBuild:
     className: CinemachineFreeLook
   - hash:
       serializedVersion: 2
+      Hash: 3d127cd3258655abf8306300102df446
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SceneMovement1st
+  - hash:
+      serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -541,6 +650,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: NoiseSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 7230efbeed18b55b449412e2342883ae
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DragonScript
   - hash:
       serializedVersion: 2
       Hash: 0aa8a2db7bfe7a7606f668306f5a72dd
@@ -651,7 +766,7 @@ ScriptsOnlyBuild:
     className: CinemachineTriggerAction
   - hash:
       serializedVersion: 2
-      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+      Hash: 129def471e9f2a8086e649041c7077d4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MovingCat
@@ -853,12 +968,6 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineVirtualCamera
-  - hash:
-      serializedVersion: 2
-      Hash: 205a0131eebc67681a273287a4e9a10f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Player
   - hash:
       serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
@@ -1137,13 +1246,21 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: aef9386513e10c2b58b4c2172faf4e3c
+      Hash: 205a0131eebc67681a273287a4e9a10f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: SceneMovement1st
+    className: PlayerMovement1st
+  - hash:
+      serializedVersion: 2
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MovingCat2nd
   platform: 2
   scenePathNames:
   - Assets/Scenes/Default Planet.unity
   - Assets/Scenes/1st Planet.unity
   - Assets/Scenes/2048Scene.unity
-  playerPath: /Users/min/Desktop/3-1/Astro-Cat/Astro-Cat/BuildSettings/2048Scene.app
+  - Assets/Scenes/1st Planet after game.unity
+  playerPath: /Users/min/Desktop/3-1/Astro-Cat/Astro-Cat/BuildSettings/1st Planet
+    after game.app
