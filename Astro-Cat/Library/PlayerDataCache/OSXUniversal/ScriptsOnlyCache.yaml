@@ -7,10 +7,12 @@ ScriptsOnlyBuild:
     - Moving
     - MovingCat
     - PlayerMovement1st
+    - SceneManager2048
     - SceneMovement1st
     - SceneMover
     - SquareManager
     - Wormhole
+    - dropDiamond
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineComposer
@@ -85,28 +87,42 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11398}
+      Script: {instanceID: 11274}
     - Class: 114
-      Script: {instanceID: 11894}
+      Script: {instanceID: 11306}
     - Class: 114
-      Script: {instanceID: 11990}
+      Script: {instanceID: 11394}
     - Class: 114
-      Script: {instanceID: 12286}
+      Script: {instanceID: 11554}
     - Class: 114
-      Script: {instanceID: 12384}
+      Script: {instanceID: 12008}
     - Class: 114
-      Script: {instanceID: 12630}
+      Script: {instanceID: 12282}
     - Class: 114
-      Script: {instanceID: 12850}
+      Script: {instanceID: 12380}
     - Class: 114
-      Script: {instanceID: 13482}
+      Script: {instanceID: 12498}
     - Class: 114
-      Script: {instanceID: 15170}
+      Script: {instanceID: 12626}
     - Class: 114
-      Script: {instanceID: 15172}
+      Script: {instanceID: 12846}
     - Class: 114
-      Script: {instanceID: 175478}
+      Script: {instanceID: 13096}
+    - Class: 114
+      Script: {instanceID: 13334}
+    - Class: 114
+      Script: {instanceID: 13478}
+    - Class: 114
+      Script: {instanceID: 13506}
+    - Class: 114
+      Script: {instanceID: 15538}
+    - Class: 114
+      Script: {instanceID: 15540}
+    - Class: 114
+      Script: {instanceID: 102128}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -120,9 +136,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 199
       Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
     - Class: 220
       Script: {instanceID: 0}
     - Class: 221
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/1st Planet.unity:
     - Class: 1
@@ -168,27 +192,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11398}
+      Script: {instanceID: 11394}
     - Class: 114
-      Script: {instanceID: 11894}
+      Script: {instanceID: 11890}
     - Class: 114
-      Script: {instanceID: 11990}
+      Script: {instanceID: 11986}
     - Class: 114
-      Script: {instanceID: 12286}
+      Script: {instanceID: 12282}
     - Class: 114
-      Script: {instanceID: 12384}
+      Script: {instanceID: 12380}
     - Class: 114
-      Script: {instanceID: 12630}
+      Script: {instanceID: 12626}
     - Class: 114
-      Script: {instanceID: 12850}
+      Script: {instanceID: 12846}
     - Class: 114
-      Script: {instanceID: 13482}
+      Script: {instanceID: 13334}
     - Class: 114
-      Script: {instanceID: 15170}
+      Script: {instanceID: 13478}
     - Class: 114
-      Script: {instanceID: 15172}
+      Script: {instanceID: 15538}
     - Class: 114
-      Script: {instanceID: 175478}
+      Script: {instanceID: 15540}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -247,25 +271,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11274}
     - Class: 114
-      Script: {instanceID: 11310}
+      Script: {instanceID: 11306}
     - Class: 114
-      Script: {instanceID: 11398}
+      Script: {instanceID: 11394}
     - Class: 114
-      Script: {instanceID: 11558}
+      Script: {instanceID: 11554}
     - Class: 114
-      Script: {instanceID: 12012}
+      Script: {instanceID: 12008}
     - Class: 114
-      Script: {instanceID: 12502}
+      Script: {instanceID: 12498}
     - Class: 114
-      Script: {instanceID: 13104}
+      Script: {instanceID: 13096}
     - Class: 114
-      Script: {instanceID: 13402}
+      Script: {instanceID: 13396}
     - Class: 114
-      Script: {instanceID: 13442}
+      Script: {instanceID: 13438}
     - Class: 114
-      Script: {instanceID: 13508}
+      Script: {instanceID: 13504}
     - Class: 114
-      Script: {instanceID: 13510}
+      Script: {instanceID: 13506}
+    - Class: 114
+      Script: {instanceID: 59694}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -340,27 +366,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11274}
     - Class: 114
-      Script: {instanceID: 11310}
+      Script: {instanceID: 11306}
     - Class: 114
-      Script: {instanceID: 11558}
+      Script: {instanceID: 11554}
     - Class: 114
-      Script: {instanceID: 11866}
+      Script: {instanceID: 11862}
     - Class: 114
-      Script: {instanceID: 12012}
+      Script: {instanceID: 12008}
     - Class: 114
-      Script: {instanceID: 12142}
+      Script: {instanceID: 12138}
     - Class: 114
-      Script: {instanceID: 12266}
+      Script: {instanceID: 12262}
     - Class: 114
-      Script: {instanceID: 12434}
+      Script: {instanceID: 12430}
     - Class: 114
-      Script: {instanceID: 12502}
+      Script: {instanceID: 12498}
     - Class: 114
-      Script: {instanceID: 13104}
+      Script: {instanceID: 13096}
     - Class: 114
-      Script: {instanceID: 13510}
+      Script: {instanceID: 13506}
     - Class: 114
-      Script: {instanceID: 36546}
+      Script: {instanceID: 77418}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -382,6 +408,59 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    Assets/Scenes/Wormhole.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 12430}
+    - Class: 114
+      Script: {instanceID: 77418}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 124
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
       Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
@@ -1096,6 +1175,12 @@ ScriptsOnlyBuild:
     className: ExampleSwapMaterials
   - hash:
       serializedVersion: 2
+      Hash: cab245ef1d130e5420dc5644b7d44083
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerMovement1st
+  - hash:
+      serializedVersion: 2
       Hash: 8cd1cbba27f3cb1717254f668e9e0d5a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1108,10 +1193,16 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: 7b930fdd6b84f1b892ec035e5c91b4a2
+      Hash: a334e7c4fd82e079d26cc49485fcbfc3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SquareManager
+  - hash:
+      serializedVersion: 2
+      Hash: 24f258b44a2f455b6715805342027169
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MovingCat2nd
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1246,21 +1337,22 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 205a0131eebc67681a273287a4e9a10f
+      Hash: 1a2bace5eafc75755ac2cf0dd88e29ab
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PlayerMovement1st
+    className: SceneManager2048
   - hash:
       serializedVersion: 2
-      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+      Hash: ec8e759933d346dedeab5600ef696ef3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: MovingCat2nd
+    className: dropDiamond
   platform: 2
   scenePathNames:
   - Assets/Scenes/Default Planet.unity
   - Assets/Scenes/1st Planet.unity
   - Assets/Scenes/2048Scene.unity
   - Assets/Scenes/1st Planet after game.unity
-  playerPath: /Users/min/Desktop/3-1/Astro-Cat/Astro-Cat/BuildSettings/1st Planet
-    after game.app
+  - Assets/Scenes/Wormhole.unity
+  playerPath: /Users/nayeonkim/Documents/GitHub/Astro-Cat/Astro-Cat/BuildSettings/add
+    wormhole.app
