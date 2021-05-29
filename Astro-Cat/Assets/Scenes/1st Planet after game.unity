@@ -3171,7 +3171,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b74d63ae2ff672243ac37ae17376a48b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.24
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4712,7 +4712,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 633779807}
-  - component: {fileID: 633779806}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -4720,19 +4719,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &633779806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633779805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4997fb0487f8845f4a7f310e8161f6ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1618091313}
 --- !u!4 &633779807
 Transform:
   m_ObjectHideFlags: 0
@@ -5695,7 +5681,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788246617}
-  m_LocalRotation: {x: 0.44175175, y: 0.000000015436493, z: -0.000000007600952, w: 0.8971374}
+  m_LocalRotation: {x: 0.44175175, y: -0.000000015436477, z: 0.000000007600946, w: 0.8971374}
   m_LocalPosition: {x: -5.77, y: 13.000002, z: -9.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -7119,7 +7105,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1100298574}
-  - component: {fileID: 1100298573}
   m_Layer: 0
   m_Name: Dragon
   m_TagString: Untagged
@@ -7127,20 +7112,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1100298573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1100298572}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e937efb4995bd4a58b83bb9c59c6965b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1618091313}
-  dragon: {fileID: 385355924}
 --- !u!4 &1100298574
 Transform:
   m_ObjectHideFlags: 0
@@ -10837,7 +10808,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629621641}
-  m_LocalRotation: {x: 0.44175175, y: 0.000000015436493, z: -0.000000007600952, w: 0.8971374}
+  m_LocalRotation: {x: 0.44175175, y: -0.000000015436477, z: 0.000000007600946, w: 0.8971374}
   m_LocalPosition: {x: -5.77, y: 13.000002, z: -9.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
