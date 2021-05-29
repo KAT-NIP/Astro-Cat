@@ -11356,6 +11356,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cute Angel Pink
       objectReference: {fileID: 0}
+    - target: {fileID: 100062, guid: bad99da68c18ab9428986240ea1613c5, type: 3}
+      propertyPath: m_TagString
+      value: Angel
+      objectReference: {fileID: 0}
     - target: {fileID: 400062, guid: bad99da68c18ab9428986240ea1613c5, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -16127,6 +16131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  talkPanel: {fileID: 729006808}
+  nametag: {fileID: 299643969}
 --- !u!54 &1128221280
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26934,6 +26940,10 @@ PrefabInstance:
     - target: {fileID: 1901966040948950, guid: 0de64d0afc69fca48822bbcdb659f472, type: 3}
       propertyPath: m_Name
       value: Cute Devil Purple
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901966040948950, guid: 0de64d0afc69fca48822bbcdb659f472, type: 3}
+      propertyPath: m_TagString
+      value: Devil
       objectReference: {fileID: 0}
     - target: {fileID: 4862746234840220, guid: 0de64d0afc69fca48822bbcdb659f472, type: 3}
       propertyPath: m_RootOrder

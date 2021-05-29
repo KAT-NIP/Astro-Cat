@@ -6,6 +6,8 @@ TagManager:
   tags:
   - talkPanel
   - Floor
+  - Devil
+  - Angel
   layers:
   - Default
   - TransparentFX
