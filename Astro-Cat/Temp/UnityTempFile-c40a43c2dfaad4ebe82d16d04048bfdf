@@ -80,6 +80,7 @@
 /reference:"Library/ScriptAssemblies/com.unity.cinemachine.editor.dll"
 /reference:"Library/ScriptAssemblies/Unity.TextMeshPro.dll"
 /reference:"Library/ScriptAssemblies/UnityEditor.UI.dll"
+/reference:"/Applications/Unity/Hub/Editor/2019.4.19f1/PlaybackEngines/AppleTVSupport/UnityEditor.iOS.Extensions.Xcode.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.4.19f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.4.19f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.4.19f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll"
