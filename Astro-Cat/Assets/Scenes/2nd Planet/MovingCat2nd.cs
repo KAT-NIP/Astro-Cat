@@ -11,25 +11,53 @@ public class MovingCat2nd : MonoBehaviour
     bool jDown;
 
     bool isJump = false;
+    bool mouseClick = false;
+    int clickCount = 0;
 
     Vector3 moveVec;
 
     Rigidbody rigid;
     Animator anim;
 
+    public GameObject talkPanel;
+    private Text talkObjectText;
+    public GameObject nametag;
+
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
+        talkObjectText = GameObject.Find("talkPanel/Text").GetComponent<Text>();
     }
 
     void Update()
     {
-       
-        GetInput();
-        Move();
-        Turn();
-        Jump();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (clickCount == 0)
+            {
+                nametag.SetActive(false);
+                talkObjectText.text = "(누군가의 목소리가 들린다. 주민을 마우스로 클릭해 말을 걸어보자.)";
+                clickCount++;
+            }
+
+
+            else if(clickCount == 1)
+            {
+                talkPanel.SetActive(false);
+                mouseClick = true;
+            }
+
+        }
+
+        if (mouseClick)
+        {
+            GetInput();
+            Move();
+            Turn();
+            Jump();
+        }
 
     }
 
