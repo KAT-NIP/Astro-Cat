@@ -297,6 +297,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3858fa54dcd5db45abcaa5ef6229f44, type: 3}
+--- !u!1 &927405272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1837684582187350, guid: d3858fa54dcd5db45abcaa5ef6229f44,
+    type: 3}
+  m_PrefabInstance: {fileID: 385422849}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &927405273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927405272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9a26747d80674897b6ed582bb6bca3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 119650795}
 --- !u!1 &1085708349
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +474,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chibi_Cat_Show_Equipment
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865011217929020467, guid: dd0d70099c0064c42bbbd471ede892a3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd0d70099c0064c42bbbd471ede892a3, type: 3}

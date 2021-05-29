@@ -48,7 +48,7 @@ public class PlayerMovement1st : MonoBehaviour
             
                 text.text = "이제 너가 이 행성에서 처음 도착했던 곳으로 다시 돌아가.\n새로운 모험이 널 기다리고 있을테니!";
                 talkPanel.SetActive(false);
-                SceneManager.LoadScene("2nd Planet");
+                SceneManager.LoadScene("Wormhole");
             }
 
         }
