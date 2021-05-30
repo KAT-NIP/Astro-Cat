@@ -23,16 +23,16 @@ public class MovingCat2nd : MonoBehaviour
     Animator anim;
 
     public GameObject talkPanel;
-    private Text talkObjectText;
+    public Text talkObjectText;
     public GameObject nametag;
-    private Text npcName;
+    public Text npcName;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
-        talkObjectText = GameObject.Find("talkPanel/Text").GetComponent<Text>();
-        npcName = GameObject.Find("talkPanel/nameTag/npcName").GetComponent<Text>();
+        //talkObjectText = GameObject.Find("talkPanel/Text").GetComponent<Text>();
+        //npcName = GameObject.Find("talkPanel/nameTag/npcName").GetComponent<Text>();
     }
 
     void Update()
@@ -79,7 +79,8 @@ public class MovingCat2nd : MonoBehaviour
                     if (hit.transform.gameObject.tag == "Devil")
                     {
                         Debug.Log("Devil");
-                        GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
+                        //GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
+                        talkPanel.SetActive(true);
                         nametag.SetActive(true);
                         npcName.text = "악마만두";
                         talkObjectText.text = "콰아아아악 꺼져";
@@ -91,7 +92,8 @@ public class MovingCat2nd : MonoBehaviour
                     else if (hit.transform.gameObject.tag == "Angel")
                     {
                         Debug.Log("Angel");
-                        GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
+                        //GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
+                        talkPanel.SetActive(true);
                         nametag.SetActive(true);
                         npcName.text = "천사만두";
                         talkObjectText.text = "당신만이 저주받은 행성을 구할 수 있어요. 마법사를 부디 무찔러 주세요!";
