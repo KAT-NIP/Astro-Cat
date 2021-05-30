@@ -4014,7 +4014,7 @@ GameObject:
   - component: {fileID: 251721822}
   - component: {fileID: 251721821}
   m_Layer: 5
-  m_Name: name
+  m_Name: npcName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16262,6 +16262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178b7fc199bbf4decaac3f5e8b979112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  talkPanel: {fileID: 729006808}
+  nametag: {fileID: 299643969}
 --- !u!1 &1128221278 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8865011217929020467, guid: dd0d70099c0064c42bbbd471ede892a3,
