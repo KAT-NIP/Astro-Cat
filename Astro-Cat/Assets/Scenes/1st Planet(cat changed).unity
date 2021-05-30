@@ -10667,6 +10667,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   onFloor: 0
+  talkPanel: {fileID: 0}
+  text: {fileID: 0}
 --- !u!136 &1618091314
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12282,6 +12284,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   onFloor: 0
+  talkPanel: {fileID: 0}
+  text: {fileID: 0}
 --- !u!54 &1851615960
 Rigidbody:
   m_ObjectHideFlags: 0
