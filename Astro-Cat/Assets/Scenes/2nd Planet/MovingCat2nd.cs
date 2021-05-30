@@ -56,41 +56,39 @@ public class MovingCat2nd : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (clickCount >= 1 && Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit))
             {
                 Debug.Log(hit.transform.gameObject);
-                if(npc_clickCount == 1)
+                if (hit.transform.gameObject.tag == "Devil")
                 {
-                    if (hit.transform.gameObject.tag == "Devil")
-                    {
-                        Debug.Log("Devil");
-                        GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
-                        nametag.SetActive(true);
-                        npcName.text = "악마만두";
-                        talkObjectText.text = "콰아아아악 꺼져";
-                       
-                    }
-
-                    else if (hit.transform.gameObject.tag == "Angel")
-                    {
-                        Debug.Log("Angel");
-                        GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
-                        nametag.SetActive(true);
-                        npcName.text = "천사만두";
-                        talkObjectText.text = "저희 마을과 제 친구들이 모두 저주에 걸렸어요!";
-                        
-                    }
+                    Debug.Log("Devil");
+                    GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
+                    nametag.SetActive(true);
+                    npcName.text = "악마만두";
+                    talkObjectText.text = "콰아아아악 꺼져";
                 }
-                npc_clickCount++;
+                
+                else if (hit.transform.gameObject.tag == "Angel")
+                {
+                    Debug.Log("Angel");
+                    GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
+                    nametag.SetActive(true);
+                    npcName.text = "천사만두";
+                    talkObjectText.text = "저희 마을과 제 친구들이 모두 저주에 걸렸어요!";
+                    //npc_clickCount++;
+                }
+
+
             }  
 
 
-            if (npc_clickCount == 2)
+            if (npc_clickCount == 1)
             {
                 talkObjectText.text = "(.. 다른 주민을 찾아보자 ..)";
+                npc_clickCount++;
             }
 
-            if(npc_clickCount == 3)
+            if(npc_clickCount == 2)
             {
                 talkPanel.SetActive(false);
                 npc_clickCount = 0;
