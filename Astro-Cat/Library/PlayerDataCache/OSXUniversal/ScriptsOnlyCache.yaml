@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - Moving
     - MovingCat
     - MovingCat2nd
+    - MovingCat2ndGame
     - PlayerMovement1st
     - PlayerScript1st
     - SceneManager2048
@@ -16,7 +17,6 @@ ScriptsOnlyBuild:
     - Wormhole
     - WormholeSceneMover
     - dropDiamond
-    - raycast
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineComposer
@@ -36,6 +36,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateMachineInspector
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
@@ -52,7 +53,106 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Outline
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/1st Planet after game.unity:
+    Assets/Scenes/0 Default Planet/Default Planet.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11296}
+    - Class: 114
+      Script: {instanceID: 11336}
+    - Class: 114
+      Script: {instanceID: 11586}
+    - Class: 114
+      Script: {instanceID: 11894}
+    - Class: 114
+      Script: {instanceID: 12040}
+    - Class: 114
+      Script: {instanceID: 12074}
+    - Class: 114
+      Script: {instanceID: 12170}
+    - Class: 114
+      Script: {instanceID: 12294}
+    - Class: 114
+      Script: {instanceID: 12464}
+    - Class: 114
+      Script: {instanceID: 12802}
+    - Class: 114
+      Script: {instanceID: 12818}
+    - Class: 114
+      Script: {instanceID: 13132}
+    - Class: 114
+      Script: {instanceID: 13322}
+    - Class: 114
+      Script: {instanceID: 13548}
+    - Class: 114
+      Script: {instanceID: 18072}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 124
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    Assets/Scenes/1 1st Planet/1st Planet after game.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -98,39 +198,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11296}
     - Class: 114
-      Script: {instanceID: 11322}
+      Script: {instanceID: 11336}
     - Class: 114
-      Script: {instanceID: 11410}
+      Script: {instanceID: 11424}
     - Class: 114
-      Script: {instanceID: 11572}
+      Script: {instanceID: 11586}
     - Class: 114
-      Script: {instanceID: 12026}
+      Script: {instanceID: 12040}
     - Class: 114
-      Script: {instanceID: 12300}
+      Script: {instanceID: 12314}
     - Class: 114
-      Script: {instanceID: 12400}
+      Script: {instanceID: 12414}
     - Class: 114
-      Script: {instanceID: 12518}
+      Script: {instanceID: 12660}
     - Class: 114
-      Script: {instanceID: 12646}
+      Script: {instanceID: 12880}
     - Class: 114
-      Script: {instanceID: 12866}
+      Script: {instanceID: 13132}
     - Class: 114
-      Script: {instanceID: 13118}
+      Script: {instanceID: 13224}
     - Class: 114
-      Script: {instanceID: 13210}
+      Script: {instanceID: 13374}
     - Class: 114
-      Script: {instanceID: 13360}
+      Script: {instanceID: 13402}
     - Class: 114
-      Script: {instanceID: 13504}
+      Script: {instanceID: 13520}
     - Class: 114
-      Script: {instanceID: 13532}
+      Script: {instanceID: 13548}
     - Class: 114
-      Script: {instanceID: 15648}
+      Script: {instanceID: 14986}
     - Class: 114
-      Script: {instanceID: 15650}
-    - Class: 114
-      Script: {instanceID: 47056}
+      Script: {instanceID: 14988}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -159,7 +257,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/Scenes/1st Planet.unity:
+    Assets/Scenes/1 1st Planet/1st Planet.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -203,27 +301,27 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11410}
+      Script: {instanceID: 11424}
     - Class: 114
-      Script: {instanceID: 11908}
+      Script: {instanceID: 11922}
     - Class: 114
-      Script: {instanceID: 12004}
+      Script: {instanceID: 12018}
     - Class: 114
-      Script: {instanceID: 12300}
+      Script: {instanceID: 12314}
     - Class: 114
-      Script: {instanceID: 12400}
+      Script: {instanceID: 12414}
     - Class: 114
-      Script: {instanceID: 12646}
+      Script: {instanceID: 12660}
     - Class: 114
-      Script: {instanceID: 12866}
+      Script: {instanceID: 12880}
     - Class: 114
-      Script: {instanceID: 13360}
+      Script: {instanceID: 13374}
     - Class: 114
-      Script: {instanceID: 13504}
+      Script: {instanceID: 13520}
     - Class: 114
-      Script: {instanceID: 15648}
+      Script: {instanceID: 14986}
     - Class: 114
-      Script: {instanceID: 15650}
+      Script: {instanceID: 14988}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -242,7 +340,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 221
       Script: {instanceID: 0}
-    Assets/Scenes/2048Scene.unity:
+    Assets/Scenes/1 1st Planet/2048Scene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -282,27 +380,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11296}
     - Class: 114
-      Script: {instanceID: 11322}
+      Script: {instanceID: 11336}
     - Class: 114
-      Script: {instanceID: 11410}
+      Script: {instanceID: 11424}
     - Class: 114
-      Script: {instanceID: 11572}
+      Script: {instanceID: 11586}
     - Class: 114
-      Script: {instanceID: 12026}
+      Script: {instanceID: 12040}
     - Class: 114
-      Script: {instanceID: 12518}
+      Script: {instanceID: 12532}
     - Class: 114
-      Script: {instanceID: 13118}
+      Script: {instanceID: 13132}
     - Class: 114
-      Script: {instanceID: 13216}
+      Script: {instanceID: 13230}
     - Class: 114
-      Script: {instanceID: 13422}
+      Script: {instanceID: 13438}
     - Class: 114
-      Script: {instanceID: 13464}
+      Script: {instanceID: 13480}
     - Class: 114
-      Script: {instanceID: 13530}
+      Script: {instanceID: 13546}
     - Class: 114
-      Script: {instanceID: 13532}
+      Script: {instanceID: 13548}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -377,25 +475,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11296}
     - Class: 114
-      Script: {instanceID: 11322}
+      Script: {instanceID: 11336}
     - Class: 114
-      Script: {instanceID: 11560}
+      Script: {instanceID: 11586}
     - Class: 114
-      Script: {instanceID: 11572}
+      Script: {instanceID: 12040}
     - Class: 114
-      Script: {instanceID: 12026}
+      Script: {instanceID: 12170}
     - Class: 114
-      Script: {instanceID: 12156}
+      Script: {instanceID: 13132}
     - Class: 114
-      Script: {instanceID: 13118}
+      Script: {instanceID: 13450}
     - Class: 114
-      Script: {instanceID: 13434}
+      Script: {instanceID: 13548}
     - Class: 114
-      Script: {instanceID: 13532}
+      Script: {instanceID: 14986}
     - Class: 114
-      Script: {instanceID: 15648}
-    - Class: 114
-      Script: {instanceID: 15650}
+      Script: {instanceID: 14988}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -422,7 +518,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/Scenes/Default Planet.unity:
+    Assets/Scenes/Ghost Hunter Game.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -441,11 +537,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
     - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
@@ -454,8 +550,6 @@ ScriptsOnlyBuild:
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
-      Script: {instanceID: 0}
-    - Class: 89
       Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
@@ -468,42 +562,18 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11296}
+      Script: {instanceID: 12040}
     - Class: 114
-      Script: {instanceID: 11322}
+      Script: {instanceID: 12170}
     - Class: 114
-      Script: {instanceID: 11572}
+      Script: {instanceID: 13548}
     - Class: 114
-      Script: {instanceID: 11880}
+      Script: {instanceID: 14986}
     - Class: 114
-      Script: {instanceID: 12026}
+      Script: {instanceID: 14988}
     - Class: 114
-      Script: {instanceID: 12060}
-    - Class: 114
-      Script: {instanceID: 12156}
-    - Class: 114
-      Script: {instanceID: 12280}
-    - Class: 114
-      Script: {instanceID: 12450}
-    - Class: 114
-      Script: {instanceID: 12518}
-    - Class: 114
-      Script: {instanceID: 12788}
-    - Class: 114
-      Script: {instanceID: 12804}
-    - Class: 114
-      Script: {instanceID: 13118}
-    - Class: 114
-      Script: {instanceID: 13308}
-    - Class: 114
-      Script: {instanceID: 13532}
-    - Class: 114
-      Script: {instanceID: 27420}
+      Script: {instanceID: 131810}
     - Class: 115
-      Script: {instanceID: 0}
-    - Class: 124
-      Script: {instanceID: 0}
-    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -513,15 +583,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
-    - Class: 213
+    - Class: 198
       Script: {instanceID: 0}
-    - Class: 222
+    - Class: 199
       Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    - Class: 258
+    - Class: 220
       Script: {instanceID: 0}
     Assets/Scenes/Wormhole.unity:
     - Class: 1
@@ -561,11 +627,11 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 12322}
+      Script: {instanceID: 12336}
     - Class: 114
-      Script: {instanceID: 12450}
+      Script: {instanceID: 12464}
     - Class: 114
-      Script: {instanceID: 27420}
+      Script: {instanceID: 18072}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -693,12 +759,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: raycast
   - hash:
       serializedVersion: 2
       Hash: 32fce7b97c39bff4b4f6c0f53f7e6bf1
@@ -1319,6 +1379,12 @@ ScriptsOnlyBuild:
     className: PlayerMovement1st
   - hash:
       serializedVersion: 2
+      Hash: ec8e759933d346dedeab5600ef696ef3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerScript1st
+  - hash:
+      serializedVersion: 2
       Hash: 8cd1cbba27f3cb1717254f668e9e0d5a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1475,16 +1541,18 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: ec8e759933d346dedeab5600ef696ef3
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PlayerScript1st
+    className: MovingCat2ndGame
   platform: 2
   scenePathNames:
-  - Assets/Scenes/Default Planet.unity
-  - Assets/Scenes/1st Planet.unity
-  - Assets/Scenes/2048Scene.unity
-  - Assets/Scenes/1st Planet after game.unity
+  - Assets/Scenes/0 Default Planet/Default Planet.unity
+  - Assets/Scenes/1 1st Planet/1st Planet.unity
+  - Assets/Scenes/1 1st Planet/2048Scene.unity
+  - Assets/Scenes/1 1st Planet/1st Planet after game.unity
   - Assets/Scenes/Wormhole.unity
   - Assets/Scenes/2nd Planet.unity
-  playerPath: /Users/min/Desktop/3-1/Astro-Cat/Astro-Cat/BuildSettings/1st Planet.app
+  - Assets/Scenes/Ghost Hunter Game.unity
+  playerPath: /Users/min/Desktop/3-1/Astro-Cat/Astro-Cat/BuildSettings/Ghost Hunter
+    Game.app
