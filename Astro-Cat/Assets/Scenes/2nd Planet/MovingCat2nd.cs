@@ -13,7 +13,7 @@ public class MovingCat2nd : MonoBehaviour
     bool isJump = false;
     bool mouseClick = false;
     int clickCount = 0;
-    int npc_clickCount = 0;
+    int npc_clickCount = 0; // npc 말풍선 클릭 인식
 
     Vector3 moveVec;
 
@@ -52,7 +52,7 @@ public class MovingCat2nd : MonoBehaviour
                 mouseClick = true;
             }
 
-            // 마우스 클릭 인식
+            // 마우스로 클릭해서 인식 후 대화
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -75,24 +75,12 @@ public class MovingCat2nd : MonoBehaviour
                     nametag.SetActive(true);
                     npcName.text = "천사만두";
                     talkObjectText.text = "저희 마을과 제 친구들이 모두 저주에 걸렸어요!";
-                    //npc_clickCount++;
+                    
                 }
 
 
             }  
 
-
-            if (npc_clickCount == 1)
-            {
-                talkObjectText.text = "(.. 다른 주민을 찾아보자 ..)";
-                npc_clickCount++;
-            }
-
-            if(npc_clickCount == 2)
-            {
-                talkPanel.SetActive(false);
-                npc_clickCount = 0;
-            }
 
             Debug.Log("npc_clickCount = " + npc_clickCount);
 
