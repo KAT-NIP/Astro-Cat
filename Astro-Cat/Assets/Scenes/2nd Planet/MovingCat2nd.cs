@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MovingCat2nd : MonoBehaviour
 {
@@ -50,13 +51,19 @@ public class MovingCat2nd : MonoBehaviour
             {
                 talkPanel.SetActive(false);
                 mouseClick = true;
+                clickCount++;
+            }
+
+            else if(clickCount == 2 && npc_clickCount == 1)
+            {
+                SceneManager.LoadScene("1st Planet");
             }
 
             // 마우스로 클릭해서 인식 후 대화
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (npc_clickCount==0 && Physics.Raycast(ray, out hit))
             {
                 Debug.Log(hit.transform.gameObject);
                 if (hit.transform.gameObject.tag == "Devil")
@@ -73,9 +80,10 @@ public class MovingCat2nd : MonoBehaviour
                     Debug.Log("Angel");
                     GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
                     nametag.SetActive(true);
+                    mouseClick = false;
                     npcName.text = "천사만두";
-                    talkObjectText.text = "저희 마을과 제 친구들이 모두 저주에 걸렸어요!";
-                    
+                    talkObjectText.text = "당신만이 저주받은 행성을 구할 수 있어요. 마법사를 부디 무찔러 주세요!";
+                    npc_clickCount++;
                 }
 
 
