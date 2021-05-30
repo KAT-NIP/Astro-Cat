@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 492}
   m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
-  controlID: 7070
+  controlID: 10982
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -46,7 +46,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 403
+    x: 404
     y: 83
     width: 735
     height: 409
@@ -86,7 +86,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 492}
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
-  controlID: 7071
+  controlID: 10983
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 7072
+  controlID: 10984
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 0
     width: 201
     height: 430
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -215,17 +215,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 19
+    x: 1
+    y: 83
     width: 200
     height: 409
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 62bafeff
-      m_LastClickedID: -83358
-      m_ExpandedIDs: 62bafeff50cbfeff7ed8feff98e2feff62e8feffe626ffff9240ffff1c4dffff3e4effff5a4effffa467ffff386bffffca75ffff9676ffffa076ffffc07affff0e87ffff1891ffff489bffff08a0ffff1ea4ffffaed2ffff76ebffff00000000306e00003a6f0000a66f000062cf000092ec000056ed00005ef300006af40000d6f400004a0f010056100100c2100100
+      scrollPos: {x: 0, y: 60}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: a630feffaa30feff3835feff3a40feff7c4ffeff9e5bfeff3068feffd072feffe27cfeff2481feff9c83feff50cbfeff7ed8feff98e2feff62e8feffe626ffff9240ffff1c4dffff3e4effff5a4effffa467ffff386bffffca75ffff9676ffffa076ffffc07affff0e87ffff1891ffff489bffff08a0ffff1ea4ffffaed2ffff76ebffff00000000306e00003a6f0000a66f000062cf000092ec000056ed00005ef300006af40000d6f400004a0f0100620f010056100100c2100100085201007e52010024530100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -298,7 +298,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 201
+    x: 202
     y: 83
     width: 200
     height: 409
@@ -363,11 +363,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.028458076, y: -0.1547134, z: 0.0044594607, w: -0.9875435}
     speed: 2
-    m_Value: {x: -0.028458077, y: -0.15471342, z: 0.0044594607, w: -0.9875436}
+    m_Value: {x: -0.02845796, y: -0.15471278, z: 0.0044594426, w: -0.9875395}
   m_Size:
     m_Target: 594.73975
     speed: 2
-    m_Value: 570.76764
+    m_Value: 594.73975
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -556,7 +556,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
+    x: 1
     y: 513
     width: 1139
     height: 261
@@ -574,20 +574,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/nayeonkim/Documents/GitHub/Astro-Cat/Astro-Cat
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 31}
-    m_SelectedIDs: a8480000
-    m_LastClickedID: 18600
-    m_ExpandedIDs: 00000000a8480000ac480000ae480000b0480000b2480000
+    scrollPos: {x: 0, y: 118.999756}
+    m_SelectedIDs: e0480000
+    m_LastClickedID: 18656
+    m_ExpandedIDs: 00000000a8480000ac480000ae480000b0480000b2480000e0480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -640,8 +640,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 62bafeff
-    m_LastClickedInstanceID: -83358
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000703a0000643a0000563a00008a4a00008448000000000000
     m_RenameOverlay:
@@ -745,7 +745,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1140
+    x: 1141
     y: 83
     width: 299
     height: 691
