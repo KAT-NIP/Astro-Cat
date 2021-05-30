@@ -13,6 +13,7 @@ public class MovingCat2nd : MonoBehaviour
     bool isJump = false;
     bool mouseClick = false;
     int clickCount = 0;
+    int npc_clickCount = 0;
 
     Vector3 moveVec;
 
@@ -22,12 +23,14 @@ public class MovingCat2nd : MonoBehaviour
     public GameObject talkPanel;
     private Text talkObjectText;
     public GameObject nametag;
+    private Text npcName;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
         talkObjectText = GameObject.Find("talkPanel/Text").GetComponent<Text>();
+        npcName = GameObject.Find("talkPanel/nameTag/npcName").GetComponent<Text>();
     }
 
     void Update()
@@ -49,6 +52,53 @@ public class MovingCat2nd : MonoBehaviour
                 mouseClick = true;
             }
 
+            // 마우스 클릭 인식
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (clickCount >= 1 && Physics.Raycast(ray, out hit))
+            {
+                Debug.Log(hit.transform.gameObject);
+                if(npc_clickCount == 1)
+                {
+                    if (hit.transform.gameObject.tag == "Devil")
+                    {
+                        Debug.Log("Devil");
+                        GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
+                        nametag.SetActive(true);
+                        npcName.text = "악마만두";
+                        talkObjectText.text = "콰아아아악 꺼져";
+                       
+                    }
+
+                    else if (hit.transform.gameObject.tag == "Angel")
+                    {
+                        Debug.Log("Angel");
+                        GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
+                        nametag.SetActive(true);
+                        npcName.text = "천사만두";
+                        talkObjectText.text = "저희 마을과 제 친구들이 모두 저주에 걸렸어요!";
+                        
+                    }
+                }
+                npc_clickCount++;
+            }  
+
+
+            if (npc_clickCount == 2)
+            {
+                talkObjectText.text = "(.. 다른 주민을 찾아보자 ..)";
+            }
+
+            if(npc_clickCount == 3)
+            {
+                talkPanel.SetActive(false);
+                npc_clickCount = 0;
+            }
+
+            Debug.Log("npc_clickCount = " + npc_clickCount);
+
+
         }
 
         if (mouseClick)
@@ -62,6 +112,8 @@ public class MovingCat2nd : MonoBehaviour
         if (transform.position.y <= -3f) {
             transform.position = new Vector3(9f, 1f, -15.1f);
         }
+
+
 
     }
 
