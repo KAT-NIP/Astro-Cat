@@ -16132,6 +16132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1125938156}
   - component: {fileID: 1125938155}
+  - component: {fileID: 1125938157}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -16249,6 +16250,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1125938157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125938154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178b7fc199bbf4decaac3f5e8b979112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1128221278 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8865011217929020467, guid: dd0d70099c0064c42bbbd471ede892a3,
@@ -21172,7 +21185,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &1502635082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21517,7 +21530,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &1528165545
 PrefabInstance:
   m_ObjectHideFlags: 0
