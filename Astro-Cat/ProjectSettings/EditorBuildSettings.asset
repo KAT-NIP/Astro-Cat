@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2nd Planet.unity
     guid: 981f2a75b24ee42448e23edf4b984e51
+  - enabled: 1
+    path: Assets/Scenes/Ghost Hunter Game.unity
+    guid: c3a2cfe833ca04c478de6fe708d025be
   m_configObjects: {}
