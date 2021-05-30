@@ -59,6 +59,10 @@ public class MovingCat2nd : MonoBehaviour
             Jump();
         }
 
+        if (transform.position.y <= -3f) {
+            transform.position = new Vector3(9f, 1f, -15.1f);
+        }
+
     }
 
     void GetInput()
