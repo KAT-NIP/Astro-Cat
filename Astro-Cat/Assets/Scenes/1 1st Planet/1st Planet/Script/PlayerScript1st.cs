@@ -13,8 +13,11 @@ public class PlayerScript1st : MonoBehaviour
     bool getGem = false;
     bool lastClick = false;
 
+    private AudioSource effectSound;
+    public AudioClip getDiamondSound;
     void Start()
     {
+        effectSound = GetComponent<AudioSource>();
         clickCount = 0;
     }
 
@@ -70,6 +73,8 @@ public class PlayerScript1st : MonoBehaviour
     {
         if (other.tag == "Gem")
         {
+            effectSound.clip = getDiamondSound;
+            effectSound.Play();
             gem = other.GetComponent<GameObject>();
             Destroy(other.gameObject);
             getGem = true;
