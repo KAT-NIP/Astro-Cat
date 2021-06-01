@@ -12484,7 +12484,8 @@ MonoBehaviour:
   muzzleLeafEffect: {fileID: 1937099962}
   muzzleSmokeEffect: {fileID: 1937099960}
   muzzleBeamEffect: {fileID: 1937099961}
-  CarrotEjectEffect: {fileID: 0}
+  CarrotEjectEffect: {fileID: 198858680741015720, guid: c7e9268bc510d734e980e1e5b5898911,
+    type: 3}
   shotClip: {fileID: 8300000, guid: 819d8dc4586c8f04dbdf8e7657f70a03, type: 3}
   reloadClip: {fileID: 8300000, guid: 0d5d3e0a9f80c644f84d3e6c26d4af2e, type: 3}
   damage: 25
@@ -16218,6 +16219,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1128221284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128221278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d972e2d4f60fd4800ac0cff20a40245a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 845807407}
+  gunPivot: {fileID: 845807405}
 --- !u!1001 &1130675413
 PrefabInstance:
   m_ObjectHideFlags: 0
