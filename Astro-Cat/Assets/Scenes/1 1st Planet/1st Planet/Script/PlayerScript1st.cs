@@ -60,7 +60,7 @@ public class PlayerScript1st : MonoBehaviour
         if (getGem && collision.gameObject.tag == "Floor")
         {
             Debug.Log("Stepped!");
-            SceneManager.LoadScene("Wormhole");
+            SceneManager.LoadScene("Wormhole(1stTo2nd)");
         }
 
 
