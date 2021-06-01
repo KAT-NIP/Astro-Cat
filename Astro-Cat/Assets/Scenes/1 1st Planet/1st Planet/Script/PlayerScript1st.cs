@@ -8,7 +8,11 @@ public class PlayerScript1st : MonoBehaviour
 {
     public GameObject talkPanel;
     public Text text;
+<<<<<<< Updated upstream
     GameObject gem; // 보석
+=======
+    GameObject gem; // 보
+>>>>>>> Stashed changes
     int clickCount = 0;
     bool getGem = false;
 
@@ -38,6 +42,10 @@ public class PlayerScript1st : MonoBehaviour
             else if (getGem == true && clickCount == 2)
             {
                 talkPanel.SetActive(false);
+<<<<<<< Updated upstream
+=======
+                clickCount++;
+>>>>>>> Stashed changes
             }
 
             Debug.Log(clickCount);
@@ -65,7 +73,11 @@ public class PlayerScript1st : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) // 보석 먹으면 사라짐
     {
+<<<<<<< Updated upstream
         if (other.tag == "Gem")
+=======
+        if(other.tag == "Gem")
+>>>>>>> Stashed changes
         {
             getGem = true;
             gem = other.GetComponent<GameObject>();
