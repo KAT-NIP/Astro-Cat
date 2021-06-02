@@ -1,18 +1,36 @@
-﻿using System.Collections;
+﻿using UnityEngine.AI;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Ghost1 : MonoBehaviour
 {
-    public float speed = 8f;
-    private Rigidbody Ghost1Rigidbody;
+    //public float speed = 8f;
+    //private Rigidbody Ghost1Rigidbody;
+    NavMeshAgent nav;
+    GameObject target;
+
 
     void Start()
     {
-        Ghost1Rigidbody = GetComponent<Rigidbody>();
-        Ghost1Rigidbody.velocity = transform.forward * speed;
+        //Ghost1Rigidbody = GetComponent<Rigidbody>();
+        //Ghost1Rigidbody.velocity = transform.forward * speed;
 
-        Destroy(gameObject, 2f);
+        nav = GetComponent<NavMeshAgent>();
+        target = GameObject.FindGameObjectWithTag("Player");
+        //Destroy(gameObject, 2f);
+    }
+
+    void Update()
+    {
+        if (nav.destination != target.transform.position)
+        {
+            nav.SetDestination(target.transform.position);
+        }
+        else
+        {
+            nav.SetDestination(transform.position);
+        }
     }
 
     void OnTriggerEnter(Collider other)

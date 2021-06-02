@@ -5,8 +5,8 @@ using UnityEngine;
 public class GhostSpawner : MonoBehaviour
 {
     public GameObject Ghost1Prefab;
-    public float spawnRateMin = 5f;
-    public float spawnRateMax = 5f;
+    public float spawnRateMin = 7f;
+    public float spawnRateMax = 7f;
 
     private Transform target;
     private float spawnRate;
@@ -17,7 +17,7 @@ public class GhostSpawner : MonoBehaviour
         timeAfterSpawn = 0f;
         spawnRate = Random.Range(spawnRateMin, spawnRateMax);
 
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        //target = GameObject.FindGameObjectWithTag("Player").transform;
 
     }
 
@@ -31,7 +31,7 @@ public class GhostSpawner : MonoBehaviour
 
             GameObject Ghost1 = Instantiate(Ghost1Prefab, transform.position, transform.rotation);
 
-            Ghost1.transform.LookAt(target);
+            //Ghost1.transform.LookAt(target);
 
             spawnRate = Random.Range(spawnRateMin, spawnRateMax);
         }
