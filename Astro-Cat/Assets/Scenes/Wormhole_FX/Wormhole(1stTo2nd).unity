@@ -415,6 +415,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4090529838831240814, guid: dd0d70099c0064c42bbbd471ede892a3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8092133001476144777, guid: dd0d70099c0064c42bbbd471ede892a3,
         type: 3}
       propertyPath: m_RootOrder
@@ -479,6 +484,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865011218069465289, guid: dd0d70099c0064c42bbbd471ede892a3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd0d70099c0064c42bbbd471ede892a3, type: 3}
