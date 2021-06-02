@@ -112,13 +112,13 @@ public class Gun : MonoBehaviour
         bulletLineRenderer.SetPosition(1, hitPosition);
 
         // 라인 렌더러를 활성화하여 총알 궤적을 그린다
-        //bulletLineRenderer.enabled = true;
+        bulletLineRenderer.enabled = true;
 
         // 0.03초 동안 잠시 처리를 대기
         yield return new WaitForSeconds(0.03f);
 
         // 라인 렌더러를 비활성화하여 총알 궤적을 지운다
-        //bulletLineRenderer.enabled = false;
+        bulletLineRenderer.enabled = false;
     }
 
     // 재장전 시도

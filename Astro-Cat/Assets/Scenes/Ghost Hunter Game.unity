@@ -12484,7 +12484,7 @@ MonoBehaviour:
   muzzleLeafEffect: {fileID: 1937099962}
   muzzleSmokeEffect: {fileID: 1937099960}
   muzzleBeamEffect: {fileID: 1937099961}
-  CarrotEjectEffect: {fileID: 198858680741015720, guid: c7e9268bc510d734e980e1e5b5898911,
+  CarrotEjectEffect: {fileID: 198721829763906112, guid: 6cf36a334a0e5754ea36fca06014b86a,
     type: 3}
   shotClip: {fileID: 8300000, guid: 819d8dc4586c8f04dbdf8e7657f70a03, type: 3}
   reloadClip: {fileID: 8300000, guid: 0d5d3e0a9f80c644f84d3e6c26d4af2e, type: 3}
@@ -12608,7 +12608,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7421dcf737a023f46b0eb0fb4a86ee4f, type: 2}
+  - {fileID: 2100000, guid: 6b7e091f083e2fa46a4c091b33167961, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14141,13 +14141,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951930696}
-  m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 3.7500014, y: -0.33000264, z: 0}
   m_LocalScale: {x: 8.333333, y: 8.333333, z: 8.333334}
   m_Children: []
   m_Father: {fileID: 845807405}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!1001 &954808890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17162,63 +17162,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1187901703}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1189647207
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 845807405}
-    m_Modifications:
-    - target: {fileID: 1049234075114562, guid: c7e9268bc510d734e980e1e5b5898911, type: 3}
-      propertyPath: m_Name
-      value: vfx_Projectile_Carrot
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703946671833430, guid: c7e9268bc510d734e980e1e5b5898911, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703946671833430, guid: c7e9268bc510d734e980e1e5b5898911, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703946671833430, guid: c7e9268bc510d734e980e1e5b5898911, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703946671833430, guid: c7e9268bc510d734e980e1e5b5898911, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703946671833430, guid: c7e9268bc510d734e980e1e5b5898911, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703946671833430, guid: c7e9268bc510d734e980e1e5b5898911, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703946671833430, guid: c7e9268bc510d734e980e1e5b5898911, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703946671833430, guid: c7e9268bc510d734e980e1e5b5898911, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703946671833430, guid: c7e9268bc510d734e980e1e5b5898911, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703946671833430, guid: c7e9268bc510d734e980e1e5b5898911, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703946671833430, guid: c7e9268bc510d734e980e1e5b5898911, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c7e9268bc510d734e980e1e5b5898911, type: 3}
 --- !u!1001 &1190795887
 PrefabInstance:
   m_ObjectHideFlags: 0
