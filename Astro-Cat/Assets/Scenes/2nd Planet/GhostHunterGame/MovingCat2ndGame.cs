@@ -72,9 +72,7 @@ public class MovingCat2ndGame : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
-
             isJump = false;
-
         }
     }
 }
