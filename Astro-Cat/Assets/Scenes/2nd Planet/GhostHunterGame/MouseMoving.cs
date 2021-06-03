@@ -54,12 +54,22 @@ public class MouseMoving : MonoBehaviour
 
     void Turn()
     {
-        Vector3 pos = Input.mousePosition;
-        pos.z = Camera.main.farClipPlane;
+        Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        Vector3 newPerspective = Camera.main.ScreenToWorldPoint(pos);
-        newPerspective.y = 0;
-        transform.LookAt(transform.position + newPerspective.normalized);
+        Plane GroupPlane = new Plane(Vector3.up, Vector3.zero);
+
+        float rayLength;
+
+        if (GroupPlane.Raycast(cameraRay, out rayLength))
+
+        {
+
+            Vector3 pointTolook = cameraRay.GetPoint(rayLength);
+
+            transform.LookAt(new Vector3(pointTolook.x, transform.position.y, pointTolook.z));
+
+        }
+        //transform.LookAt(transform.position + moveVec);
     }
 
     void Jump()
