@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ghost1 : MonoBehaviour
+public class Ghost2 : MonoBehaviour
 {
     //public float speed = 8f;
     //private Rigidbody Ghost1Rigidbody;
@@ -21,12 +21,12 @@ public class Ghost1 : MonoBehaviour
         //Destroy(gameObject, 2f);
     }
 
-    void Update()
+    void Update() 
     {
         // 유령이 플레이어를 따라오게
         //if (nav.destination != target.transform.position)
         //{
-        nav.SetDestination(target.transform.position);
+            nav.SetDestination(target.transform.position);
         //}
         //else
         //{
