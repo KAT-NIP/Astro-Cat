@@ -12706,6 +12706,8 @@ GameObject:
   - component: {fileID: 776829525}
   - component: {fileID: 776829524}
   - component: {fileID: 776829523}
+  - component: {fileID: 776829529}
+  - component: {fileID: 776829528}
   - component: {fileID: 776829527}
   m_Layer: 0
   m_Name: Ghost Spawner 1
@@ -12798,17 +12800,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 776829522}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3522021c75b042eaa162886eb0531f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ghost3Prefab: {fileID: 395987975913932856, guid: 729bd078ceb404ae18f2abd4d822da65,
+    type: 3}
+  spawnRateMin: 8
+  spawnRateMax: 12
+--- !u!114 &776829528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776829522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc73241911574d8d9d89f79bdfc6374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ghost2Prefab: {fileID: 6484571360434873227, guid: 1d1b0dfbbf2d64250a61dbc85bde8057,
+    type: 3}
+  spawnRateMin: 5
+  spawnRateMax: 8
+--- !u!114 &776829529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776829522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4adc0c971febd4d8388bc15a5e9d56f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Ghost1Prefab: {fileID: 8595807772476734931, guid: f65e7a4c153644fec99f387a92474efa,
     type: 3}
-  Ghost2Prefab: {fileID: 6484571360434873227, guid: 1d1b0dfbbf2d64250a61dbc85bde8057,
-    type: 3}
-  Ghost3Prefab: {fileID: 395987975913932856, guid: 729bd078ceb404ae18f2abd4d822da65,
-    type: 3}
-  spawnRateMin: 0.5
-  spawnRateMax: 3
+  spawnRateMin: 3
+  spawnRateMax: 5
 --- !u!1001 &781772023
 PrefabInstance:
   m_ObjectHideFlags: 0
