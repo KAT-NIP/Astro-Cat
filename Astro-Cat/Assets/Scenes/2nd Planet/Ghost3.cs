@@ -38,7 +38,7 @@ public class Ghost3 : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            GameObject player = other.GetComponent<GameObject>();
+            //GameObject player = other.GetComponent<GameObject>();
             Debug.Log("부딪힘");
 
         }
