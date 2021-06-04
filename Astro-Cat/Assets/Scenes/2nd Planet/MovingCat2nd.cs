@@ -65,6 +65,7 @@ public class MovingCat2nd : MonoBehaviour
             else if (npc_clickCount == 2)
             {
                 talkObjectText.text = "당신에게 총을 드릴게요! 이 총이라면 마법사와 유령을 모두 소멸시킬 수 있을거에요.";
+                GameObject.Find("Hand_r_equipment").transform.Find("Gun").gameObject.SetActive(true);
                 npc_clickCount++;
             }
 
