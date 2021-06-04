@@ -26,14 +26,16 @@ public class MovingCat2nd : MonoBehaviour
     public Text talkObjectText;
     public GameObject nametag;
     public Text npcName;
+    private AudioSource playerAudio;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
-        //talkObjectText = GameObject.Find("talkPanel/Text").GetComponent<Text>();
-        //npcName = GameObject.Find("talkPanel/nameTag/npcName").GetComponent<Text>();
+        playerAudio = GetComponent<AudioSource>();
     }
+
+
 
     void Update()
     {
@@ -65,6 +67,8 @@ public class MovingCat2nd : MonoBehaviour
             else if (npc_clickCount == 2)
             {
                 talkObjectText.text = "당신에게 총을 드릴게요! 이 총이라면 마법사와 유령을 모두 소멸시킬 수 있을거에요.";
+                playerAudio.Play();
+                GameObject.Find("Hand_r_equipment").transform.Find("Gun").gameObject.SetActive(true);
                 npc_clickCount++;
             }
 
