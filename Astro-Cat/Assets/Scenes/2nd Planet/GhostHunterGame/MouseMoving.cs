@@ -63,10 +63,8 @@ public class MouseMoving : MonoBehaviour
         if (GroupPlane.Raycast(cameraRay, out rayLength))
 
         {
-
             Vector3 pointTolook = cameraRay.GetPoint(rayLength);
-
-            transform.LookAt(new Vector3(pointTolook.x, transform.position.y, pointTolook.z));
+            transform.LookAt(new Vector3(pointTolook.x + 2, transform.position.y, pointTolook.z));
 
         }
         //transform.LookAt(transform.position + moveVec);
