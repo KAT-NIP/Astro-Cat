@@ -19,12 +19,13 @@ public class beforeGame : MonoBehaviour
     public Camera hamstoCamera;
     public GameObject hamstoFace;
     //public MeshRenderer face;
-    //public Material beforeFace;
+    public Material beforeFace;
     public Material afterFace;
 
     private void Awake()
     {
         crowSound.Play();
+        set_skinned_mat("Face", 0, beforeFace);
     }
     // Start is called before the first frame update
     void Start()
@@ -85,7 +86,7 @@ public class beforeGame : MonoBehaviour
 
             else if(mouseClick == 6)
             {
-                set_skinned_mat("hamstoFace", 1, afterFace);
+                set_skinned_mat("Face", 1, afterFace);
                 //카메라 전환(햄토리 줌인 카메라)
                 hamstoCamera.enabled = true;
                 nameTagName.text = "햄토리 왕";

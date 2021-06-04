@@ -26919,9 +26919,10 @@ MonoBehaviour:
   talkPanel: {fileID: 436226008}
   nameTagName: {fileID: 1149551943}
   text: {fileID: 865821052}
-  hamstoCamera: {fileID: 0}
-  hamstoFace: {fileID: 0}
-  afterFace: {fileID: 0}
+  hamstoCamera: {fileID: 2054065041}
+  hamstoFace: {fileID: 1475572245}
+  beforeFace: {fileID: 2100000, guid: 3b831a7699ebb5b4fa5d4f05679df8b9, type: 2}
+  afterFace: {fileID: 2100000, guid: 15a8946d174a6884fb8ed96b457c15cc, type: 2}
 --- !u!114 &1266521855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32264,6 +32265,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4989348497682772, guid: c5db07ad1e88a8f4d9148e5980d4ba14,
     type: 3}
   m_PrefabInstance: {fileID: 1288853578}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1475572245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1765084904742374, guid: f78822f3881ce954aa45662e86fddf81,
+    type: 3}
+  m_PrefabInstance: {fileID: 99575992}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1480464928
 PrefabInstance:
@@ -47016,7 +47023,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &2054065040
 AudioListener:
   m_ObjectHideFlags: 0
