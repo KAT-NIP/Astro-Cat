@@ -37,35 +37,71 @@ public class MovingCat2nd : MonoBehaviour
 
     void Update()
     {
-
+        Debug.Log(mouseClick);
         if (Input.GetMouseButtonDown(0))
         {
-            if (clickCount == 0)
+            if (clickCount == 0) // 맨 처음 말풍선
             {
                 nametag.SetActive(false);
                 talkObjectText.text = "(누군가의 목소리가 들린다. 주민을 마우스로 클릭해 말을 걸어보자.)";
                 clickCount++;
+                mouseClick = true;
             }
 
 
-            else if(clickCount == 1)
+            else if (clickCount == 1)
             {
                 talkPanel.SetActive(false);
                 mouseClick = true;
                 clickCount++;
             }
 
-            else if(clickCount == 2 && npc_clickCount == 1)
+            else if (npc_clickCount == 1) // 천사만두 npc
+            {
+                talkObjectText.text = "마법사와 그의 생성물인 유령들이 저희 행성을 이렇게 망쳐놓았어요.";
+                npc_clickCount++;
+            }
+
+            else if (npc_clickCount == 2)
+            {
+                talkObjectText.text = "당신에게 총을 드릴게요! 이 총이라면 마법사와 유령을 모두 소멸시킬 수 있을거에요.";
+                npc_clickCount++;
+            }
+
+            else if (npc_clickCount == 3)
+            {
+                talkObjectText.text = "마우스 왼쪽 버튼을 클릭하면 총을 발사할 수 있어요. 유령과 닿으면 체력이 줄어드니 조심하세요.";
+                npc_clickCount++;
+            }
+
+            else if (npc_clickCount == 4)
+            {
+                talkObjectText.text = "아, 마법사와 해골 유령은 모험가님을 공격할 수 있으니 주의하세요.";
+                npc_clickCount++;
+            }
+
+            else if (npc_clickCount == 5)
+            {
+                talkObjectText.text = "당신만이 저주받은 행성을 구할 수 있어요. 마법사를 꼭 무찔러주세요.";
+                npc_clickCount++;
+            }
+
+
+            else if (npc_clickCount == 6)
             {
                 SceneManager.LoadScene("Ghost Hunter Game");
             }
 
-            else if(clickCount == 2 && (devil_clickCount % 2 == 1))
+            else if (clickCount == 2 && (devil_clickCount % 2 == 1)) // 악마만두
             {
                 talkPanel.SetActive(false);
                 mouseClick = true;
                 devil_clickCount++;
+
             }
+
+
+
 
             // 마우스로 클릭해서 인식 후 대화
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -74,44 +110,50 @@ public class MovingCat2nd : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 Debug.Log(hit.transform.gameObject);
-                if (npc_clickCount == 0)
+
+                if (hit.transform.gameObject.tag == "Devil") // 악마만두 클릭 시
                 {
-                    if (hit.transform.gameObject.tag == "Devil")
-                    {
-                        Debug.Log("Devil");
-                        //GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
-                        talkPanel.SetActive(true);
-                        nametag.SetActive(true);
-                        npcName.text = "악마만두";
-                        talkObjectText.text = "콰아아아악 꺼져";
-                        devil_clickCount++;
-                        Debug.Log(devil_clickCount);
-                        
-                    }
+                    Debug.Log("Devil");
+                    //GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
+                    talkPanel.SetActive(true);
+                    nametag.SetActive(true);
+                    npcName.text = "악마만두";
+                    talkObjectText.text = "콰아아아악 꺼져";
+                    devil_clickCount++;
+                    Debug.Log(devil_clickCount);
+                    mouseClick = false;
 
-                    else if (hit.transform.gameObject.tag == "Angel")
-                    {
-                        Debug.Log("Angel");
-                        //GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
-                        talkPanel.SetActive(true);
-                        nametag.SetActive(true);
-                        npcName.text = "천사만두";
-                        talkObjectText.text = "당신만이 저주받은 행성을 구할 수 있어요. 마법사를 부디 무찔러 주세요!";
-                        npc_clickCount++;
-                    }
-
-                    //mouseClick = false;
                 }
 
+                else if (hit.transform.gameObject.tag == "Angel")
+                {
+                    Debug.Log("Angel");
+                    //GameObject.Find("Canvas").transform.Find("talkPanel").gameObject.SetActive(true);
+                    talkPanel.SetActive(true);
+                    nametag.SetActive(true);
+                    npcName.text = "천사만두";
 
+                    if (npc_clickCount == 0) // 천사만두 클릭 시
+                    {
+                        talkObjectText.text = "용감한 모험가님.. 저희를 구하러 와주셨군요!";
+                        npc_clickCount++;
+                    }
+                    mouseClick = false;
 
-            }  
+                }
 
+                
+            }
 
-            Debug.Log("npc_clickCount = " + npc_clickCount);
 
 
         }
+
+
+        Debug.Log("npc_clickCount = " + npc_clickCount);
+
+
+
 
         if (mouseClick)
         {
@@ -121,7 +163,8 @@ public class MovingCat2nd : MonoBehaviour
             Jump();
         }
 
-        if (transform.position.y <= -3f) {
+        if (transform.position.y <= -3f) // 떨어지면 Waypoint로 복귀
+        {
             transform.position = new Vector3(9f, 1f, -15.1f);
         }
 
