@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class beforeGame : MonoBehaviour
 {
@@ -14,6 +15,12 @@ public class beforeGame : MonoBehaviour
     public Text nameTagName;
     public Text text;
     private int mouseClick = 0;
+
+    public Camera hamstoCamera;
+    public GameObject hamstoFace;
+    //public MeshRenderer face;
+    //public Material beforeFace;
+    public Material afterFace;
 
     private void Awake()
     {
@@ -78,16 +85,33 @@ public class beforeGame : MonoBehaviour
 
             else if(mouseClick == 6)
             {
+                set_skinned_mat("hamstoFace", 1, afterFace);
+                //카메라 전환(햄토리 줌인 카메라)
+                hamstoCamera.enabled = true;
                 nameTagName.text = "햄토리 왕";
-                text.text = "두 개는 어림도 없지 ㅎㅎ\n세 개는 모아와~! 제한시간 안에 내 크로우와 미로 술래잡기를 해서 이기면 보석을 하나 더 주지.";
+                text.text = "두 개는 어림도 없지!! 세 개는 모아와야 하는거 아닌가?\n제한시간 안에 내 크로우와 미로 술래잡기를 해서 이기면 보석을 하나 더 주지.";
                 mouseClick++;
             }
 
             else if(mouseClick == 7)
             {
                 talkPanel.SetActive(false);
+                SceneManager.LoadScene("3rd Planet Maze");
             }
         }
         
+    }
+
+    void set_skinned_mat(string obj_name, int Mat_Nr, Material Mat)
+    {
+        GameObject obj = GameObject.Find(obj_name);
+
+        SkinnedMeshRenderer renderer = obj.GetComponentInChildren<SkinnedMeshRenderer>();
+
+        Material[] mats = renderer.materials;
+
+        mats[Mat_Nr] = Mat;
+
+        renderer.materials = mats;
     }
 }
