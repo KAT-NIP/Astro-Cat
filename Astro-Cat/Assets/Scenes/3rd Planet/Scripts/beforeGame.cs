@@ -16,16 +16,17 @@ public class beforeGame : MonoBehaviour
     public Text text;
     private int mouseClick = 0;
 
+    public Camera characterCamera;
     public Camera hamstoCamera;
-    public GameObject hamstoFace;
-    //public MeshRenderer face;
-    public Material beforeFace;
+    
+    public SkinnedMeshRenderer hamstoFace;
     public Material afterFace;
 
     private void Awake()
     {
+        characterCamera.enabled = true;
+        hamstoCamera.enabled = false;
         crowSound.Play();
-        set_skinned_mat("Face", 0, beforeFace);
     }
     // Start is called before the first frame update
     void Start()
@@ -86,8 +87,10 @@ public class beforeGame : MonoBehaviour
 
             else if(mouseClick == 6)
             {
-                set_skinned_mat("Face", 1, afterFace);
+                //얼굴 표정 변ㅎ
+                hamstoFace.material = afterFace;
                 //카메라 전환(햄토리 줌인 카메라)
+                characterCamera.enabled = false;
                 hamstoCamera.enabled = true;
                 nameTagName.text = "햄토리 왕";
                 text.text = "두 개는 어림도 없지!! 세 개는 모아와야 하는거 아닌가?\n제한시간 안에 내 크로우와 미로 술래잡기를 해서 이기면 보석을 하나 더 주지.";
@@ -101,18 +104,5 @@ public class beforeGame : MonoBehaviour
             }
         }
         
-    }
-
-    void set_skinned_mat(string obj_name, int Mat_Nr, Material Mat)
-    {
-        GameObject obj = GameObject.Find(obj_name);
-
-        SkinnedMeshRenderer renderer = obj.GetComponentInChildren<SkinnedMeshRenderer>();
-
-        Material[] mats = renderer.materials;
-
-        mats[Mat_Nr] = Mat;
-
-        renderer.materials = mats;
     }
 }

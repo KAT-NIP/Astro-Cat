@@ -1836,6 +1836,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hamsto19
       objectReference: {fileID: 0}
+    - target: {fileID: 1765084904742374, guid: f78822f3881ce954aa45662e86fddf81, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4463458262049990, guid: f78822f3881ce954aa45662e86fddf81, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1895,7 +1899,7 @@ PrefabInstance:
     - target: {fileID: 137728735403093180, guid: f78822f3881ce954aa45662e86fddf81,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 137728735403093180, guid: f78822f3881ce954aa45662e86fddf81,
         type: 3}
@@ -26919,9 +26923,9 @@ MonoBehaviour:
   talkPanel: {fileID: 436226008}
   nameTagName: {fileID: 1149551943}
   text: {fileID: 865821052}
+  characterCamera: {fileID: 1532416445}
   hamstoCamera: {fileID: 2054065041}
-  hamstoFace: {fileID: 1475572245}
-  beforeFace: {fileID: 2100000, guid: 3b831a7699ebb5b4fa5d4f05679df8b9, type: 2}
+  hamstoFace: {fileID: 1475572246}
   afterFace: {fileID: 2100000, guid: 15a8946d174a6884fb8ed96b457c15cc, type: 2}
 --- !u!114 &1266521855
 MonoBehaviour:
@@ -32266,9 +32270,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1288853578}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1475572245 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1765084904742374, guid: f78822f3881ce954aa45662e86fddf81,
+--- !u!137 &1475572246 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 137728735403093180, guid: f78822f3881ce954aa45662e86fddf81,
     type: 3}
   m_PrefabInstance: {fileID: 99575992}
   m_PrefabAsset: {fileID: 0}
@@ -47023,7 +47027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &2054065040
 AudioListener:
   m_ObjectHideFlags: 0
