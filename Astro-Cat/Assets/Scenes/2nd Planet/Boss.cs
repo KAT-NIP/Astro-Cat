@@ -5,7 +5,16 @@ using UnityEngine;
 
 public class Boss : LivingEntity
 {
-    
+    public enum CurrentState { idle, attack, dead }; // 보스 상태
+    public CurrentState curState = CurrentState.idle;
+
+    public float attackDist = 3f;
+    private Transform playerTransform; // 플레이어 위치
+    private Transform bossTransform; // 보스 위ㅊ
+    private Animator bossAnimator;
+
+    private bool isDead = false; // 사망 여부
+
     GameObject target;
 
     void Start()
@@ -14,14 +23,86 @@ public class Boss : LivingEntity
         health = 25;
         target = GameObject.FindGameObjectWithTag("Player");
 
+        bossTransform = this.gameObject.GetComponent<Transform>();
+        playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        bossAnimator = this.gameObject.GetComponent<Animator>();
+
+        // StartCoroutine(this.CheckState());
+        // StartCoroutine(this.CheckStateForAction());
+
+
     }
+
+    //IEnumerator CheckState()
+    //{
+    //    yield return new WaitForSeconds(0.2f);
+
+    //    float dist = Vector3.Distance(playerTransform.position, bossTransform.position);
+
+    //    while (!isDead)
+    //    {
+    //        if (dist <= attackDist) // 공격해야하는 범위 내에 들어오면 공격 상태로 변ㄱ
+    //        {
+    //            curState = CurrentState.attack;
+    //        }
+
+    //        else
+    //        {
+    //            curState = CurrentState.idle;
+    //        }
+    //    }
+
+    //}
+
+    //IEnumerator CheckStateForAction()
+    //{
+    //    while (!isDead)
+    //    {
+    //        switch (curState)
+    //        {
+    //            case CurrentState.attack:
+    //                bossAnimator.SetTrigger("Melee Attack");
+    //                break;
+
+    //            case CurrentState.idle:
+    //                break;
+    //        }
+
+    //        yield return null;
+    //    }
+
+
+    //}
+
 
     void Update()
     {
         // 유령이 플레이어를 따라오게
 
-        //nav.SetDestination(target.transform.position);
         transform.LookAt(target.transform);
+
+        if (!isDead)
+        {
+            float dist = Vector3.Distance(playerTransform.position, bossTransform.position);
+
+            if (dist <= attackDist) // 공격해야하는 범위 내에 들어오면 공격 상태로 변ㄱ
+            {
+                curState = CurrentState.attack;
+                bossAnimator.SetTrigger("Melee Attack");
+
+            }
+
+            else
+            {
+                curState = CurrentState.idle;
+
+            }
+        }
+
+        else
+        {
+            bossAnimator.SetTrigger("Die");
+        }
 
     }
 
@@ -42,6 +123,7 @@ public class Boss : LivingEntity
         base.OnDamage(damage, hitPoint, hitNormal);
     }
 
+
     // 사망 처리
     public override void Die()
     {
@@ -55,6 +137,8 @@ public class Boss : LivingEntity
             enemyColliders[i].enabled = false;
         }
 
-        Destroy(gameObject);
+        isDead = true;
+
+        //Destroy(gameObject);
     }
 }
