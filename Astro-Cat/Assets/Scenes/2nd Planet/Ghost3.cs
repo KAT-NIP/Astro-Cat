@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Ghost3 : LivingEntity
 {
@@ -11,6 +12,13 @@ public class Ghost3 : LivingEntity
     GameObject target;
 
     Animator anim;
+
+    //public float damage = 20f;
+    public float timeBetAttack = 2.0f;
+    public float lastAttackTime;
+
+    public GameObject firePoint;
+    public GameObject VFX;
     void Start()
     {
         //Ghost1Rigidbody = GetComponent<Rigidbody>();
@@ -33,6 +41,7 @@ public class Ghost3 : LivingEntity
         //{
         //    nav.SetDestination(transform.position);
         //}
+        Attack();
     }
 
     void OnTriggerEnter(Collider other)
@@ -42,13 +51,25 @@ public class Ghost3 : LivingEntity
             //GameObject player = other.GetComponent<GameObject>();
             Debug.Log("부딪힘");
         }
-
     }
 
     public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
     {
         // LivingEntity의 OnDamage()를 실행하여 데미지 적용
         base.OnDamage(damage, hitPoint, hitNormal);
+    }
+
+    private void Attack()
+    {
+        if(!dead && Time.time >= lastAttackTime + timeBetAttack)
+        {
+            if(target != null)
+            {
+                lastAttackTime = Time.time;
+                SpawnVFX();
+                anim.SetTrigger("Attack");
+            }
+        }
     }
 
     // 사망 처리
@@ -63,7 +84,21 @@ public class Ghost3 : LivingEntity
         {
             enemyColliders[i].enabled = false;
         }
-
         Destroy(gameObject, 1f);
+    }
+
+    private void SpawnVFX()
+    {
+        GameObject vfx;
+        vfx = Instantiate(VFX, firePoint.transform.position, Quaternion.identity);
+        vfx.transform.localRotation = gameObject.transform.rotation;
+
+        if (firePoint != null)
+        {
+            vfx = Instantiate(VFX, firePoint.transform.position, Quaternion.identity);
+            vfx.transform.localRotation = gameObject.transform.rotation;
+        }
+        else
+            vfx = Instantiate(VFX);
     }
 }

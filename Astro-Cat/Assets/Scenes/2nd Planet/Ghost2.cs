@@ -50,6 +50,7 @@ public class Ghost2 : LivingEntity
     {
         // LivingEntity의 OnDamage()를 실행하여 데미지 적용
         base.OnDamage(damage, hitPoint, hitNormal);
+        anim.SetTrigger("Attacked");
     }
 
     // 사망 처리
