@@ -14,7 +14,7 @@ public class Ghost3 : LivingEntity
     Animator anim;
 
     //public float damage = 20f;
-    public float timeBetAttack = 2.0f;
+    public float timeBetAttack = 5.0f;
     public float lastAttackTime;
 
     public GameObject firePoint;
@@ -26,6 +26,7 @@ public class Ghost3 : LivingEntity
         health = 75;
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+
         target = GameObject.FindGameObjectWithTag("Player");
         //Destroy(gameObject, 2f);
     }
@@ -61,13 +62,15 @@ public class Ghost3 : LivingEntity
 
     private void Attack()
     {
+
         if(!dead && Time.time >= lastAttackTime + timeBetAttack)
         {
-            if(target != null)
+
+            anim.SetTrigger("Attack");
+            if (target != null)
             {
                 lastAttackTime = Time.time;
                 SpawnVFX();
-                anim.SetTrigger("Attack");
             }
         }
     }
@@ -91,14 +94,14 @@ public class Ghost3 : LivingEntity
     {
         GameObject vfx;
         vfx = Instantiate(VFX, firePoint.transform.position, Quaternion.identity);
-        vfx.transform.localRotation = gameObject.transform.rotation;
+        vfx.transform.localRotation = firePoint.transform.rotation;
 
-        if (firePoint != null)
-        {
-            vfx = Instantiate(VFX, firePoint.transform.position, Quaternion.identity);
-            vfx.transform.localRotation = gameObject.transform.rotation;
-        }
-        else
-            vfx = Instantiate(VFX);
+        //if (firePoint != null)
+        //{
+        //    vfx = Instantiate(VFX, firePoint.transform.position, Quaternion.identity);
+        //    vfx.transform.localRotation = target.transform.rotation;
+        //}
+        //else
+        //    vfx = Instantiate(VFX);
     }
 }
