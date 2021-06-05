@@ -9,6 +9,7 @@ TagManager:
   - Devil
   - Angel
   - Gem
+  - Bullet
   layers:
   - Default
   - TransparentFX

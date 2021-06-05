@@ -10,13 +10,14 @@ public class Ghost3 : LivingEntity
     NavMeshAgent nav;
     GameObject target;
 
-
+    Animator anim;
     void Start()
     {
         //Ghost1Rigidbody = GetComponent<Rigidbody>();
         //Ghost1Rigidbody.velocity = transform.forward * speed;
         health = 75;
         nav = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
         target = GameObject.FindGameObjectWithTag("Player");
         //Destroy(gameObject, 2f);
     }
@@ -40,7 +41,6 @@ public class Ghost3 : LivingEntity
         {
             //GameObject player = other.GetComponent<GameObject>();
             Debug.Log("부딪힘");
-
         }
 
     }
@@ -56,7 +56,7 @@ public class Ghost3 : LivingEntity
     {
         // LivingEntity의 Die()를 실행하여 기본 사망 처리 실행
         base.Die();
-
+        anim.SetTrigger("Die");
         Collider[] enemyColliders = GetComponents<Collider>();
 
         for (int i = 0; i < enemyColliders.Length; i++)
@@ -64,6 +64,6 @@ public class Ghost3 : LivingEntity
             enemyColliders[i].enabled = false;
         }
 
-        Destroy(gameObject);
+        Destroy(gameObject, 1f);
     }
 }
