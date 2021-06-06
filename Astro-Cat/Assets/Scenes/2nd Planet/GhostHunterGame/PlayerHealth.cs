@@ -44,12 +44,14 @@ public class PlayerHealth : LivingEntity
     {
         if(collision.collider.CompareTag("Bullet"))
         {
-            health -= 20;
-            Debug.Log("Remain Health = " + health);
-
-            if(health <= 0 && !dead)
+            if(!dead)
             {
-                Die();
+                health -= 20;
+                Debug.Log("Remain Health = " + health);
+
+                if(health <= 0)
+                    Die();
+                
             }
         }
     }

@@ -34,11 +34,11 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        player = GetComponent<LivingEntity>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<LivingEntity>();
     }
     void Update()
     {
-        if(!player.dead)
+        if (!player.dead)
         {
             Gun gun = GameObject.Find("Gun").GetComponent<Gun>();
             bulletCnt = gun.magAmmo;
