@@ -2,9 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : LivingEntity
 {
+    public Slider healthSlider;
+
     public enum CurrentState { idle, attack, dead }; // 보스 상태
     public CurrentState curState = CurrentState.idle;
 
@@ -29,7 +32,7 @@ public class Boss : LivingEntity
     void Start()
     {
 
-        health = 50;
+        health = 100;
         target = GameObject.FindGameObjectWithTag("Player");
 
         bossTransform = this.gameObject.GetComponent<Transform>();
@@ -82,12 +85,14 @@ public class Boss : LivingEntity
 
     }
 
+
     public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
     {
         // LivingEntity의 OnDamage()를 실행하여 데미지 적용
         base.OnDamage(damage, hitPoint, hitNormal);
         bossAnimator.SetTrigger("Take Damage");
-        
+
+        healthSlider.value = health; // 체력 슬라이더에 반영
     }
 
 
@@ -96,9 +101,10 @@ public class Boss : LivingEntity
     {
 
         bossAnimator.SetTrigger("Die");
-
         // LivingEntity의 Die()를 실행하여 기본 사망 처리 실행
         base.Die();
+
+        healthSlider.gameObject.SetActive(false); // 체력 슬라이더 비활성화
 
         Collider[] enemyColliders = GetComponents<Collider>();
 
