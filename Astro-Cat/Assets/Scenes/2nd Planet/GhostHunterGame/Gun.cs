@@ -67,6 +67,7 @@ public class Gun : MonoBehaviour
         }
     }
 
+
     // 실제 발사 처리
     private void Shot()
     {
@@ -96,6 +97,7 @@ public class Gun : MonoBehaviour
             state = State.Empty;
         }
     }
+
 
     // 발사 이펙트와 소리를 재생하고 총알 궤적을 그린다
     private IEnumerator ShotEffect(Vector3 hitPosition)
@@ -149,4 +151,5 @@ public class Gun : MonoBehaviour
         // 총의 현재 상태를 발사 준비된 상태로 변경
         state = State.Ready;
     }
+
 }
