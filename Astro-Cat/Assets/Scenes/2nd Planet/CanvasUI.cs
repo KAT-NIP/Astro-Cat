@@ -15,24 +15,34 @@ public class CanvasUI : MonoBehaviour
     private int Ghost3Cnt;
     private int bulletCnt;
 
+    public LivingEntity player;
     // Update is called once per frame
+
+    private void Awake()
+    {
+        player = GetComponent<LivingEntity>();
+    }
     void Update()
     {
-        Gun gun = GameObject.Find("Gun").GetComponent<Gun>();
-        bulletCnt = gun.magAmmo;
+        if(!player.dead)
+        {
+            Gun gun = GameObject.Find("Gun").GetComponent<Gun>();
+            bulletCnt = gun.magAmmo;
 
-        GameObject[] ghost1 = GameObject.FindGameObjectsWithTag("Ghost1");
-        GameObject[] ghost2 = GameObject.FindGameObjectsWithTag("Ghost2");
-        GameObject[] ghost3 = GameObject.FindGameObjectsWithTag("Ghost3");
+            GameObject[] ghost1 = GameObject.FindGameObjectsWithTag("Ghost1");
+            GameObject[] ghost2 = GameObject.FindGameObjectsWithTag("Ghost2");
+            GameObject[] ghost3 = GameObject.FindGameObjectsWithTag("Ghost3");
 
-        Ghost1Cnt = ghost1.Length;
-        Ghost2Cnt = ghost2.Length;
-        Ghost3Cnt = ghost3.Length;
+            Ghost1Cnt = ghost1.Length;
+            Ghost2Cnt = ghost2.Length;
+            Ghost3Cnt = ghost3.Length;
 
-        Ghost1Text.text = "x " + Ghost1Cnt;
-        Ghost2Text.text = "x " + Ghost2Cnt;
-        Ghost3Text.text = "x " + Ghost3Cnt;
+            Ghost1Text.text = "x " + Ghost1Cnt;
+            Ghost2Text.text = "x " + Ghost2Cnt;
+            Ghost3Text.text = "x " + Ghost3Cnt;
 
-        bulletText.text = "x " + bulletCnt;
+            bulletText.text = "x " + bulletCnt;
+        }
+        
     }
 }

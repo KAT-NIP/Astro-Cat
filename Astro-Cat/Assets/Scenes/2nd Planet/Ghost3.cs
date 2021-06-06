@@ -62,10 +62,8 @@ public class Ghost3 : LivingEntity
 
     private void Attack()
     {
-
         if(!dead && Time.time >= lastAttackTime + timeBetAttack)
         {
-
             anim.SetTrigger("Attack");
             if (target != null)
             {

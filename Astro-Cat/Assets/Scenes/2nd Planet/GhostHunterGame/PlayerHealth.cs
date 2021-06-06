@@ -24,16 +24,13 @@ public class PlayerHealth : LivingEntity
 
     public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
     {
-        
         base.OnDamage(damage, hitPoint, hitNormal);
-        Debug.Log("Remain Health = " + health);
     }
 
 
     public override void Die()
     {
         base.Die();
-
         playerMovement.enabled = false;
         playerShooter.enabled = false;
     }
@@ -49,6 +46,11 @@ public class PlayerHealth : LivingEntity
         {
             health -= 20;
             Debug.Log("Remain Health = " + health);
+
+            if(health <= 0 && !dead)
+            {
+                Die();
+            }
         }
     }
 }
