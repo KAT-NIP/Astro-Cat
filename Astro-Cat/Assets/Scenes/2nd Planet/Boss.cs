@@ -11,11 +11,20 @@ public class Boss : LivingEntity
     private Transform playerTransform; // 플레이어 위치
     private Transform bossTransform; // 보스 위치
     private Animator bossAnimator;
-    public Animation anim;
+
+    public AudioClip audioAttack;
+    public AudioClip audioDie;
+
+    AudioSource audioSource;
 
     private bool isDead = false; // 사망 여부
 
     GameObject target;
+
+    private void Awake()
+    {
+        this.audioSource = GetComponent<AudioSource>();
+    }
 
     void Start()
     {
@@ -27,8 +36,6 @@ public class Boss : LivingEntity
         playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         bossAnimator = this.gameObject.GetComponent<Animator>();
 
-        // StartCoroutine(this.CheckState());
-        // StartCoroutine(this.CheckStateForAction());
 
 
     }
@@ -69,7 +76,8 @@ public class Boss : LivingEntity
         {
             //GameObject player = other.GetComponent<GameObject>();
             Debug.Log("플레이어에게 공격 성공");
-
+            audioSource.clip = audioAttack;
+            audioSource.Play();
         }
 
     }
@@ -79,6 +87,7 @@ public class Boss : LivingEntity
         // LivingEntity의 OnDamage()를 실행하여 데미지 적용
         base.OnDamage(damage, hitPoint, hitNormal);
         bossAnimator.SetTrigger("Take Damage");
+        
     }
 
 
@@ -101,6 +110,10 @@ public class Boss : LivingEntity
         isDead = true;
 
         bossAnimator.SetTrigger("Die");
+        audioSource.clip = audioDie;
+        audioSource.Play();
+
+        Debug.Log("보스 죽음");
         //Destroy(gameObject);
     }
 }
