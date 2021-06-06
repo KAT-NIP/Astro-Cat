@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 3806433809306000340}
   m_Layer: 0
   m_Name: Ghost2
-  m_TagString: Untagged
+  m_TagString: Ghost2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0cc28779ae44197b09f8c0f7254cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHealth: 100
 --- !u!1 &6484571360434873229
 GameObject:
   m_ObjectHideFlags: 0
