@@ -30,6 +30,7 @@ public class Gun : MonoBehaviour
     public float damage = 25; // 공격력
     private float fireDistance = 50f; // 사정거리
 
+
     public int magCapacity = 100; // 탄창 용량
     public int magAmmo; // 현재 탄창에 남아있는 탄약
 
@@ -147,7 +148,8 @@ public class Gun : MonoBehaviour
         int ammoToFill = magCapacity - magAmmo;
 
         magAmmo += ammoToFill;
-        
+
+        //Debug.Log("magAmmo " + magAmmo);
         // 총의 현재 상태를 발사 준비된 상태로 변경
         state = State.Ready;
     }

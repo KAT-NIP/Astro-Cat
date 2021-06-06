@@ -39,6 +39,7 @@ public class PlayerShooter : MonoBehaviour
             if (gun.Reload())
             {
                 playerAnimator.SetTrigger("Reload");
+
             }
         }
 
@@ -48,10 +49,12 @@ public class PlayerShooter : MonoBehaviour
     // 탄약 UI 갱신
     private void UpdateUI()
     {
-        //if (gun != null && UIManager.instance != null)
-        //{
-        //    // UI 매니저의 탄약 텍스트에 탄창의 탄약과 남은 전체 탄약을 표시
-        //    UIManager.instance.UpdateAmmoText(gun.magAmmo, gun.ammoRemain);
-        //}
+        if (gun != null && UIManager.instance != null)
+        {
+            // UI 매니저의 탄약 텍스트에 탄창의 탄약을 표시
+            UIManager.instance.UpdateAmmoText(gun.magAmmo);
+        }
+
+
     }
 }
