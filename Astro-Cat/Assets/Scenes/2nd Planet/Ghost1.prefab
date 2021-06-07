@@ -940,7 +940,7 @@ GameObject:
   - component: {fileID: 8723641438828966872}
   m_Layer: 0
   m_Name: Ghost1
-  m_TagString: Devil
+  m_TagString: Ghost1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

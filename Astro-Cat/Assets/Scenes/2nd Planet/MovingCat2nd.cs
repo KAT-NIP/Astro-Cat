@@ -93,7 +93,7 @@ public class MovingCat2nd : MonoBehaviour
 
             else if (npc_clickCount == 6)
             {
-                SceneManager.LoadScene("Ghost Hunter Game");
+                SceneManager.LoadScene("Ghost Hunter Game copy copy");
             }
 
             else if (clickCount == 2 && (devil_clickCount % 2 == 1)) // 악마만두
