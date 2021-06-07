@@ -100,7 +100,7 @@ public class beforeGame : MonoBehaviour
             else if(mouseClick == 7)
             {
                 talkPanel.SetActive(false);
-                SceneManager.LoadScene("3rd Planet Maze");
+                SceneManager.LoadScene("Maze");
             }
         }
         
