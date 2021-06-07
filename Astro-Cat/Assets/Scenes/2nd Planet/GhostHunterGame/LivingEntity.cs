@@ -38,11 +38,17 @@ public class LivingEntity : MonoBehaviour, IDamageable
 
     public virtual void Die()
     {
-        if(onDeath != null) {
+        UpdateUI();
+        if (onDeath != null) {
             onDeath();
         }
-
+        
 
         dead = true;
+    }
+
+    private void UpdateUI()
+    {
+        UIManager.instance.UpdateLifeImage();
     }
 }

@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Ghost1 : LivingEntity
 {
-    //public float speed = 8f;
-    //private Rigidbody Ghost1Rigidbody;
+
     NavMeshAgent nav;
     GameObject target;
 
@@ -14,13 +13,12 @@ public class Ghost1 : LivingEntity
 
     void Start()
     {
-        //Ghost1Rigidbody = GetComponent<Rigidbody>();
-        //Ghost1Rigidbody.velocity = transform.forward * speed;
+
         health = 25;
         anim = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player");
-        //Destroy(gameObject, 2f);
+
     }
 
     void Update()

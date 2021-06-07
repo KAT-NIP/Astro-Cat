@@ -59,11 +59,11 @@ public class Boss : LivingEntity
         {
             float dist = Vector3.Distance(playerTransform.position, bossTransform.position);
 
-            if (dist <= 4.5) // 공격해야하는 범위 내에 들어오면 공격 상태로 변ㄱ
+            if (dist <= 4.5) // 공격해야하는 범위 내에 들어오면 공격 상태로 변경
             {
                 curState = CurrentState.attack;
                 bossAnimator.SetTrigger("Melee Attack");
-                Debug.Log(dist);
+
             }
 
             else
@@ -82,7 +82,7 @@ public class Boss : LivingEntity
         if (other.tag == "Player")
         {
             //GameObject player = other.GetComponent<GameObject>();
-            Debug.Log("플레이어에게 공격 성공");
+            //Debug.Log("플레이어에게 공격 성공");
             audioSource.clip = audioAttack;
             audioSource.Play();
         }

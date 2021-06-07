@@ -25,6 +25,7 @@ public class PlayerHealth : LivingEntity
     public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
     {
         base.OnDamage(damage, hitPoint, hitNormal);
+
     }
 
 
@@ -34,6 +35,7 @@ public class PlayerHealth : LivingEntity
         playerMovement.enabled = false;
         playerShooter.enabled = false;
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -50,9 +52,45 @@ public class PlayerHealth : LivingEntity
                 Debug.Log("Remain Health = " + health);
 
                 if(health <= 0)
+                {
+                    UpdateUI();
                     Die();
-                
+                    
+                }
+                    
+
+                Debug.Log("playerhealth" + health);
+                UpdateUI();
             }
+
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "BossAttack")
+        {
+            if (!dead)
+            {
+                health -= 20;
+                Debug.Log("Remain Health = " + health);
+
+                if(health <= 0)
+                {
+                    UpdateUI();
+                    Die();
+                    
+                }
+
+                Debug.Log("playerhealth" + health);
+                UpdateUI();
+            }
+
+            Debug.Log("보스공격받음");
+        }
+    }
+    private void UpdateUI()
+    {
+        UIManager.instance.UpdateLifeImage();
     }
 }

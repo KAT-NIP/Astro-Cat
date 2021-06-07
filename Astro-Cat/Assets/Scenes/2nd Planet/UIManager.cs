@@ -31,7 +31,11 @@ public class UIManager : MonoBehaviour
     private int Ghost3Cnt;
     private int bulletCnt;
 
-    
+    public Image heart1;
+    public Image heart2;
+    public Image heart3;
+    public Image heart4;
+    public Image heart5;
 
     public LivingEntity player;
     // Update is called once per frame
@@ -65,12 +69,37 @@ public class UIManager : MonoBehaviour
 
         Debug.Log("deadLife" + UIManager.deadLife);
 
-        if (UIManager.deadLife >= 10)
+        if (UIManager.deadLife >= 3)
         {
             GameObject.Find("BossAppear").transform.Find("Boss").gameObject.SetActive(true);
         }
 
         
+    }
+
+    public void UpdateLifeImage()
+    {
+        Debug.Log("UImanger"+player.health);
+        if (player.health == 80)
+        {
+            heart1.gameObject.SetActive(false);
+        }
+        else if (player.health == 60)
+        {
+            heart2.gameObject.SetActive(false);
+        }
+        else if (player.health == 40)
+        {
+            heart3.gameObject.SetActive(false);
+        }
+        else if (player.health == 20)
+        {
+            heart4.gameObject.SetActive(false);
+        }
+        else if (player.health == 0) 
+        {
+            heart5.gameObject.SetActive(false);
+        }
     }
 
     public void UpdateAmmoText(int magAmmo)
