@@ -64,6 +64,26 @@ public class PlayerHealth : LivingEntity
             }
 
         }
+
+        else if (collision.collider.CompareTag("Devil"))
+        {
+            if (!dead)
+            {
+                health -= 20;
+                Debug.Log("Remain Health = " + health);
+
+                if (health <= 0)
+                {
+                    UpdateUI();
+                    Die();
+
+                }
+
+
+                Debug.Log("playerhealth" + health);
+                UpdateUI();
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)

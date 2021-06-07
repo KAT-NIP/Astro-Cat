@@ -940,7 +940,7 @@ GameObject:
   - component: {fileID: 8723641438828966872}
   m_Layer: 0
   m_Name: Ghost1
-  m_TagString: Ghost1
+  m_TagString: Devil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1020,7 +1020,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8595807772476734931}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
