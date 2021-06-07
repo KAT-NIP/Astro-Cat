@@ -17,10 +17,12 @@ public class Boss : LivingEntity
 
     public AudioClip audioAttack;
     public AudioClip audioDie;
+    public AudioClip bossAppear;
 
     AudioSource audioSource;
 
     private bool isDead = false; // 사망 여부
+
 
     GameObject target;
 
@@ -28,6 +30,7 @@ public class Boss : LivingEntity
     {
         this.audioSource = GetComponent<AudioSource>();
     }
+
 
     void Start()
     {
@@ -39,8 +42,8 @@ public class Boss : LivingEntity
         playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         bossAnimator = this.gameObject.GetComponent<Animator>();
 
-
-
+        audioSource.clip = bossAppear;
+        audioSource.Play();
     }
 
 
@@ -56,7 +59,7 @@ public class Boss : LivingEntity
         {
             float dist = Vector3.Distance(playerTransform.position, bossTransform.position);
 
-            if (dist <= 5) // 공격해야하는 범위 내에 들어오면 공격 상태로 변ㄱ
+            if (dist <= 4.5) // 공격해야하는 범위 내에 들어오면 공격 상태로 변ㄱ
             {
                 curState = CurrentState.attack;
                 bossAnimator.SetTrigger("Melee Attack");
@@ -68,7 +71,8 @@ public class Boss : LivingEntity
                 curState = CurrentState.idle;
 
             }
-        } 
+
+        }
 
 
     }
@@ -85,6 +89,7 @@ public class Boss : LivingEntity
 
     }
 
+    
 
     public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
     {

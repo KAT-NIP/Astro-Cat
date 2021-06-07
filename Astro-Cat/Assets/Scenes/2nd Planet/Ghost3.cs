@@ -85,6 +85,9 @@ public class Ghost3 : LivingEntity
         {
             enemyColliders[i].enabled = false;
         }
+
+        UIManager.deadLife++;
+
         Destroy(gameObject, 1f);
     }
 

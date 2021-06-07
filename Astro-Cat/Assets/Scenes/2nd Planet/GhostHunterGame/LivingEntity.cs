@@ -10,6 +10,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
     public bool dead { get; protected set; }
     public event Action onDeath;
 
+
     protected virtual void OnEnable()
     {
         dead = false;
@@ -21,6 +22,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
 
         if(health <= 0 && !dead)
         {
+
             Die();
         }
     }
@@ -39,6 +41,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
         if(onDeath != null) {
             onDeath();
         }
+
 
         dead = true;
     }

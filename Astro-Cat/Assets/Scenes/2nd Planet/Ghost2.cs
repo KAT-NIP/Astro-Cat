@@ -66,6 +66,8 @@ public class Ghost2 : LivingEntity
             enemyColliders[i].enabled = false;
         }
 
+        UIManager.deadLife++;
+
         Destroy(gameObject, 1f);
     }
 }

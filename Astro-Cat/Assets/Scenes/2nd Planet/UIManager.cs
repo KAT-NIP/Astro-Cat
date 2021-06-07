@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public static int deadLife; // 죽은 생명 수
+
     public static UIManager instance
     {
         get
@@ -28,6 +30,8 @@ public class UIManager : MonoBehaviour
     private int Ghost2Cnt;
     private int Ghost3Cnt;
     private int bulletCnt;
+
+    
 
     public LivingEntity player;
     // Update is called once per frame
@@ -56,6 +60,14 @@ public class UIManager : MonoBehaviour
             Ghost3Text.text = "x " + Ghost3Cnt;
 
             bulletText.text = "x " + bulletCnt;
+        }
+
+
+        Debug.Log("deadLife" + UIManager.deadLife);
+
+        if (UIManager.deadLife >= 10)
+        {
+            GameObject.Find("BossAppear").transform.Find("Boss").gameObject.SetActive(true);
         }
 
         
