@@ -22,6 +22,7 @@ public class CrowMove : MonoBehaviour
     void Update()
     {
         Vector3 tempPos = target.transform.position;
+        tempPos.z = target.transform.position.z - 10;
         tempPos.y = crow.transform.position.y;
         crow.transform.position = tempPos;
         crow.transform.rotation = target.transform.rotation;
