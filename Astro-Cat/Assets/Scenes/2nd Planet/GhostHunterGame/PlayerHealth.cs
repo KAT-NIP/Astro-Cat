@@ -44,7 +44,7 @@ public class PlayerHealth : LivingEntity
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.CompareTag("Bullet"))
+        if(collision.collider.CompareTag("Bullet")) // Ghost 3
         {
             if(!dead)
             {
@@ -65,7 +65,7 @@ public class PlayerHealth : LivingEntity
 
         }
 
-        else if (collision.collider.CompareTag("Devil"))
+        else if (collision.collider.CompareTag("Devil")) // Ghost1,2
         {
             if (!dead)
             {
@@ -88,7 +88,7 @@ public class PlayerHealth : LivingEntity
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "BossAttack")
+        if(other.tag == "BossAttack") // Boss
         {
             if (!dead)
             {
