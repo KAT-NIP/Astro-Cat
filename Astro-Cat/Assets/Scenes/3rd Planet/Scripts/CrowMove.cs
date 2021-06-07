@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class CrowMove : MonoBehaviour
 {
-    NavMeshAgent nav;
+    public GameObject crow;
+    //public NavMeshAgent nav;
     GameObject target;
 
     Animator anim;
@@ -13,13 +14,16 @@ public class CrowMove : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        nav = GetComponent<NavMeshAgent>();
+        //nav = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        nav.SetDestination(target.transform.position);
+        Vector3 tempPos = target.transform.position;
+        tempPos.y = crow.transform.position.y;
+        crow.transform.position = tempPos;
+        crow.transform.rotation = target.transform.rotation;
     }
 }
