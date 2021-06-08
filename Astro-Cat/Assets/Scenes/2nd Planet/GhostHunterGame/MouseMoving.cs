@@ -77,7 +77,6 @@ public class MouseMoving : MonoBehaviour
             rigid.AddForce(Vector3.up * 5, ForceMode.Impulse);
             anim.SetTrigger("doJump");
             isJump = true;
-
         }
     }
 

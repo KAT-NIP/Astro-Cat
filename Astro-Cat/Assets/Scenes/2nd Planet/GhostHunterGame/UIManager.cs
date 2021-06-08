@@ -66,7 +66,8 @@ public class UIManager : MonoBehaviour
         if(isGameOver)
         {
             gameOverText.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.R))
+            deadLife = 0;
+            if (Input.GetKeyDown(KeyCode.R))
             {
                 RestartScene();
             }

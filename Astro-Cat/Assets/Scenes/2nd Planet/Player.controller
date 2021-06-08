@@ -196,7 +196,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Upper Layer
     m_StateMachine: {fileID: 7145198449699230117}
-    m_Mask: {fileID: 0}
+    m_Mask: {fileID: 31900000, guid: cf049e3bdfb7f491da0aab796b6ee25f, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -382,7 +382,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 330, y: 30, z: 0}
+  m_ExitPosition: {x: 250, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -8749947055742658255}
 --- !u!1107 &9069515818395676810
