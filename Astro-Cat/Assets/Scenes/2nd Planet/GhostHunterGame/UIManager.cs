@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
         if (GameClear && Input.GetMouseButtonDown(0))
         {
             Debug.Log("씬 변경");
-            SceneManager.LoadScene("Default Planet");
+            SceneManager.LoadScene("2nd Planet after game");
         }
 
         if(isGameOver)

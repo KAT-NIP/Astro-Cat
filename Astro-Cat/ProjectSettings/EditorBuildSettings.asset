@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Ghost Hunter Game copy copy.unity
     guid: 3dea5205973da49a487700df3ebcb704
   - enabled: 1
+    path: Assets/Scenes/2nd Planet after game.unity
+    guid: 35ce785db1b1d40e18a31ee9fdfd2697
+  - enabled: 1
     path: Assets/Scenes/Wormhole_FX/Wormhole(2ndTo3rd).unity
     guid: b8abe0317b8d24628be234446c858937
   - enabled: 0
