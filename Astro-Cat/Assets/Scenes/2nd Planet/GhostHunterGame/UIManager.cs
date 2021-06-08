@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     }
 
     private static UIManager m_instance; // 싱글톤이 할당될 변수
+    public GameObject GamePanel;
     public Text Ghost1Text;
     public Text Ghost2Text;
     public Text Ghost3Text;
@@ -54,6 +55,8 @@ public class UIManager : MonoBehaviour
     }
     void Update()
     {
+
+
         // 게임 클리어 시 행성 이동
         if (GameClear && Input.GetMouseButtonDown(0))
         {
@@ -61,6 +64,13 @@ public class UIManager : MonoBehaviour
             Debug.Log("씬 변경");
             SceneManager.LoadScene("Default Planet");
 
+        }
+
+        if (GameClear)
+        {
+            GameObject.FindGameObjectWithTag("Ghost1").SetActive(false);
+            GameObject.FindGameObjectWithTag("Ghost2").SetActive(false);
+            GameObject.FindGameObjectWithTag("Ghost3").SetActive(false);
         }
 
         if (!player.dead)
@@ -96,17 +106,22 @@ public class UIManager : MonoBehaviour
         if (boss.dead)
         {
             GameClear = true;
-
+            GamePanel.SetActive(false);
             talkPanel.SetActive(true);
 
             GameObject.Find("Ghost1(Clone)").SetActive(false);
             GameObject.Find("Ghost2(Clone)").SetActive(false);
             GameObject.Find("Ghost3(Clone)").SetActive(false);
+            GameObject.FindGameObjectWithTag("Ghost1").SetActive(false);
+            GameObject.FindGameObjectWithTag("Ghost2").SetActive(false);
             GameObject.FindGameObjectWithTag("Ghost3").SetActive(false);
             
             GameObject.FindGameObjectWithTag("Bullet").SetActive(false);
 
+            
         }
+
+
 
 
 

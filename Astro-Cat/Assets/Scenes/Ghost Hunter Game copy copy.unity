@@ -19722,6 +19722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8467607ec79044252a095e7214e5e91b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GamePanel: {fileID: 1687003682}
   Ghost1Text: {fileID: 785123758}
   Ghost2Text: {fileID: 1617594090}
   Ghost3Text: {fileID: 929002545}
