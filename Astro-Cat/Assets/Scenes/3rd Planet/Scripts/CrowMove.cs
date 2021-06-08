@@ -30,33 +30,25 @@ public class CrowMove : MonoBehaviour
     void Update()
     {
         tempPos = target.transform.position;
-        if (target.transform.rotation == Quaternion.Euler(new Vector3(0, 90, 0)))
-        {
-            Debug.Log("Before");
-            Debug.Log(tempPos.x);
-            tempPos.x = tempPos.x - 10;
-            Debug.Log(tempPos.x);
-        }
+        //if (target.transform.rotation == Quaternion.Euler(new Vector3(0, 90, 0)))
+        //{
+        //    tempPos.x = tempPos.x - 10;
+        //}
 
-        else if(target.transform.rotation == Quaternion.Euler(new Vector3(0, -90, 0)))
-        {
-            Debug.Log("Before");
-            Debug.Log(tempPos.x);
-            tempPos.x = tempPos.x + 10;
-            Debug.Log(tempPos.x);
-        }
+        //else if(target.transform.rotation == Quaternion.Euler(new Vector3(0, -90, 0)))
+        //{
+        //    tempPos.x = tempPos.x + 10;
+        //}
 
-        else if(target.transform.rotation == Quaternion.Euler(new Vector3(0, -180, 0)))
-        {
-            Debug.Log(-180);
-            tempPos.z = tempPos.z + 10;
-        }
+        //else if(target.transform.rotation == Quaternion.Euler(new Vector3(0, -180, 0)))
+        //{
+        //    tempPos.z = tempPos.z + 10;
+        //}
 
-        else if(target.transform.rotation.y == 0)
-        {
-            Debug.Log(0);
-            tempPos.z = tempPos.z - 10;
-        }
+        //else if(target.transform.rotation.y == 0)
+        //{
+        //    tempPos.z = tempPos.z - 10;
+        //}
         //tempPos.z = target.transform.position.z - 10;
         tempPos.y = crow.transform.position.y;
         crow.transform.position = tempPos;
