@@ -102,7 +102,7 @@ public class UIManager : MonoBehaviour
             GameObject.Find("Ghost1(Clone)").SetActive(false);
             GameObject.Find("Ghost2(Clone)").SetActive(false);
             GameObject.Find("Ghost3(Clone)").SetActive(false);
-
+            GameObject.FindGameObjectWithTag("Ghost3").SetActive(false);
             
             GameObject.FindGameObjectWithTag("Bullet").SetActive(false);
 
