@@ -38,6 +38,7 @@ public class PlayerHealth : LivingEntity
         base.Die();
         playerMovement.enabled = false;
         playerShooter.enabled = false;
+        UIManager.instance.isGameOver = true;
     }
 
     // Update is called once per frame
@@ -112,7 +113,7 @@ public class PlayerHealth : LivingEntity
                     Die();
                     
                 }
-
+                
                 Debug.Log("playerhealth" + health);
                 UpdateUI();
             }

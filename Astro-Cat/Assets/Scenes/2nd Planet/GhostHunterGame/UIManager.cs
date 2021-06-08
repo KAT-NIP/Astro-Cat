@@ -42,26 +42,34 @@ public class UIManager : MonoBehaviour
     public LivingEntity player;
     public Boss boss;
     public static bool GameClear = false; // 게임 클리어 시
+    public bool isGameOver;
 
     public GameObject talkPanel;
     // Update is called once per frame
+    public GameObject gameOverText;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<LivingEntity>();
-        
+        isGameOver = false;
     }
+
     void Update()
     {
-
-
         // 게임 클리어 시 행성 이동
         if (GameClear && Input.GetMouseButtonDown(0))
         {
-
             Debug.Log("씬 변경");
             SceneManager.LoadScene("Default Planet");
+        }
 
+        if(isGameOver)
+        {
+            gameOverText.SetActive(true);
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                RestartScene();
+            }
         }
 
         if (GameClear)
@@ -201,5 +209,10 @@ public class UIManager : MonoBehaviour
     public void UpdateAmmoText(int magAmmo)
     {
         bulletText.text = "x " + magAmmo;
+    }
+
+    private void RestartScene()
+    {
+        SceneManager.LoadScene("Ghost Hunter Game copy copy");
     }
 }
