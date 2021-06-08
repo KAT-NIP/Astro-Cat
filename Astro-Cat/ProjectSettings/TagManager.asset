@@ -14,6 +14,7 @@ TagManager:
   - Ghost2
   - Ghost3
   - BossAttack
+  - Boss
   layers:
   - Default
   - TransparentFX
