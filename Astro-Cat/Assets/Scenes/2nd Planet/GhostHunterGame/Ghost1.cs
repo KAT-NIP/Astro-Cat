@@ -13,7 +13,6 @@ public class Ghost1 : LivingEntity
 
     void Start()
     {
-
         health = 25;
         anim = GetComponent<Animator>();
         nav = GetComponent<NavMeshAgent>();

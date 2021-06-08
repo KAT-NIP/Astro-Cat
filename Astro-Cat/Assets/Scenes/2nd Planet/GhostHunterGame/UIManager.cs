@@ -43,8 +43,6 @@ public class UIManager : MonoBehaviour
     public Boss boss;
     public static bool GameClear = false; // 게임 클리어 시
 
-
-
     public GameObject talkPanel;
     // Update is called once per frame
 
@@ -68,9 +66,9 @@ public class UIManager : MonoBehaviour
 
         if (GameClear)
         {
-            GameObject.FindGameObjectWithTag("Ghost1").SetActive(false);
-            GameObject.FindGameObjectWithTag("Ghost2").SetActive(false);
-            GameObject.FindGameObjectWithTag("Ghost3").SetActive(false);
+            //GameObject.FindGameObjectWithTag("Ghost1").SetActive(false);
+            //GameObject.FindGameObjectWithTag("Ghost2").SetActive(false);
+            //GameObject.FindGameObjectWithTag("Ghost3").SetActive(false);
         }
 
         if (!player.dead)
@@ -94,8 +92,6 @@ public class UIManager : MonoBehaviour
         }
 
 
-        
-
         if (UIManager.deadLife >= 5)
         {
             GameObject.Find("BossAppear").transform.Find("Boss").gameObject.SetActive(true);
@@ -109,24 +105,31 @@ public class UIManager : MonoBehaviour
             GamePanel.SetActive(false);
             talkPanel.SetActive(true);
 
-            GameObject.Find("Ghost1(Clone)").SetActive(false);
-            GameObject.Find("Ghost2(Clone)").SetActive(false);
-            GameObject.Find("Ghost3(Clone)").SetActive(false);
-            GameObject.FindGameObjectWithTag("Ghost1").SetActive(false);
-            GameObject.FindGameObjectWithTag("Ghost2").SetActive(false);
-            GameObject.FindGameObjectWithTag("Ghost3").SetActive(false);
-            
-            GameObject.FindGameObjectWithTag("Bullet").SetActive(false);
+            //GameObject.Find("Ghost1(Clone)").SetActive(false);
+            //GameObject.Find("Ghost2(Clone)").SetActive(false);
+            //GameObject.Find("Ghost3(Clone)").SetActive(false);
+            //GameObject.FindGameObjectWithTag("Ghost1").SetActive(false);
+            //GameObject.FindGameObjectWithTag("Ghost2").SetActive(false);
+            //GameObject.FindGameObjectWithTag("Ghost3").SetActive(false);
 
-            
+            //GameObject.FindGameObjectWithTag("Bullet").SetActive(false);
+            GameObject[] ghost1 = GameObject.FindGameObjectsWithTag("Ghost1");
+            GameObject[] ghost2 = GameObject.FindGameObjectsWithTag("Ghost2");
+            GameObject[] ghost3 = GameObject.FindGameObjectsWithTag("Ghost3");
+
+            for(int i = 0; i < ghost1.Length; i++)
+            {
+                Destroy(ghost1[i]);
+            }
+            for (int i = 0; i < ghost2.Length; i++)
+            {
+                Destroy(ghost2[i]);
+            }
+            for (int i = 0; i < ghost3.Length; i++)
+            {
+                Destroy(ghost3[i]);
+            }
         }
-
-
-
-
-
-
-
     }
 
     public void UpdateLifeImage()
