@@ -29,21 +29,25 @@ public class PlayerShooter : MonoBehaviour
 
     private void Update()
     {
-        // 입력을 감지하고 총 발사하거나 재장전
-        if (Input.GetButton("Fire1"))
+        if (!UIManager.GameClear)
         {
-            gun.Fire();
-        }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            if (gun.Reload())
+            // 입력을 감지하고 총 발사하거나 재장전
+            if (Input.GetButton("Fire1"))
             {
-                playerAnimator.SetTrigger("Reload");
-
+                gun.Fire();
             }
+            else if (Input.GetKeyDown(KeyCode.R))
+            {
+                if (gun.Reload())
+                {
+                    playerAnimator.SetTrigger("Reload");
+
+                }
+            }
+
+            UpdateUI();
         }
 
-        UpdateUI();
     }
 
     // 탄약 UI 갱신

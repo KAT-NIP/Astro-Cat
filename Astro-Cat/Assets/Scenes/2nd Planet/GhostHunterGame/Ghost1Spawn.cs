@@ -24,19 +24,23 @@ public class Ghost1Spawn : MonoBehaviour
 
     void Update()
     {
-        timeAfterSpawn += Time.deltaTime;
-
-        // 유령 생성
-        if (timeAfterSpawn >= spawnRate)
+        if (!UIManager.GameClear)
         {
-            timeAfterSpawn = 0f;
+            timeAfterSpawn += Time.deltaTime;
 
-            GameObject Ghost1 = Instantiate(Ghost1Prefab, transform.position, transform.rotation);
+            // 유령 생성
+            if (timeAfterSpawn >= spawnRate)
+            {
+                timeAfterSpawn = 0f;
 
-            //Ghost1.transform.LookAt(target);
+                GameObject Ghost1 = Instantiate(Ghost1Prefab, transform.position, transform.rotation);
 
-            spawnRate = Random.Range(spawnRateMin, spawnRateMax);
+
+
+                spawnRate = Random.Range(spawnRateMin, spawnRateMax);
+            }
         }
+
 
     }
 }

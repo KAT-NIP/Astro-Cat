@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -39,6 +40,9 @@ public class UIManager : MonoBehaviour
 
     public LivingEntity player;
     public Boss boss;
+    public static bool GameClear = false; // 게임 클리어 시
+
+
 
     public GameObject talkPanel;
     // Update is called once per frame
@@ -50,6 +54,15 @@ public class UIManager : MonoBehaviour
     }
     void Update()
     {
+        // 게임 클리어 시 행성 이동
+        if (GameClear && Input.GetMouseButtonDown(0))
+        {
+
+            Debug.Log("씬 변경");
+            SceneManager.LoadScene("Default Planet");
+
+        }
+
         if (!player.dead)
         {
             Gun gun = GameObject.Find("Gun").GetComponent<Gun>();
@@ -71,9 +84,9 @@ public class UIManager : MonoBehaviour
         }
 
 
-        Debug.Log("deadLife" + UIManager.deadLife);
+        
 
-        if (UIManager.deadLife >= 3)
+        if (UIManager.deadLife >= 5)
         {
             GameObject.Find("BossAppear").transform.Find("Boss").gameObject.SetActive(true);
             boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<Boss>();
@@ -82,8 +95,20 @@ public class UIManager : MonoBehaviour
 
         if (boss.dead)
         {
+            GameClear = true;
+
             talkPanel.SetActive(true);
+
+            GameObject.Find("Ghost1(Clone)").SetActive(false);
+            GameObject.Find("Ghost2(Clone)").SetActive(false);
+            GameObject.Find("Ghost3(Clone)").SetActive(false);
+
+            
+            GameObject.FindGameObjectWithTag("Bullet").SetActive(false);
+
         }
+
+
 
 
 
