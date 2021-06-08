@@ -135,26 +135,67 @@ public class UIManager : MonoBehaviour
     public void UpdateLifeImage()
     {
         Debug.Log("UImanger"+player.health);
-        if (player.health == 80)
+
+        Vector3 smallScale = new Vector3(0.1f, 0.1f, 0);
+        switch(player.health)
         {
-            heart1.gameObject.SetActive(false);
+            case 90:
+                heart1.transform.localScale -= smallScale;
+                break;
+            case 80:
+                heart1.gameObject.SetActive(false);
+                break;
+            case 70:
+                heart1.gameObject.SetActive(false);
+                heart2.transform.localScale -= smallScale;
+                break;
+            case 60:
+                heart2.gameObject.SetActive(false);
+                break;
+            case 50:
+                heart2.gameObject.SetActive(false);
+                heart3.transform.localScale -= smallScale;
+                break;
+            case 40:
+                heart3.gameObject.SetActive(false);
+                break;
+            case 30:
+                heart3.gameObject.SetActive(false);
+                heart4.transform.localScale -= smallScale;
+                break;
+            case 20:
+                heart4.gameObject.SetActive(false);
+                break;
+            case 10:
+                heart4.gameObject.SetActive(false);
+                heart5.transform.localScale -= smallScale;
+                break;
+            case 0:
+                heart5.gameObject.SetActive(false);
+                break;
+            default:
+                break;
         }
-        else if (player.health == 60)
-        {
-            heart2.gameObject.SetActive(false);
-        }
-        else if (player.health == 40)
-        {
-            heart3.gameObject.SetActive(false);
-        }
-        else if (player.health == 20)
-        {
-            heart4.gameObject.SetActive(false);
-        }
-        else if (player.health == 0) 
-        {
-            heart5.gameObject.SetActive(false);
-        }
+        //if (player.health == 80)
+        //{
+        //    heart1.gameObject.SetActive(false);
+        //}
+        //else if (player.health == 60)
+        //{
+        //    heart2.gameObject.SetActive(false);
+        //}
+        //else if (player.health == 40)
+        //{
+        //    heart3.gameObject.SetActive(false);
+        //}
+        //else if (player.health == 20)
+        //{
+        //    heart4.gameObject.SetActive(false);
+        //}
+        //else if (player.health == 0) 
+        //{
+        //    heart5.gameObject.SetActive(false);
+        //}
     }
 
     public void UpdateAmmoText(int magAmmo)

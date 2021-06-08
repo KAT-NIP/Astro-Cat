@@ -77,7 +77,7 @@ public class PlayerHealth : LivingEntity
         {
             if (!dead)
             {
-                health -= 20;
+                health -= 10;
                 audioSource.clip = playerDamaged;
                 audioSource.Play();
 
