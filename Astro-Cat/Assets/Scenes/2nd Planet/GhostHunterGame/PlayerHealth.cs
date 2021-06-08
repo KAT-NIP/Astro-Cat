@@ -8,6 +8,9 @@ public class PlayerHealth : LivingEntity
     private Animator playerAnimator;
     private MouseMoving playerMovement;
     private PlayerShooter playerShooter;
+    public AudioClip playerDamaged;
+
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     private void Awake()
@@ -15,6 +18,7 @@ public class PlayerHealth : LivingEntity
         playerAnimator = GetComponent<Animator>();
         playerMovement = GetComponent<MouseMoving>();
         playerShooter = GetComponent<PlayerShooter>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     protected override void OnEnable()
@@ -44,14 +48,18 @@ public class PlayerHealth : LivingEntity
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.CompareTag("Bullet"))
+        if(collision.collider.CompareTag("Bullet")) 
         {
             if(!dead)
             {
                 health -= 20;
+                audioSource.clip = playerDamaged;
+                audioSource.Play();
+
                 Debug.Log("Remain Health = " + health);
 
-                if(health <= 0)
+
+                if (health <= 0)
                 {
                     UpdateUI();
                     Die();
@@ -59,20 +67,43 @@ public class PlayerHealth : LivingEntity
                 }
                     
 
-                Debug.Log("playerhealth" + health);
                 UpdateUI();
             }
 
+        }
+
+        // 유령하고 부딪히면 데미지
+        else if (collision.collider.CompareTag("Ghost1") || collision.collider.CompareTag("Ghost2") || collision.collider.CompareTag("Ghost3")) 
+        {
+            if (!dead)
+            {
+                health -= 20;
+                audioSource.clip = playerDamaged;
+                audioSource.Play();
+
+                Debug.Log("Remain Health = " + health);
+
+                if (health <= 0)
+                {
+                    UpdateUI();
+                    Die();
+
+                }
+
+                UpdateUI();
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "BossAttack")
+        if(other.tag == "BossAttack") // Boss
         {
             if (!dead)
             {
                 health -= 20;
+                audioSource.clip = playerDamaged;
+                audioSource.Play();
                 Debug.Log("Remain Health = " + health);
 
                 if(health <= 0)
