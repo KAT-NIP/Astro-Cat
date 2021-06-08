@@ -61,6 +61,16 @@ public class MovingCatMaze : MonoBehaviour
         Jump();
     }
 
+    void FreezeRotation()
+    {
+        rigid.angularVelocity = Vector3.zero;
+    }
+
+    private void FixedUpdate()
+    {
+        FreezeRotation();
+    }
+
     void GetInput()
     {
         hAxis = Input.GetAxisRaw("Horizontal");

@@ -27679,7 +27679,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 84
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!4 &975383992 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8092133001476144777, guid: dd0d70099c0064c42bbbd471ede892a3,
@@ -61298,11 +61298,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 746964f5c0ca3d04fb8372d860a12576, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.43
+      value: 5.57
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 746964f5c0ca3d04fb8372d860a12576, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -121.7
+      value: -123.14
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 746964f5c0ca3d04fb8372d860a12576, type: 3}
       propertyPath: m_LocalRotation.w
