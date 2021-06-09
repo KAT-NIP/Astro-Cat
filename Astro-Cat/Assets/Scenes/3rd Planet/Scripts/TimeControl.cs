@@ -26,8 +26,8 @@ public class TimeControl : MonoBehaviour
         int min = (int)time / 60 % 60;
         int sec = (int)time % 60;
         
-        Debug.Log("min = " + min);
-        Debug.Log("sec = " + sec);
+        //Debug.Log("min = " + min);
+        //Debug.Log("sec = " + sec);
 
         if (min == 0 && sec == 0)
         {
@@ -61,7 +61,7 @@ public class TimeControl : MonoBehaviour
 
         if (1 - min == 0 && 60 - sec == 0)
         {
-            Debug.Log((1 - min) + (60 - sec));
+            //Debug.Log((1 - min) + (60 - sec));
             gameOverText.enabled = true;
             Invoke("restartGame", 5f);
 
