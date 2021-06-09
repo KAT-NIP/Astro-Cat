@@ -86,18 +86,27 @@ public class MovingCatMaze1 : MonoBehaviour
             {
                 case Item.Type.plusTime:
                     Debug.Log("plusTime");
+                    TimeControl.timeValue = 5;
+                    item.gameObject.SetActive(false);
                     break;
 
                 case Item.Type.minusTime:
                     Debug.Log("minusTime");
+                    TimeControl.timeValue = -5;
+                    item.gameObject.SetActive(false);
+                    //speed -= 5;
                     break;
 
                 case Item.Type.plusVelocity:
                     Debug.Log("plusVelocity");
+                    speed += 10;
+                    item.gameObject.SetActive(false);
                     break;
 
                 case Item.Type.minusVelocity:
                     Debug.Log("minusVelocity");
+                    speed -= 10;
+                    item.gameObject.SetActive(false);
                     break;
             }
 

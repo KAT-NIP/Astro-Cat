@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class TimeControl : MonoBehaviour
 {
+    public static int timeValue = 0; // 시간 아이템 먹을 시 시간 변화
+    
+
     public Text[] timeText;
     public Text gameOverText;
     float time;
@@ -22,7 +25,8 @@ public class TimeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        time += Time.deltaTime + timeValue;
+        timeValue = 0;
         int min = (int)time / 60 % 60;
         int sec = (int)time % 60;
         

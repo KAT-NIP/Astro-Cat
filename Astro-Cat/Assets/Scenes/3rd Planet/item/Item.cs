@@ -7,7 +7,7 @@ public class Item : MonoBehaviour
 
     public enum Type { plusTime, minusTime, plusVelocity, minusVelocity };
     public Type type;
-    public int value; // 아이템 먹을 시 변화량
+
 
     void Start()
     {
@@ -15,22 +15,22 @@ public class Item : MonoBehaviour
         if (randomType == 0)
         {
             type = Type.plusTime;
-            value = 10;
+
         }
         else if(randomType == 1)
         {
             type = Type.minusTime;
-            value = -10;
+
         }
         else if (randomType == 2)
         {
             type = Type.plusVelocity;
-            value = 5;
+
         }
         else if (randomType == 1)
         {
             type = Type.minusVelocity;
-            value = -5;
+
         }
     }
 

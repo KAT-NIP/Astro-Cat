@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TimeControl1 : MonoBehaviour
 {
+    //public static int timeValue = 10;
     public Text[] timeText;
     public Text gameOverText;
     float time;
