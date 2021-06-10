@@ -776,16 +776,16 @@ AnimatorStateMachine:
     m_Position: {x: 250, y: -160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3054945482095999232}
-    m_Position: {x: 760, y: 30, z: 0}
+    m_Position: {x: 450, y: -120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -5558759179323351992}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 780, y: -50, z: 0}
+  m_AnyStatePosition: {x: 470, y: -200, z: 0}
   m_EntryPosition: {x: 120, y: -276, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ExitPosition: {x: 490, y: -30, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -8869463478409209953}
 --- !u!1102 &969446430160330252
