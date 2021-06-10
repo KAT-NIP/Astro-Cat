@@ -19,8 +19,6 @@ public class MovingCatMaze : MonoBehaviour
     Rigidbody rigid;
     Animator anim;
 
-    //public GameObject talkPanel;
-   // private Text talkObjectText;
 
     private void Awake()
     {
@@ -30,30 +28,6 @@ public class MovingCatMaze : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    if (clickCount == 0)
-        //    {
-        //        talkObjectText.text = "우주..? 행성..? 어디로 가야하지?";
-        //        clickCount++;
-        //    }
-        //    else
-        //    {
-        //        //Win.SetActive(false);
-        //        //마우스 클릭 시 대화창 사라짐
-        //        talkPanel.SetActive(false);
-        //        mouseClick = true;
-        //    }
-
-        //}
-
-        //if (mouseClick)
-        //{
-        //    GetInput();
-        //    Move();
-        //    Turn();
-        //    Jump();
-        //}
 
         GetInput();
         Move();
@@ -103,13 +77,40 @@ public class MovingCatMaze : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.tag == "Floor")
-    //    {
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Item")
+        {
+            Item item = other.GetComponent<Item>();
+            switch (item.type)
+            {
+                case Item.Type.plusTime:
+                    Debug.Log("plusTime");
+                    TimeControl.timeValue = 10;
+                    item.gameObject.SetActive(false);
+                    break;
 
-    //        isJump = false;
+                case Item.Type.minusTime:
+                    Debug.Log("minusTime");
+                    TimeControl.timeValue = -10;
+                    item.gameObject.SetActive(false);
+                    
+                    break;
 
-    //    }
-    //}
+                case Item.Type.plusVelocity:
+                    Debug.Log("plusVelocity");
+                    speed += 10;
+                    item.gameObject.SetActive(false);
+                    break;
+
+                case Item.Type.minusVelocity:
+                    Debug.Log("minusVelocity");
+                    speed -= 10;
+                    item.gameObject.SetActive(false);
+                    break;
+            }
+
+        }
+
+    }
 }
