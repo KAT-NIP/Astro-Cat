@@ -10,23 +10,19 @@ public class AfterGame : MonoBehaviour
     public Text name;
 
     public GameObject[] gems;
-    bool[] gemActive;
-    int gemIndex = 0;
+    bool gemActive = false;
+    bool gemSoundPlayed = false;
 
     public GameObject hamsterKing;
 
     public AudioSource crowSound;
+    public AudioSource gemSound;
 
     int clickCount;
     // Start is called before the first frame update
     void Start()
     {
         clickCount = 0;
-        gemActive = new bool[3];
-        for(int i = 0; i<3; i++)
-        {
-            gemActive[i] = false;
-        }
         talkText = GameObject.Find("talkPanel/Text").GetComponent<Text>();
     }
 
@@ -66,91 +62,40 @@ public class AfterGame : MonoBehaviour
                 Debug.Log(clickCount);
 
                 talkPanel.SetActive(false);
-                if (gemActive[0]) //gems[0]참
-                {
-                    if (gemActive[1]) //gems[0] && gems[1] 참
-                    {
-                        if (gemActive[2]) //gems[0] && gems[1] && gems[2] 참
-                        {
-                            gems[0].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
-                            gems[1].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
-                            gems[2].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
-
-                            if (gems[0].transform.position.x == hamsterKing.transform.position.x)
-                            {
-                                gems[0].SetActive(false);
-                            }
-
-                            if (gems[1].transform.position.x == hamsterKing.transform.position.x)
-                            {
-                                gems[1].SetActive(false);
-                            }
-
-                            if (gems[2].transform.position.x == hamsterKing.transform.position.x)
-                            {
-                                gems[2].SetActive(false);
-                            }
-                        }
-
-                        else //gems[2] 활성화활 차례
-                        {
-                            gems[2].SetActive(true);
-                            gems[0].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
-                            gems[1].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
-                            gems[2].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
-
-                            if (gems[0].transform.position.x == hamsterKing.transform.position.x)
-                            {
-                                gems[0].SetActive(false);
-                            }
-
-                            if (gems[1].transform.position.x == hamsterKing.transform.position.x)
-                            {
-                                gems[1].SetActive(false);
-                            }
-
-                            if (gems[2].transform.position.x == hamsterKing.transform.position.x / 3)
-                            {
-                                gemActive[2] = true;
-                            }
-                        }
-                    }
-
-                    else //gems[1] 활성화할 차례
-                    {
-                        gems[1].SetActive(true);
-                        gems[0].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
-                        gems[1].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
-
-
-                        if (gems[0].transform.position.x == hamsterKing.transform.position.x)
-                        {
-                            gems[0].SetActive(false);
-                        }
-
-                        if (gems[1].transform.position.x == hamsterKing.transform.position.x / 3)
-                        {
-                            gemActive[1] = true;
-                        }
-                    }
-
-                }
-
-                else //gems[0] 활성화할 차례
-                {
-                    gems[0].SetActive(true);
-                    gems[0].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
-
-                    if (gems[0].transform.position.x == hamsterKing.transform.position.x / 3)
-                    {
-                        gemActive[0] = true;
-                    }
-                }
-
+                gemActive = true;
 
             }
         }
 
-       
+        if(gemActive)
+        {
+            if (!gemSoundPlayed)
+            {
+                gemSound.Play();
+                gemSoundPlayed = true;
+            }
+
+            gems[0].SetActive(true);
+            gems[1].SetActive(true);
+            gems[2].SetActive(true);
+
+            gems[0].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
+            gems[1].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
+            gems[2].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
+
+            if(gems[0].transform.position.x <= -1 && gems[1].transform.position.x <= -1 && gems[2].transform.position.x <= -1)
+            {
+                gemActive = false;
+            }
+        }
+
+        if (!gemActive)
+        {
+            gems[0].SetActive(false);
+            gems[1].SetActive(false);
+            gems[2].SetActive(false);
+        }
+
+
     }
 }

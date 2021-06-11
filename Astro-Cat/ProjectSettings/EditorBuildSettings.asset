@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3rd Planet/Maze.unity
     guid: 4e757f5a8916949d88f6a466086bf272
+  - enabled: 1
+    path: Assets/Scenes/3rd Planet/3rd Planet After Game.unity
+    guid: faaeb055935344ed3a8959994dc2f3a2
   m_configObjects: {}
