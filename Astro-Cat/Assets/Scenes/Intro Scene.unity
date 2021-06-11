@@ -320,18 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f41d9a5c90b4585a089560b5ebf7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 905584623}
-  sprites: []
-  imageObj:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  myImage: {fileID: 0}
-  index: 0
-  slide: 0
-  time: 0
+  myImage: {fileID: 905584626}
 --- !u!114 &905584626
 MonoBehaviour:
   m_ObjectHideFlags: 0
