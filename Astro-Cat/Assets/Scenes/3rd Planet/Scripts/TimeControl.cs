@@ -11,8 +11,12 @@ public class TimeControl : MonoBehaviour
     public Text[] timeText;
     public Text gameOverText;
     float time = 120;
+    int min, sec;
+    bool musicPlayed = false;
     //int min = 0;
     // Start is called before the first frame update
+    public AudioSource gameOverAudioSource;
+
     void Start()
     {
         //제한 시간 2
@@ -23,36 +27,45 @@ public class TimeControl : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         time -= Time.deltaTime + timeValue;
         timeValue = 0;
         //Debug.Log(time);
         //timeValue = 0;
-        int min = (int)time / 60;
-        int sec = ((int)time - min * 60) % 60;
+        min = (int)time / 60;
+        sec = ((int)time - min * 60) % 60;
         //int sec = (int)(time - (time/60 * 60) % 60);ß
         Debug.Log("min" + min);
         Debug.Log("sec" + sec);
-
-
-        if (sec >= 60)
-        {
-            min += 1;
-            sec -= 60;
-        }
-        else
-        {
-            timeText[0].text = min.ToString();
-            timeText[1].text = sec.ToString();
-        }
 
         if (min <= 0 && sec <= 0)
         {
             timeText[0].text = 0.ToString();
             timeText[1].text = 0.ToString();
-            gameOverText.gameObject.SetActive(true);
-            Invoke("restartGame", 5f);
+            if (!musicPlayed)
+            {
+                gameOverText.gameObject.SetActive(true);
+                gameOverAudioSource.Play();
+                musicPlayed = true;
+                Invoke("restartGame", 5f);
+            }
+            
         }
+
+        else {
+            if (sec >= 60)
+            {
+                min += 1;
+                sec -= 60;
+            }
+            else
+            {
+                timeText[0].text = min.ToString();
+                timeText[1].text = sec.ToString();
+            }
+        }
+
+
 
 
         //if (min == 0 && sec == 0)
