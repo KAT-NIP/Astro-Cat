@@ -20,8 +20,9 @@ public class MovingCatMaze : MonoBehaviour
     Animator anim;
 
     public GameObject SandClock;
+    public GameObject Velocity;
     public Text ItemText;
-
+    
 
     private void Awake()
     {
@@ -58,6 +59,10 @@ public class MovingCatMaze : MonoBehaviour
     void Move()
     {
         moveVec = new Vector3(hAxis, 0, vAxis).normalized;
+        if (speed <= 5)
+        {
+            speed = 5;
+        }
 
         transform.position += moveVec * speed * Time.deltaTime;
 
@@ -113,15 +118,24 @@ public class MovingCatMaze : MonoBehaviour
 
                 case Item.Type.plusVelocity:
                     Debug.Log("plusVelocity");
+                    Velocity.SetActive(true);
+                    ItemText.text = "+5";
+                    ItemText.gameObject.SetActive(true);
 
-                    speed += 10;
+                    speed += 5;
                     item.gameObject.SetActive(false);
+
+                    Invoke("HideVelocityIcon", 1f);
                     break;
 
                 case Item.Type.minusVelocity:
                     Debug.Log("minusVelocity");
+                    Velocity.SetActive(true);
+                    ItemText.text = "-5";
+                    ItemText.gameObject.SetActive(true);
 
-                    speed -= 10;
+                    Invoke("HideVelocityIcon", 1f);
+                    speed -= 5;
                     item.gameObject.SetActive(false);
                     break;
             }
@@ -133,6 +147,12 @@ public class MovingCatMaze : MonoBehaviour
     private void HideClockIcon()
     {
         SandClock.SetActive(false);
+        ItemText.gameObject.SetActive(false);
+    }
+
+    private void HideVelocityIcon()
+    {
+        Velocity.SetActive(false);
         ItemText.gameObject.SetActive(false);
     }
 }
