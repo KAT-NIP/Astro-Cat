@@ -13,6 +13,9 @@ public class AfterGame : MonoBehaviour
     bool gemActive = false;
     bool gemSoundPlayed = false;
 
+    public GameObject key;
+    bool keyStart = false;
+
     public GameObject hamsterKing;
 
     public AudioSource crowSound;
@@ -65,7 +68,14 @@ public class AfterGame : MonoBehaviour
                 gemActive = true;
 
             }
+
+            else if(clickCount == 4)
+            {
+                //웜홀로 씬 전환
+
+            }
         }
+
 
         if(gemActive)
         {
@@ -79,21 +89,41 @@ public class AfterGame : MonoBehaviour
             gems[1].SetActive(true);
             gems[2].SetActive(true);
 
-            gems[0].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
-            gems[1].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
-            gems[2].transform.position += new Vector3(-Time.deltaTime / 2, 0, 0);
+            gems[0].transform.position += new Vector3(-Time.deltaTime, 0, 0);
+            gems[1].transform.position += new Vector3(-Time.deltaTime, 0, 0);
+            gems[2].transform.position += new Vector3(-Time.deltaTime, 0, 0);
 
-            if(gems[0].transform.position.x <= -1 && gems[1].transform.position.x <= -1 && gems[2].transform.position.x <= -1)
+            if(gems[0].transform.position.x <= -1.5 && gems[1].transform.position.x <= -1.5 && gems[2].transform.position.x <= -1.5)
             {
                 gemActive = false;
+                keyStart = true;
             }
         }
 
-        if (!gemActive)
+        if (!gemActive && keyStart)
         {
             gems[0].SetActive(false);
             gems[1].SetActive(false);
             gems[2].SetActive(false);
+
+            key.SetActive(true);
+            if (gemSoundPlayed)
+            {
+                gemSound.Play();
+                gemSoundPlayed = false;
+            }
+
+            key.transform.position += new Vector3(Time.deltaTime, 0, 0);
+
+            if(key.transform.position.x >= 0)
+            {
+                key.SetActive(false);
+                talkPanel.SetActive(true);
+                name.text = "냥냥이";
+                talkText.text = "드디어 돌아갈 수 있게 되었구나\n얼른 주인에게 돌아가야겠어! 열쇠야 도와줘!";
+                clickCount = 4;
+            }
+
         }
 
 
