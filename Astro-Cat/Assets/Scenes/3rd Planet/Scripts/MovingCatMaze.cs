@@ -19,6 +19,9 @@ public class MovingCatMaze : MonoBehaviour
     Rigidbody rigid;
     Animator anim;
 
+    public GameObject SandClock;
+    public Text ItemText;
+
 
     private void Awake()
     {
@@ -86,25 +89,38 @@ public class MovingCatMaze : MonoBehaviour
             {
                 case Item.Type.plusTime:
                     Debug.Log("plusTime");
+                    SandClock.SetActive(true);
+                    ItemText.text = "+10";
+                    ItemText.gameObject.SetActive(true);
+
                     TimeControl.timeValue = 10;
                     item.gameObject.SetActive(false);
+
+                    Invoke("HideClockIcon", 1f);
                     break;
 
                 case Item.Type.minusTime:
                     Debug.Log("minusTime");
+                    SandClock.SetActive(true);
+                    ItemText.text = "-10";
+                    ItemText.gameObject.SetActive(true);
+
                     TimeControl.timeValue = -10;
                     item.gameObject.SetActive(false);
-                    
+
+                    Invoke("HideClockIcon", 1f);
                     break;
 
                 case Item.Type.plusVelocity:
                     Debug.Log("plusVelocity");
+
                     speed += 10;
                     item.gameObject.SetActive(false);
                     break;
 
                 case Item.Type.minusVelocity:
                     Debug.Log("minusVelocity");
+
                     speed -= 10;
                     item.gameObject.SetActive(false);
                     break;
@@ -112,5 +128,11 @@ public class MovingCatMaze : MonoBehaviour
 
         }
 
+    }
+
+    private void HideClockIcon()
+    {
+        SandClock.SetActive(false);
+        ItemText.gameObject.SetActive(false);
     }
 }

@@ -28,7 +28,7 @@ public class TimeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        time -= Time.deltaTime + timeValue;
+        time -= Time.deltaTime - timeValue;
         timeValue = 0;
         //Debug.Log(time);
         //timeValue = 0;
