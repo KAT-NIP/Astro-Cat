@@ -65,7 +65,7 @@ public class MovingCatMaze : MonoBehaviour
             {
                 diamond.SetActive(false);
                 Debug.Log("hi");
-                SceneManager.LoadScene("Maze");
+                SceneManager.LoadScene("3rd Planet After Game");
             }
         }
 
