@@ -23,7 +23,13 @@ public class MovingCatMaze : MonoBehaviour
     public GameObject SandClock;
     public GameObject Velocity;
     public Text ItemText;
-    
+    public GameObject crow;
+    public GameObject newCrow;
+
+    public Text[] timeText;
+
+    public GameObject RawImage1;
+    public GameObject RawImage2;
 
     private void Awake()
     {
@@ -146,7 +152,16 @@ public class MovingCatMaze : MonoBehaviour
         if (other.gameObject.tag == "Finish")
         {
             Debug.Log("finished!");
-            SceneManager.LoadScene("Maze");
+            timeText[0].gameObject.SetActive(false);
+            timeText[1].gameObject.SetActive(false);
+            timeText[2].gameObject.SetActive(false);
+            crow.SetActive(false);
+            newCrow.SetActive(true);
+
+            RawImage1.SetActive(false);
+            RawImage2.SetActive(false);
+
+            //SceneManager.LoadScene("Maze");
         }
     }
 
