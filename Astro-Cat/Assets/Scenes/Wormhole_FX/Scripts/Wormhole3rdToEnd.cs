@@ -17,7 +17,7 @@ public class Wormhole3rdToEnd : MonoBehaviour
     {
         if(player.transform.position.y < -40)
         {
-            //SceneManager.LoadScene("");
+            SceneManager.LoadScene("End Scene");
         }
     }
 }

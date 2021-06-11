@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Intro Scene.unity
+    guid: 6d8501e35f0854e0ea25f00688af3d19
+  - enabled: 1
     path: Assets/Scenes/Wormhole_FX/Wormhole(IntroTo1st).unity
     guid: 2176cb5f85242414a98d3eb47c109729
   - enabled: 1
@@ -14,9 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1 1st Planet/1st Planet.unity
     guid: 13dee877178304167ab81e3e58d71b8b
-  - enabled: 0
-    path: Assets/Scenes/1 1st Planet/1st Planet - old version.unity
-    guid: 8fe1fb7282d8e4cdcadd6cdc3aa284dc
   - enabled: 1
     path: Assets/Scenes/1 1st Planet/2048Scene.unity
     guid: d20591591113f469789dabf10ae6d824
@@ -35,15 +35,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2nd Planet after game.unity
     guid: 35ce785db1b1d40e18a31ee9fdfd2697
-  - enabled: 0
-    path: Assets/Scenes/Ghost Hunter Game.unity
-    guid: c3a2cfe833ca04c478de6fe708d025be
+  - enabled: 1
+    path: Assets/Scenes/Wormhole_FX/Wormhole(2ndTo3rd) 1.unity
+    guid: 210372125f69b4965b1dfce0de5760d5
   - enabled: 1
     path: Assets/Scenes/3rd Planet/3rd Planet.unity
     guid: a134cb8fdf39c42ff94584999f800dd6
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/3rd Planet/Maze.unity
     guid: 4e757f5a8916949d88f6a466086bf272
@@ -53,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Wormhole_FX/Wormhole(3rdToEnd).unity
     guid: b8abe0317b8d24628be234446c858937
+  - enabled: 1
+    path: Assets/Scenes/End Scene.unity
+    guid: 0ec62596ab02b4d83958b597bbb16c47
   m_configObjects: {}

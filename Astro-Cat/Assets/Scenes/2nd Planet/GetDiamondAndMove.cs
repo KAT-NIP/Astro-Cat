@@ -39,9 +39,9 @@ public class GetDiamondAndMove : MonoBehaviour
                 //effectSound.Pause();
             }
 
-            else if(clickCount == 2 && touchPlayer == true)
+            else if(clickCount >= 2 && touchPlayer == true)
             {
-                SceneManager.LoadScene("Wormhole(2ndTo3rd)");
+                SceneManager.LoadScene("Wormhole(2ndTo3rd) 1");
             }
         }
 
