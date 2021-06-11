@@ -249,11 +249,11 @@ public class SquareManager : MonoBehaviour {
         {
             for(int j = 0; j <= 3; j++)
             {
-                // 레벨1 클리어조건 (n[4] = 32)
-                if(!levelClear[0] && Square[i, j] != null && Square[i, j].name == n[4].name + "(Clone)")
+                // 레벨1 클리어조건 (n[5] = 64)
+                if(!levelClear[0] && Square[i, j] != null && Square[i, j].name == n[5].name + "(Clone)")
                 {
                     WinText.text = "Level 1 Clear!";
-                    ContinueText.text = "다음 레벨 목표 : 64점 타일";
+                    ContinueText.text = "다음 레벨 목표 : 128점 타일";
                     levelClear[0] = true;
 
                     //talkObject활성화, 텍스트 내용 수정
@@ -263,11 +263,11 @@ public class SquareManager : MonoBehaviour {
                     
                     return true;
                 }
-                // 레벨2 클리어조건 (n[5] = 64)
-                if (!levelClear[1] && Square[i, j] != null && Square[i, j].name == n[5].name + "(Clone)")
+                // 레벨2 클리어조건 (n[6] = 128)
+                if (!levelClear[1] && Square[i, j] != null && Square[i, j].name == n[6].name + "(Clone)")
                 {
                     WinText.text = "Level 2 Clear!";
-                    ContinueText.text = "다음 레벨 목표 : 128점 타일";
+                    ContinueText.text = "다음 레벨 목표 : 256점 타일";
                     levelClear[1] = true;
 
                     talkObject.SetActive(true);
@@ -278,7 +278,7 @@ public class SquareManager : MonoBehaviour {
                 }
 
                 // 레벨1 클리어조건 (n[6] = 128)
-                if (!levelClear[2] && Square[i, j] != null && Square[i, j].name == n[6].name + "(Clone)")
+                if (!levelClear[2] && Square[i, j] != null && Square[i, j].name == n[7].name + "(Clone)")
                 {
                     WinText.text = "Stage Clear!";
                     levelClear[2] = true;
