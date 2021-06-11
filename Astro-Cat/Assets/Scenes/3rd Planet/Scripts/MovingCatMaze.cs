@@ -33,6 +33,8 @@ public class MovingCatMaze : MonoBehaviour
 
     public GameObject talkPanel;
 
+    public GameObject diamond;
+
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
@@ -41,10 +43,33 @@ public class MovingCatMaze : MonoBehaviour
 
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0) && clickCount == 1)
         {
             talkPanel.SetActive(false);
+            //diamond.transform.position = this.gameObject.transform.position;
+            diamond.transform.position = new Vector3(this.gameObject.transform.position.x, 7f, this.gameObject.transform.position.z);
+
+            diamond.SetActive(true);
+
+            //diamond.transform.position = new Vector3(this.gameObject.transform.position.x, 7f - Time.deltaTime / 2, this.gameObject.transform.position.z);
+
+            clickCount = 2;
         }
+        else if (clickCount == 2)
+        {
+
+            diamond.transform.position += new Vector3(0,-Time.deltaTime,0);
+            Debug.Log("transform");
+            if (diamond.transform.position.y < 5f)
+            {
+                diamond.SetActive(false);
+                Debug.Log("hi");
+                SceneManager.LoadScene("Maze");
+            }
+        }
+
+
 
         GetInput();
         Move();
@@ -157,7 +182,7 @@ public class MovingCatMaze : MonoBehaviour
 
         }
 
-        if (other.gameObject.tag == "Finish")
+        if (other.gameObject.tag == "Finish" && clickCount == 0)
         {
             Debug.Log("finished!");
             timeText[0].gameObject.SetActive(false);
@@ -169,11 +194,16 @@ public class MovingCatMaze : MonoBehaviour
             RawImage1.SetActive(false);
             RawImage2.SetActive(false);
 
-            talkPanel.SetActive(true);
+            if (clickCount == 0)
+            {
+                talkPanel.SetActive(true);
+            }
+            
 
             clickCount = 1;
             Debug.Log("clickCount" + clickCount);
             //SceneManager.LoadScene("Maze");
+            
         }
 
 

@@ -35,8 +35,8 @@ public class TimeControl : MonoBehaviour
         min = (int)time / 60;
         sec = ((int)time - min * 60) % 60;
         //int sec = (int)(time - (time/60 * 60) % 60);ß
-        Debug.Log("min" + min);
-        Debug.Log("sec" + sec);
+        //Debug.Log("min" + min);
+        //Debug.Log("sec" + sec);
 
         if (min <= 0 && sec <= 0)
         {
