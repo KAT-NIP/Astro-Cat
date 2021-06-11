@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MovingCatMaze : MonoBehaviour
 {
@@ -142,6 +143,11 @@ public class MovingCatMaze : MonoBehaviour
 
         }
 
+        if (other.gameObject.tag == "Finish")
+        {
+            Debug.Log("finished!");
+            SceneManager.LoadScene("Maze");
+        }
     }
 
     private void HideClockIcon()
