@@ -44,7 +44,7 @@ public class AfterGame : MonoBehaviour
                 clickCount++;
             }
 
-            if(clickCount == 1)
+            else if(clickCount == 1)
             {
                 Debug.Log(clickCount);
 
@@ -53,7 +53,7 @@ public class AfterGame : MonoBehaviour
                 clickCount++;
             }
 
-            if(clickCount == 2)
+            else if(clickCount == 2)
             {
                 Debug.Log(clickCount);
 
@@ -61,7 +61,7 @@ public class AfterGame : MonoBehaviour
                 clickCount++;
             }
 
-            if (clickCount == 3)
+            else if (clickCount == 3)
             {
                 Debug.Log(clickCount);
 
