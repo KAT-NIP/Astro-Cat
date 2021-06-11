@@ -31,6 +31,8 @@ public class MovingCatMaze : MonoBehaviour
     public GameObject RawImage1;
     public GameObject RawImage2;
 
+    public GameObject talkPanel;
+
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
@@ -39,11 +41,17 @@ public class MovingCatMaze : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0) && clickCount == 1)
+        {
+            talkPanel.SetActive(false);
+        }
 
         GetInput();
         Move();
         Turn();
         Jump();
+
+
     }
 
     void FreezeRotation()
@@ -161,8 +169,14 @@ public class MovingCatMaze : MonoBehaviour
             RawImage1.SetActive(false);
             RawImage2.SetActive(false);
 
+            talkPanel.SetActive(true);
+
+            clickCount = 1;
+            Debug.Log("clickCount" + clickCount);
             //SceneManager.LoadScene("Maze");
         }
+
+
     }
 
     private void HideClockIcon()
