@@ -58,7 +58,7 @@ public class IntroScript : MonoBehaviour
                 TitleText.SetActive(true);
                 break;
             case 6:
-                SceneManager.LoadScene("Wormhole(1stTo2nd)");
+                SceneManager.LoadScene("Wormhole(IntroTo1st)");
                 break;
             default:
                 break;
