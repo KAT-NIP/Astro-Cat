@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AfterGame : MonoBehaviour
 {
@@ -72,7 +73,7 @@ public class AfterGame : MonoBehaviour
             else if(clickCount == 4)
             {
                 //웜홀로 씬 전환
-
+                SceneManager.LoadScene("Wormhole(3rdToEnd)");
             }
         }
 
