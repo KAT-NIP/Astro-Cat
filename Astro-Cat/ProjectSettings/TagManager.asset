@@ -16,6 +16,7 @@ TagManager:
   - BossAttack
   - Boss
   - Item
+  - Image
   layers:
   - Default
   - TransparentFX
