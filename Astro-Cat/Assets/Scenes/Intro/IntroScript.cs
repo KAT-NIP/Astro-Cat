@@ -6,36 +6,49 @@ using UnityEngine.SceneManagement;
 
 public class IntroScript : MonoBehaviour
 {
-    public GameObject image;
     Sprite[] sprites;
-    public GameObject[] imageObj;
+    //public GameObject[] imageObj;
     public Image myImage;
-    int index;
+    int clickCount;
 
-    public float slide = 2f;
-    float time = 0f;
     // Start is called before the first frame update
     void Start()
     {
         sprites = Resources.LoadAll<Sprite>("images");
 
-        index = 0;
+        clickCount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        if (time == slide && index < 5)
+        if(Input.GetMouseButtonDown(0))
         {
-            image.GetComponent<Image>().sprite = sprites[index];
-            index++;
-            time = 0f;
+            clickCount++;
         }
-
-        if (index == 5)
+        switch (clickCount)
         {
-            SceneManager.LoadScene("Wormhole(1stTo2nd)");
+            case 0:
+                myImage.GetComponent<Image>().sprite = sprites[clickCount];
+                break;
+            case 1:
+                myImage.GetComponent<Image>().sprite = sprites[clickCount];
+                break;
+            case 2:
+                myImage.GetComponent<Image>().sprite = sprites[clickCount];
+                break;
+            case 3:
+                myImage.GetComponent<Image>().sprite = sprites[clickCount];
+                break;
+            case 4:
+                myImage.GetComponent<Image>().sprite = sprites[clickCount];
+                break;
+            case 5:
+                SceneManager.LoadScene("Wormhole(1stTo2nd)");
+                break;
+            default:
+                break;
         }
     }
+
 }
