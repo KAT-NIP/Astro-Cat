@@ -2512,7 +2512,7 @@ ScriptsOnlyBuild:
     className: UIManager
   - hash:
       serializedVersion: 2
-      Hash: a334e7c4fd82e079d26cc49485fcbfc3
+      Hash: 07372ad17ce06cecceb6fab704501e39
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SquareManager
@@ -2666,4 +2666,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/3rd Planet/3rd Planet After Game.unity
   - Assets/Scenes/Wormhole_FX/Wormhole(3rdToEnd).unity
   - Assets/Scenes/End Scene.unity
-  playerPath: /Users/yang-yujin/Documents/GitHub/Astro-Cat/Astro-Cat/BuildSettings/newsemifinal.app
+  playerPath: /Users/yang-yujin/Documents/GitHub/Astro-Cat/Astro-Cat/BuildSettings/pleasemifinal.app
