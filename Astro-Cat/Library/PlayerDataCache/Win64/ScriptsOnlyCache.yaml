@@ -1,7 +1,5 @@
 ScriptsOnlyBuild:
   usedScripts:
-    Assembly-CSharp-Editor.dll:
-    - ReadmeEditorBE3
     Assembly-CSharp.dll:
     - ActivedSpawner
     - AfterGame
@@ -33,7 +31,6 @@ ScriptsOnlyBuild:
     - PlayerScript1st
     - PlayerShooter
     - ProjectileMoveScript
-    - ReadmeBE3
     - SceneManager2048
     - SceneMovement1st
     - SceneMover
@@ -152,7 +149,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13618}
     - Class: 114
-      Script: {instanceID: 23362}
+      Script: {instanceID: 36164}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -265,9 +262,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13618}
     - Class: 114
-      Script: {instanceID: 17124}
+      Script: {instanceID: 17128}
     - Class: 114
-      Script: {instanceID: 17126}
+      Script: {instanceID: 17130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -366,9 +363,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13590}
     - Class: 114
-      Script: {instanceID: 17124}
+      Script: {instanceID: 17128}
     - Class: 114
-      Script: {instanceID: 17126}
+      Script: {instanceID: 17130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -546,9 +543,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13618}
     - Class: 114
-      Script: {instanceID: 17124}
+      Script: {instanceID: 17128}
     - Class: 114
-      Script: {instanceID: 17126}
+      Script: {instanceID: 17130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -643,9 +640,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13618}
     - Class: 114
-      Script: {instanceID: 17124}
+      Script: {instanceID: 17128}
     - Class: 114
-      Script: {instanceID: 17126}
+      Script: {instanceID: 17130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -746,9 +743,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13618}
     - Class: 114
-      Script: {instanceID: 17124}
+      Script: {instanceID: 17128}
     - Class: 114
-      Script: {instanceID: 17126}
+      Script: {instanceID: 17130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -851,9 +848,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13618}
     - Class: 114
-      Script: {instanceID: 17124}
+      Script: {instanceID: 17128}
     - Class: 114
-      Script: {instanceID: 17126}
+      Script: {instanceID: 17130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1140,9 +1137,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13618}
     - Class: 114
-      Script: {instanceID: 17124}
+      Script: {instanceID: 17128}
     - Class: 114
-      Script: {instanceID: 17126}
+      Script: {instanceID: 17130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1292,7 +1289,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13234}
     - Class: 114
-      Script: {instanceID: 23362}
+      Script: {instanceID: 36164}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1367,7 +1364,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13234}
     - Class: 114
-      Script: {instanceID: 23362}
+      Script: {instanceID: 36164}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1442,7 +1439,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13234}
     - Class: 114
-      Script: {instanceID: 23362}
+      Script: {instanceID: 36164}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1517,7 +1514,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13234}
     - Class: 114
-      Script: {instanceID: 23362}
+      Script: {instanceID: 36164}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -2515,7 +2512,7 @@ ScriptsOnlyBuild:
     className: UIManager
   - hash:
       serializedVersion: 2
-      Hash: a334e7c4fd82e079d26cc49485fcbfc3
+      Hash: 07372ad17ce06cecceb6fab704501e39
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SquareManager
@@ -2669,4 +2666,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/3rd Planet/3rd Planet After Game.unity
   - Assets/Scenes/Wormhole_FX/Wormhole(3rdToEnd).unity
   - Assets/Scenes/End Scene.unity
-  playerPath: /Users/min/Desktop/3-1/Astro-Cat/Astro-Cat/BuildSettings/AstroCat_Win/Astro-Cat.exe
+  playerPath: /Users/min/Desktop/3-1/Astro-Cat/Astro-Cat/BuildSettings/Astro_Cat/Astro-Cat.exe
