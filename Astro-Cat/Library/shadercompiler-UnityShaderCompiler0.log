@@ -2,3 +2,5 @@ Base path: '/Applications/Unity/Hub/Editor/2019.4.19f1/Unity.app/Contents', plug
 Cmd: initializeCompiler
 Cmd: preprocessCompute
   insize=1893 outsize=1897 ok=1
+Cmd: preprocessCompute
+  insize=1893 outsize=1897 ok=1
