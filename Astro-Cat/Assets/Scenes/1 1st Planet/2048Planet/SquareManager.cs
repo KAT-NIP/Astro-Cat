@@ -27,8 +27,8 @@ public class SquareManager : MonoBehaviour {
     static float gridOffset;
     static bool horizontal;
     public bool quterSwip;
-    private GameObject talkObject; // 말풍선 object 
-    private Text talkObjectText; // 말풍선 속 대사 object
+    public GameObject talkObject; // 말풍선 object 
+    public Text talkObjectText; // 말풍선 속 대사 object
     bool mouseClick = false; // mouse click 시 game keep going
 
     private AudioSource soundEffectAudio;
